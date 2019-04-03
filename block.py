@@ -138,10 +138,102 @@ class txInput:
 		scriptLen = int(hexstr[0:2],16)
 		scriptLen *= 2
 		script = hexstr[2:2+scriptLen] 
-		print "\tScript:\t\t " + script
-		if SIGHASH_ALL != int(hexstr[scriptLen:scriptLen+2],16): # should be 0x01
-			print "\t Script op_code is not SIGHASH_ALL"
+		if self.scriptLen == 2:
+			print("t\Script:\t " + OPCODE_NAMES[int(hexstr[0:2],16)]+" "+OPCODE_NAMES[int(hexstr[2:4],16)])
 			return hexstr
+		if script[-2:] == '82': #OP_SIZE e.g. txid:bc197104ed150ffb76ed3f3824ce99b05b39e6329eb4e1d7347888ac7f68fa76
+			decodedScript = hexstr[2:scriptLen]+" NONE|ANYONECANSPEND "+hexstr[scriptLen+4:]
+			print "\tScript:\t " + decodedScript
+			return hexstr
+		print "\tScript:\t\t " + script+'\n'
+		if len(hexstr) < scriptLen+2: #e.g. txid:1ddf545ccf0bf653134b2110b73fda185ca99348895900a677eed0ddb922aac3
+			print " \tNon-Standard 'STRANGE' input script:\t"+hexstr
+			return hexstr
+		elif SIGHASH_ALL != int(hexstr[scriptLen:scriptLen+2],16): # should be 0x01
+			op_codeTail = OPCODE_NAMES[int(hexstr[-2:],16)]
+			if op_codeTail=="OP_CHECKMULTISIG":                         # Stack Exchange (http://archive.is/eMO5i)
+				op_codeTailCount = OPCODE_NAMES[int(hexstr[-4:-2],16)]
+				pubkeyCount = int(op_codeTailCount.split('_')[1])
+				print str(pubkeyCount) + " "+hexstr+'\n'
+				inputScriptSig=""
+				try: 
+				    op_code1 = OPCODE_NAMES[int(hexstr[0:2],16)]
+				except KeyError: #Obselete pay to pubkey directly 
+					print " \tOP_CODE key %s Error"%hexstr[0:2]
+					return hexstr
+				inputScriptSig+=op_code1
+				curIndex = 2
+				cur_opValue = hexstr[curIndex:curIndex+2]
+				sigCount = 0
+				while(sigCount<pubkeyCount):    # Loop until we hit PUSHDATA1 or pubkeys -1 
+					inputScriptSig+=(" OP_PUSHDATA:"+str(cur_opValue))
+					curIndex+=2
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_SEQ:"+str(cur_opValue))
+					curIndex+=2
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_LENGTH:"+str(cur_opValue))
+					curIndex+=2
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_INT:"+str(cur_opValue))
+					curIndex+=2
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_LENGTH:"+str(cur_opValue))
+					curIndex+=2
+					sigLength = int(cur_opValue,16)*2
+					sigR = hexstr[curIndex:curIndex+sigLength]
+					inputScriptSig+= (" "+sigR)
+					curIndex+=sigLength
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_INT:"+str(cur_opValue))
+					curIndex+=2
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_LENGTH:"+str(cur_opValue))
+					curIndex+=2
+					print inputScriptSig
+					sigLength = int(cur_opValue,16)*2
+					sigS = hexstr[curIndex:curIndex+sigLength]
+					inputScriptSig+= (" "+sigS)
+					curIndex+=sigLength
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					if int(cur_opValue,16) == SIGHASH_ALL:
+						inputScriptSig+=(' OP_SIGHASHALL:'+str(cur_opValue))
+						print("Remaining hex: "+hexstr[curIndex+2:])
+					curIndex+=2
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					sigCount+=1
+					if int(cur_opValue,16) == OP_PUSHDATA1:
+						break
+				inputScriptSig+=(" OP_PUSHDATA:"+str(cur_opValue))
+				curIndex+=2
+				if int(cur_opValue,16) == OP_PUSHDATA1:
+					cur_opValue = hexstr[curIndex:curIndex+2]# next value is amount of bytes on stack
+					inputScriptSig+= (" OP_INT:"+str(cur_opValue))
+					curIndex+=2
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					curOp = OPCODE_NAMES[int(cur_opValue,16)]
+					inputScriptSig+= (" "+curOp+":"+str(cur_opValue))
+					curIndex+=2
+				else:
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_INT:"+str(cur_opValue))
+					curIndex+=2
+				print inputScriptSig
+				for i in range(0,pubkeyCount):
+					cur_opValue = hexstr[curIndex:curIndex+2]
+					inputScriptSig+= (" OP_DATA:"+str(cur_opValue))
+					keylen = int(cur_opValue,16)*2
+					curIndex+=2
+					pubkey = hexstr[curIndex:curIndex+keylen]
+					inputScriptSig+= " "+pubkey
+					curIndex+=keylen
+					print str(i)+" "+inputScriptSig+'\n'
+				inputScriptSig+=" "+op_codeTailCount+" "+op_codeTail
+				print " \tMultiSig:\t "+inputScriptSig
+				return hexstr
+			else:
+				print " \tScript op_code is not SIGHASH_ALL"
+				return hexstr
 		else: 
 			pubkey = hexstr[2+scriptLen+2:2+scriptLen+2+66]
 			print " \tInPubkey:\t "  + pubkey
@@ -180,19 +272,36 @@ class txOutput:
 			return hexstr
 		if op_code1 == "OP_DUP":  #P2PKHA pay to pubkey hash mode
 	 		op_code2 = OPCODE_NAMES[int(hexstr[2:4],16)] + " "
-			keylen = int(hexstr[4:6],16) 
-			op_codeTail2nd = OPCODE_NAMES[int(hexstr[6+keylen*2:6+keylen*2+2],16)]
-			op_codeTailLast = OPCODE_NAMES[int(hexstr[6+keylen*2+2:6+keylen*2+4],16)]
-			print " \tPubkey OP_CODE:\t " + op_code1 + " " + op_code2 + " " + "Bytes:%d " % keylen +\
+	 		keylen = int(hexstr[4:6],16)
+	 		op_codeTail2nd = OPCODE_NAMES[int(hexstr[6+keylen*2:6+keylen*2+2],16)]
+	 		op_codeTailLast = OPCODE_NAMES[int(hexstr[6+keylen*2+2:6+keylen*2+4],16)]
+	 		print " \tPubkey OP_CODE:\t " + op_code1 + " " + op_code2 + " " + "Bytes:%d " % keylen +\
 					"tail_op_code:" +  op_codeTail2nd + " " + op_codeTailLast
-			print "\tPubkeyHash:\t       %s" % hexstr[6:6+keylen*2]
-			return hexstr	
+	 		print "\tPubkeyHash:\t       %s" % hexstr[6:6+keylen*2]
+	 		return hexstr	
 		elif op_code1 == "OP_HASH160": #P2SHA pay to script hash 
 			keylen = int(hexstr[2:4],16) 
 			op_codeTail = OPCODE_NAMES[int(hexstr[4+keylen*2:4+keylen*2+2],16)]
 			print " \tPubkey OP_CODE:\t " + op_code1 + " " + " " + "Bytes:%d " % keylen +\
 					"tail_op_code:" +  op_codeTail + " " 
 			print "\tPure Pubkey:\t     %s" % hexstr[4:4+keylen*2]
+			return hexstr
+		elif op_code1 == "OP_RETURN": #OP_RETURN
+			print " \tOP_CODE:\t " + op_code1 + " " + " %s" % hexstr[2:]
+			return hexstr
+		elif op_idx >= int('0x51',16) and op_idx <= int('0x60',16): #OP_CODE1 in {OP_1, OP_2 ... OP_16} check for tail: OP_CHECKMULTISIG
+			op_codeTail = OPCODE_NAMES[int(hexstr[-2:],16)]
+			if op_codeTail=="OP_CHECKMULTISIG":
+				op_codeTailCount = OPCODE_NAMES[int(hexstr[-4:-2],16)] #Signature count
+				pubkeyCount = int(op_codeTailCount.split('_')[1])
+				pubkeys = ""
+				curIndex = 2
+				for i in range(0,pubkeyCount):
+					keylen = int(hexstr[curIndex:curIndex+2],16)
+					curIndex+=2
+					pubkeys+=hexstr[curIndex:curIndex+(keylen*2)]+" "
+					curIndex+=keylen*2
+			print " \tMultiSig:\t " + op_code1 + " %s" % pubkeys +op_codeTailCount+" "+op_codeTail
 			return hexstr
 		else: #TODO extend for multi-signature parsing 
 			print "\t Need to extend multi-signatuer parsing %x" % int(hexstr[0:2],16) + op_code1
