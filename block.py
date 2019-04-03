@@ -1,16 +1,23 @@
 from blocktools import *
 from opcode import *
 from datetime import datetime
+from sys import byteorder
+from hashlib import sha256
+from binascii import hexlify
 import time
 
 class BlockHeader:
 	def __init__(self, blockchain):
+		headerStart = blockchain.tell()
 		self.version = uint4(blockchain)
 		self.previousHash = hash32(blockchain)
 		self.merkleHash = hash32(blockchain)
 		self.time = uint4(blockchain)
 		self.bits = uint4(blockchain)
 		self.nonce = uint4(blockchain)
+		headerEnd = blockchain.tell()
+		blockchain.seek(headerStart)
+		self.fullHeader = blockchain.read(headerEnd-headerStart)
 	def toString(self):
 		print "Version:\t %d" % self.version
 		print "Previous Hash\t %s" % hashStr(self.previousHash)
@@ -21,6 +28,8 @@ class BlockHeader:
 	def decodeTime(self, time):
 		utc_time = datetime.utcfromtimestamp(time)
 		return utc_time.strftime("%Y-%m-%d %H:%M:%S.%f+00:00 (UTC)")
+	def calculateBlockHash(self):
+		return sha256(sha256(self.fullHeader).digest()).digest()[::-1].encode('hex') # Block hash calculation (Stack Exchange: http://archive.is/Id8vn)
 
 class Block:
 	def __init__(self, blockchain):
@@ -40,6 +49,7 @@ class Block:
 		
 		if self.hasLength(blockchain, self.blocksize):
 			self.setHeader(blockchain)
+			self.blockHash = self.blockHeader.calculateBlockHash()
 			self.txCount = varint(blockchain)
 			self.Txs = []
 
@@ -74,7 +84,7 @@ class Block:
 		self.blockHeader = BlockHeader(blockchain)
 
 	def toString(self):
-		print ""
+		print "Block Hash: "+self.blockHash
 		print "Magic No: \t%8x" % self.magicNum
 		print "Blocksize: \t", self.blocksize
 		print ""
@@ -88,6 +98,7 @@ class Block:
 
 class Tx:
 	def __init__(self, blockchain):
+		txStart = blockchain.tell()
 		self.version = uint4(blockchain)
 		self.inCount = varint(blockchain)
 		self.inputs = []
@@ -102,9 +113,16 @@ class Tx:
 				output = txOutput(blockchain)
 				self.outputs.append(output)	
 		self.lockTime = uint4(blockchain)
+		# TxID calculation (Stack Exchange: http://archive.is/kqVZf)
+		self.txLength = blockchain.tell()-txStart
+		blockchain.seek(txStart)
+		txdata = hexlify(blockchain.read(self.txLength)).decode('hex')
+		#print "Warning: this code only tested on a little-endian x86_64 arch"
+		txhash = sha256(sha256(txdata).digest()).digest()
+		self.txid = txhash[::-1].encode('hex_codec')
 		
 	def toString(self):
-		print ""
+		print "TXID: "+self.txid
 		print "="*20 + " No. %s " %self.seq + "Transaction " + "="*20
 		print "Tx Version:\t %d" % self.version
 		print "Inputs:\t\t %d" % self.inCount
@@ -197,4 +215,3 @@ class txOutput:
 		else: #TODO extend for multi-signature parsing 
 			print "\t Need to extend multi-signatuer parsing %x" % int(hexstr[0:2],16) + op_code1
 			return hexstr
-		
