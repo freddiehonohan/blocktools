@@ -165,7 +165,8 @@ class txInput:
             return
         scriptLen = int(hexstr[0:2],16)
         scriptLen *= 2
-        script = hexstr[2:2+scriptLen] 
+        script = hexstr[2:2+scriptLen]
+        scriptStack=[]
         if self.scriptLen == 2:
             print("t\Script:\t " + OPCODE_NAMES[int(hexstr[0:2],16)]+" "+OPCODE_NAMES[int(hexstr[2:4],16)])
             return
@@ -178,86 +179,36 @@ class txInput:
             print " \tNon-Standard 'STRANGE' input script:\t"+hexstr
             return # c9728b88e6e6e5fd8c87c5cf229175d3987dd95c19dabcba58a4c0ff0860e561
         elif SIGHASH_ALL != int(hexstr[scriptLen:scriptLen+2],16): # should be 0x01
-            op_codeTail = OPCODE_NAMES[int(hexstr[-2:],16)]
-            if op_codeTail=="OP_CHECKMULTISIG":                         # Stack Exchange (http://archive.is/eMO5i)
-                scriptStack = []
-                scriptStack.append(op_codeTail)
-                op_codeTailCount = OPCODE_NAMES[int(hexstr[-4:-2],16)]
-                scriptStack.append(op_codeTailCount)
-                pubkeyCount = int(op_codeTailCount.split('_')[1])
-                curIndex = len(hexstr)-4
-                for i in range(0,pubkeyCount):
-                    # try compressed first i.e. 0x02, 0x03
-                    savedStartIndex=curIndex
-                    curIndex -=64
-                    k = hexstr[curIndex:curIndex+64]
-                    curIndex -= 2
-                    cur_opValue = hexstr[curIndex:curIndex+2]
-                    print cur_opValue
-                    if cur_opValue == '02' or cur_opValue == '03': # key is compressed 32 bytes
-                        scriptStack.append(k)
-                        scriptStack.append('OP_INT:'+cur_opValue)
-                        curIndex -= 2
-                        cur_opValue = hexstr[curIndex:curIndex+2]
-                        scriptStack.append('OP_LENGTH:'+cur_opValue)
-                    else:
-                        curIndex = savedStartIndex-128
-                        k = hexstr[curIndex:curIndex+64]
-                        curIndex -= 2
-                        cur_opValue = hexstr[curIndex:curIndex+2]
-                        if cur_opValue == '04': # key is uncompressed 64 bytes
-                            scriptStack.append(k)
-                            scriptStack.append('OP_INT:'+cur_opValue)
-                            curIndex -= 2
-                            cur_opValue = hexstr[curIndex:curIndex+2]
-                            scriptStack.append('OP_LENGTH:'+cur_opValue)
+            if int(hexstr[-2:],16) == SIGHASH_ALL:
+                curIndex = len(hexstr)-2
+                cur_opValue = hexstr[curIndex:curIndex+2]
+                scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
+                if int(cur_opValue,16)==SIGHASH_ALL:
+                    # go back 32 bytes and check for sig length == 32, if not siglength = 33
+                    for i in range(0,2):
+                        if(hexstr[curIndex-64-2:curIndex-64]=='20'):
+                            sigLength = 32
                         else:
-                            print("Unknown error parsing multi-sig input: "+hexstr)
-                            #sys.exit(-1)
-                            return
-                curIndex-=2
-                cur_opValue = hexstr[curIndex:curIndex+2]
-                op_codeSigCount = OPCODE_NAMES[int(cur_opValue,16)]
-                scriptStack.append(op_codeSigCount)
-                reqSigs = int(op_codeSigCount.split('_')[1])
-                curIndex-=2
-                cur_opValue = hexstr[curIndex:curIndex+2]
-                scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
-                curIndex-=2
-                cur_opValue = hexstr[curIndex:curIndex+2]
-                scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
-                sigCount=0
-                while sigCount<reqSigs:     #https://bitcoin.stackexchange.com/questions/12554/why-the-signature-is-always-65-13232-bytes-long
-                    curIndex-=2
-                    cur_opValue = hexstr[curIndex:curIndex+2]
-                    scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
-                    if int(cur_opValue,16)==SIGHASH_ALL:
-                        # go back 32 bytes and check for sig length == 32, if not siglength = 33
-                        for i in range(0,2):
-                            if(hexstr[curIndex-64-2:curIndex-64]=='20'):
-                                sigLength = 32
-                            else:
-                                sigLength = 33
-                            curIndex-=sigLength*2
-                            sig = hexstr[curIndex:curIndex+sigLength*2] #
-                            scriptStack.append(sig)
-                            curIndex-=2
-                            cur_opValue=hexstr[curIndex:curIndex+2]
-                            scriptStack.append("OP_LENGTH:"+cur_opValue)
-                            curIndex-=2
-                            cur_opValue=hexstr[curIndex:curIndex+2]
-                            scriptStack.append("OP_INT:"+cur_opValue)
+                            sigLength = 33
+                        curIndex-=sigLength*2
+                        sig = hexstr[curIndex:curIndex+sigLength*2] #
+                        scriptStack.append(sig)
+                        curIndex-=2
+                        cur_opValue=hexstr[curIndex:curIndex+2]
+                        scriptStack.append("OP_LENGTH:"+cur_opValue)
+                        curIndex-=2
+                        cur_opValue=hexstr[curIndex:curIndex+2]
+                        scriptStack.append("OP_INT:"+cur_opValue)
 
-                    curIndex-=2
-                    cur_opValue = hexstr[curIndex:curIndex+2]
-                    scriptStack.append("OP_LENGTH:"+cur_opValue)
-                    curIndex-=2
-                    cur_opValue = hexstr[curIndex:curIndex+2]
-                    scriptStack.append("OP_SEQ:"+cur_opValue)
-                    curIndex-=2
-                    cur_opValue = hexstr[curIndex:curIndex+2]
-                    scriptStack.append("OP_PUSHDATA:"+cur_opValue)
-                    sigCount+=1
+                curIndex-=2
+                cur_opValue = hexstr[curIndex:curIndex+2]
+                scriptStack.append("OP_LENGTH:"+cur_opValue)
+                curIndex-=2
+                cur_opValue = hexstr[curIndex:curIndex+2]
+                scriptStack.append("OP_SEQ:"+cur_opValue)
+                curIndex-=2
+                cur_opValue = hexstr[curIndex:curIndex+2]
+                scriptStack.append("OP_PUSHDATA:"+cur_opValue)
                 try: 
                     op_code1 = OPCODE_NAMES[int(hexstr[0:2],16)]
                 except KeyError: #Obselete pay to pubkey directly 
@@ -265,12 +216,106 @@ class txInput:
                     #sys.exit(-1)
                     return
                 scriptStack.append(op_code1)
-                print " \tMultiSig:\t "+" ".join(scriptStack[::-1])
-                #sys.exit(-1)
-            else:
-                print " \tScript op_code is not SIGHASH_ALL "+hexstr
-                #sys.exit(-1)
+                print " \tScriptSig:\t "+" ".join(scriptStack[::-1])
                 return
+            else:
+                op_codeTail = OPCODE_NAMES[int(hexstr[-2:],16)]
+                if op_codeTail=="OP_CHECKMULTISIG":                         # Stack Exchange (http://archive.is/eMO5i)
+                    scriptStack = []
+                    scriptStack.append(op_codeTail)
+                    op_codeTailCount = OPCODE_NAMES[int(hexstr[-4:-2],16)]
+                    scriptStack.append(op_codeTailCount)
+                    pubkeyCount = int(op_codeTailCount.split('_')[1])
+                    curIndex = len(hexstr)-4
+                    for i in range(0,pubkeyCount):
+                        # try compressed first i.e. 0x02, 0x03
+                        savedStartIndex=curIndex
+                        curIndex -=64
+                        k = hexstr[curIndex:curIndex+64]
+                        curIndex -= 2
+                        cur_opValue = hexstr[curIndex:curIndex+2]
+                        print cur_opValue
+                        if cur_opValue == '02' or cur_opValue == '03': # key is compressed 32 bytes
+                            scriptStack.append(k)
+                            scriptStack.append('OP_INT:'+cur_opValue)
+                            curIndex -= 2
+                            cur_opValue = hexstr[curIndex:curIndex+2]
+                            scriptStack.append('OP_LENGTH:'+cur_opValue)
+                        else:
+                            curIndex = savedStartIndex-128
+                            k = hexstr[curIndex:curIndex+64]
+                            curIndex -= 2
+                            cur_opValue = hexstr[curIndex:curIndex+2]
+                            if cur_opValue == '04': # key is uncompressed 64 bytes
+                                scriptStack.append(k)
+                                scriptStack.append('OP_INT:'+cur_opValue)
+                                curIndex -= 2
+                                cur_opValue = hexstr[curIndex:curIndex+2]
+                                scriptStack.append('OP_LENGTH:'+cur_opValue)
+                            else:
+                                print("Unknown error parsing multi-sig input: "+hexstr)
+                                #sys.exit(-1)
+                                return
+                    curIndex-=2
+                    cur_opValue = hexstr[curIndex:curIndex+2]
+                    op_codeSigCount = OPCODE_NAMES[int(cur_opValue,16)]
+                    scriptStack.append(op_codeSigCount)
+                    reqSigs = int(op_codeSigCount.split('_')[1])
+                    curIndex-=2
+                    cur_opValue = hexstr[curIndex:curIndex+2]
+                    scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
+                    curIndex-=2
+                    cur_opValue = hexstr[curIndex:curIndex+2]
+                    scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
+                    sigCount=0
+                    while sigCount<reqSigs:     #https://bitcoin.stackexchange.com/questions/12554/why-the-signature-is-always-65-13232-bytes-long
+                        curIndex-=2
+                        cur_opValue = hexstr[curIndex:curIndex+2]
+                        scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
+                        if int(cur_opValue,16)==SIGHASH_ALL:
+                            # go back 32 bytes and check for sig length == 32, if not siglength = 33
+                            for i in range(0,2):
+                                if(hexstr[curIndex-64-2:curIndex-64]=='20'):
+                                    sigLength = 32
+                                else:
+                                    sigLength = 33
+                                curIndex-=sigLength*2
+                                sig = hexstr[curIndex:curIndex+sigLength*2] #
+                                scriptStack.append(sig)
+                                curIndex-=2
+                                cur_opValue=hexstr[curIndex:curIndex+2]
+                                scriptStack.append("OP_LENGTH:"+cur_opValue)
+                                curIndex-=2
+                                cur_opValue=hexstr[curIndex:curIndex+2]
+                                scriptStack.append("OP_INT:"+cur_opValue)
+
+                        curIndex-=2
+                        cur_opValue = hexstr[curIndex:curIndex+2]
+                        scriptStack.append("OP_LENGTH:"+cur_opValue)
+                        curIndex-=2
+                        cur_opValue = hexstr[curIndex:curIndex+2]
+                        scriptStack.append("OP_SEQ:"+cur_opValue)
+                        curIndex-=2
+                        cur_opValue = hexstr[curIndex:curIndex+2]
+                        scriptStack.append("OP_PUSHDATA:"+cur_opValue)
+                        sigCount+=1
+                    try: 
+                        op_code1 = OPCODE_NAMES[int(hexstr[0:2],16)]
+                    except KeyError: #Obselete pay to pubkey directly 
+                        print " \tOP_CODE key %s Error"%hexstr[0:2]+" "+hexstr
+                        #sys.exit(-1)
+                        return
+                    scriptStack.append(op_code1)
+                    print " \tMultiSig:\t "+" ".join(scriptStack[::-1])
+                    #sys.exit(-1)
+                else:
+                    if(op_codeTail=="OP_ROLL"):
+                        print OP_ROLL
+                    else:
+                        print " \tScript op_code is not SIGHASH_ALL "+hexstr
+                        print "Tail: "+op_codeTail
+                        #sys.exit(-1)
+                    return
         else: 
             pubkey = hexstr[2+scriptLen+2:2+scriptLen+2+66]
             print " \tInPubkey:\t "  + pubkey
