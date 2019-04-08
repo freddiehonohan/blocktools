@@ -1,0 +1,126 @@
+<52|<h1>BONG çŽ‰</h1>
+<h2>You have found a game!</h2>
+bong-ball.html?5827|ï»¿	<!DOCTYPE html>  
+      
+    <html>  
+        <head>  
+            <title>BONG çŽ‰</title>  
+            <meta charset="utf-8">  
+      <style>
+body { 
+    background-image: url('bitfossil.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+}
+</style>
+            
+        </head>  
+      
+        <body>
+        <center><h1>BONG çŽ‰</h1><p><!--#include file="..\broadcast\global-tweet.ssi" --><p>
+		 <script src="../f5e8166c30fd080f9c5f0ab79a57b058e0d31364f8064f39badddff2675f754b/jquery.min.js"></script>  
+            <script>  
+		
+		        $(document).ready(function() {  
+                    
+					//BEGIN LIBRARY CODE
+					var x;
+					var y;
+					var dx;
+					var dy;
+					var WIDTH;
+					var HEIGHT;
+					var ctx;
+					var paddley;
+					var paddleh;
+					var paddlew;
+					var intervalId;
+					var downDown = false;
+					var upDown = false;
+					var radius;
+					var paddleyAI;
+					
+					var canvas = document.getElementById( 'myCanvas' );
+									
+					//set downDown or upDown if the down or up keys are down
+					function onKeyDown(evt) {
+					  if (evt.keyCode == 40) downDown = true;
+					  else if (evt.keyCode == 38) upDown = true;
+					}
+					
+					//and unset them when the down or up key is released
+					function onKeyUp(evt) {
+					  if (evt.keyCode == 40) downDown = false;
+					  else if (evt.keyCode == 38) upDown = false;
+					}
+					
+					$(document).keydown(onKeyDown);
+					$(document).keyup(onKeyUp);
+	
+					function init_paddles() {
+						paddley = HEIGHT / 2;
+						paddleyAI = paddley;
+						paddleh = 75;
+						paddlew = 20;
+						
+					}
+					
+					 
+					function init() {
+					  ctx = canvas.getConö¢ŠØƒÝýHÔÆks‘Yítext("2d");  
+					  WIDTH = canvas.width;
+					  HEIGHT = canvas.height;
+					  x = Math.floor(Math.random() * ((WIDTH-400)+1) + 200);
+					  y = Math.floor(Math.random() * HEIGHT+1);
+					  dx = Math.floor(Math.random() * 5) - 2;
+					  if  (dx == 0) dx=1;
+					  dy = Math.floor(Math.random() * 9) - 4;
+                             if (dy == 0) dy = 1;
+					  radius = 10;
+					  downDown = false;
+					  upDown = false;
+					  intervalId = 0;
+					  
+					  intervalId = setInterval(draw, Math.floor(Math.random() * ((5-3)+1) + 3));
+					  init_paddles();
+					   
+					}
+				
+					function circle(x,y,r) {
+					  ctx.beginPath();
+					  ctx.arc(x, y, r, 0, Math.PI*2, true);
+					  ctx.closePath();
+					  ctx.fill();
+					}
+
+					function rect(x,y,w,h) {
+					  ctx.beginPath();
+					  ctx.rect(x,y,w,h);
+					  ctx.closePath();
+					  ctx.fill();
+					}
+
+					function clear() {
+					  ctx.clearRect(0, 0, WIDTH, HEIGHT);
+					}
+
+					function followBallAI() {
+					
+						//randomly pick number beteween 0 and 1
+						var delayReaction = Math.random();
+						
+						//20% chance of reaction delay
+						if(delayReaction >= 0.10) {
+						
+							if(y > paddleyAI + paddleh) {
+								if(paddleyAI + paddleh + 3 <= HEIGHT) {
+									paddleyAI += 3;
+								}
+							}
+							
+							else if(y < paddleyAI) {
+								if(paddleyAI - 3 >= 0) {
+									paddleyAI -= 3;
+								}
+		

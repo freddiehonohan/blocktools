@@ -175,6 +175,7 @@ class txInput:
             print "\tScript:\t " + decodedScript
             return
         print "\tScript:\t\t " + script+'\n'
+        print hexstr
         if len(hexstr) < scriptLen+2: #e.g. txid:1ddf545ccf0bf653134b2110b73fda185ca99348895900a677eed0ddb922aac3
             print " \tNon-Standard 'STRANGE' input script:\t"+hexstr
             return # c9728b88e6e6e5fd8c87c5cf229175d3987dd95c19dabcba58a4c0ff0860e561
@@ -310,13 +311,31 @@ class txInput:
                     #sys.exit(-1)
                 else:
                     if(op_codeTail=="OP_ROLL"):
-                        print OP_ROLL
+                        print "OP_ROLL"
+                        scriptStack.append(op_codeTail)
                     else:
                         print " \tScript op_code is not SIGHASH_ALL "+hexstr
                         print "Tail: "+op_codeTail
                         #sys.exit(-1)
                     return
-        else: 
+        else:
+            scriptStack=[]
+            curIndex = 2+scriptLen
+            cur_opValue = hexstr[curIndex:curIndex+2]
+            if(int(cur_opValue,16) == OP_PUSHDATA2):
+                scriptStack.append("OP_PUSHDATA2:"+cur_opValue)
+                curIndex+=2
+                cur_opValue = hexstr[curIndex:curIndex+2]
+                scriptStack.append("OP_SEQ:"+cur_opValue)
+                curIndex+=2
+                cur_opValue = hexstr[curIndex:curIndex+2]
+                scriptStack.append("OP_LENGTH:"+cur_opValue)
+                curIndex+=2
+                dataLen = int(cur_opValue,16)*2
+                scriptStack.append(hexstr[curIndex:curIndex+dataLen])
+                print " \tMultiSig:\t "+" ".join(scriptStack)
+                sys.exit(1)
+                
             pubkey = hexstr[2+scriptLen+2:2+scriptLen+2+66]
             print " \tInPubkey:\t "  + pubkey
 

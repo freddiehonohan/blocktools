@@ -1,0 +1,133 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256        
+                    
+> - floating ADC inputs, as Peter suggested;
+> - five independent RC oscillators.
+                    
+I've got another idea that requires no extra hardware. I think has a
+solid theoretical basis which I've explored below in sufficient detail
+to raise suspicions that I miss my old line of work:
+                    
+tl;dr: Record the dt time between button clicks, adding dt to the
+accumulator each time by hashing it into the persistent state.
+                    
+                    
+Theoretical Basis   
+=================   
+                    
+We assume that the timing accuracy of a button click has a normal
+distribution. That is even a human delibrately trying to maintain a
+consistent tempo, dt, between clicks will in fact have a normally
+distributed error. Humans can be remarkably accurate when they want to
+be, but timing data from studies of drumming
+ and throwing
+ suggests
+that assuming 1ms jitter in muscle timing accuracy is a very generous.
+Assuming that jitter is normally distributed is reasonable.
+                    
+We can easily measure the time between clicks with a interrupt driven
+polling function. You're probably using something like a 12MHz clock for
+your uC due to the USB interface. Incrementing a timing counter,
+checking the button pin state, and saving that counter if the pin state
+has changed should take < 16 cycles or so; triggering the interrupt
+every 256 cycles is likely quite reasonable giving us a button sampling
+frequency of 12MHz/256 = ~50kHz. The button itself is an RC circuit;
+C=100pF and R=4.7k
+ is perfectly reasonable for the circuit on its own,
+but let's bump that to C=1nF to account for human body capacitance.
+                    
+Input low and input high are generally 0.15*VDD and 0.85*VDD
+T=Ku
+#>>HI
+respectively. Thus if we're to *accurately* record the state of the
+button on a high->low transition we need to wait:
+                    
+    0.15*VDD = VDD*e^{-dt/RC} -> dt = -RC*ln(0.15) = 4.7
+                    
+Exactly what this means for your circuit is kinda complex - are inputs
+re-synchronized with the usual clock-domain crossing flip-flops? - but
+to say it results in a max sampling rate of 100kHz isn't unreasonable;
+our 50kHz number above looks fine.
+                    
+The worst case scenario for RNG generation is when our user is a skilled
+drummer listening to machine-made techno music who can't help but do
+everything exactly according to the impersonal machine rhythm. Our mean
+ is that rhythm - likely around 150BPM if they have good taste - and as
+per the above data we'll assume one standard deviation, 
+, is 1ms. This
+means that there is a 68% chance that a given sample will be within
+1mS; put another way there is a 32% chance that the sample will yield a
+random value. Thus hand-wave a bit and say this sample represents 0.32
+bits of uncertainty. (in that which *side* of the guassian curve the
+sample "landed on" was unknown)
+                    
+The next bit of our measurement is even better. 
+0.5ms is half a
+standard deviation with a 61.8% chance the sample will yield an unknown
+value. 
+0.25ms 80% etc. Basically the measurement is far more accurate
+than the user, so the LSB's of the measurement are random noise. The
+proposed 50kHz sampling rate means that we get about four or five bits
+of entropy per button press; we certainly get at least one bit.
+                    
+                    
+Why can we trust this source of entropy?
+========================================
+                    
+1) We know exactly what is generating the random noise - the user's
+   inherent inability to accurately press a button. There are no
+   conceivable circumstances where that noise source would fail to
+   exist.           
+                    
+2) The source is very difficult for the attacker to observe. The phase
+   resolution required to accurately pick up the lowest-order bits of
+   the button press with, say, a microphone exceeds that available in
+   standard audio equipment by a good margin even in the worst-case;
+   better if the sampling rate is increased. The miniscule amount of
+   charge moved per button press is highly unlikely to be the worst
+   contributor to a power analysis attacker's success.
+                    
+3) The electrical design steers well clear of anything that can be
+   influenced by external noise. The 4.7k
+ pull-up makes the switch
+   essentially immune to external noise; if noise is influencing the RNG
+   the device obviously fails anyway. The switch is immune to anything
+   short of high vibration, whose exact phase would be certainly unknown
+   to the attacker anyway.
+                    
+4) The firmware design is simple and requires nothing more than a
+   free-running counter.
+                    
+5) Testing the design is easy. Just record dt for many button presses in
+   a row and plot the ratio of 1:0 for each bit, MSB to LSB. If the RNG
+   source is working the LSB's will tend towards 0.5
+                    
+                    
+User Experience     
+===============     
+                    
+"Every time you press the new key button, an adorable kitten working for
+the NSA sheds a single tear. We recommend you make that kitten shed at
+least 32 tears, 128 if you're feeling paranoid."
+                    
+                    
+References          
+==========          
+                    
+1) http://musicmachinery.com/2009/03/02/in-search-of-the-click-track/
+2) http://brettworks.com/2011/04/26/on-musical-time-and-drummers-brains/
+3) http://www.ncbi.nlm.nih.gov/pubmed/10610752
+                    
+-----BEGIN PGP SIGNATURE-----
+                    
+iQGrBAEBCACVBQJVHyajXhSAAAAAABUAQGJsb2NraGFzaEBiaXRjb2luLm9yZzAw
+MDAwMDAwMDAwMDAwMDAwOTdmZmViNDk3NWU3ZTQ4M2M2MjI1NjA3OWY4NmYzMGJm
+MzMyOTc2ODFlNDIyYjYvFIAAAAAAFQARcGthLWFkZHJlc3NAZ251cGcub3JncGV0
+ZUBwZXRlcnRvZC5vcmcACgkQwIXyHOf0udyshAf/cGn42DcHeE0wVjxjoeyFOZ+Q
+E5fswpu7dIkm5EKs+5ZMnL84EiC2XBNEpN8Al+EZ3LpSOlT+M2RBl6tk7ISsaado
+/DcXR1VO1usypIAcVsQ8H+nl2mDpirOAPc7WKH0ALGJo67WHfd9XDksiwjSExyyj
+2eq0+B8i8dKVzBY9XF6VXheuWhUXv/gVEuPfZMPPDRh73TniF72tn9D78YU9wSkv
+l7jeeSoAXFhD7vdoA1myV58ocauLsTMCuZchsfRd/o0+dfpvO5HSML/LrH7GSr4I
+zKsCY0VZ2RzR5qmwLjvvkWlTd8LxZKaJSRfgTCiK6EjrA5XQg0xvhqV8IHDCnQ==
+=Uqxd               
+-----END PGP SIGNATURE-----

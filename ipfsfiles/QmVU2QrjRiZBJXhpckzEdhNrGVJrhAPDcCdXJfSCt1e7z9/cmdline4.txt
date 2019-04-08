@@ -1,0 +1,851 @@
+tZg-
+                    
+                    
+In the Beginning was the Command Line - Part 4/6
+                    
+                    
+OS SHOCK            
+                    
+                    
+Young Americans who leave their great big homogeneous country and visit
+some other part of the world typically go through several stages of
+culture shock: first, dumb wide-eyed astonishment. Then a tentative
+engagement with the new country's manners, cuisine, public transit
+systems and toilets, leading to a brief period of fatuous confidence
+that they are instant experts on the new country. As the visit wears on,
+homesickness begins to set in, and the traveler begins to appreciate,
+for the first time, how much he or she took for granted at home. At the
+same time it begins to seem obvious that many of one's own cultures and
+traditions are essentially arbitrary, and could have been different;
+driving on the right side of the road, for example. When the traveler
++$S>?
+=mYg>
+r0*-mT
+A"!c*
+,B\V
+h_"c`
+returns home and takes stock of the experience, he or she may have learned
+a good deal more about America than about the country they went to visit.
+                    
+For the same reasons, Linux is worth trying. It is a strange country
+indeed, but you don't have to live there; a brief sojourn suffices to give
+some flavor of the place and--more importantly--to lay bare everything
+that is taken for granted, and all that could have been done differently,
+under Windows or MacOS.
+                    
+You can't try it unless you install it. With any other OS, installing
+it would be a straightforward transaction: in exchange for money, some
+company would give you a CD-ROM, and you would be on your way. But a lot
+is subsumed in that kind of transaction, and has to be gone through and
+picked apart.       
+                    
+We like plain dealings and straightforward transactions in America. If
+you go to Egypt and, say, take a taxi somewhere, you become a part of the
+C~UtC
+9g(?Tf
+ax4m
+7sen]#<
+0u3C
+,B\V
+7Cx,p
+taxi driver's life; he refuses to take your money because it would demean
+your friendship, he follows you around town, and weeps hot tears when
+you get in some other guy's taxi. You end up meeting his kids at some
+point, and have to devote all sort of ingenuity to finding some way to
+compensate him without insulting his honor. It is exhausting. Sometimes
+you just want a simple Manhattan-style taxi ride.
+                    
+But in order to have an American-style setup, where you can just go
+out and hail a taxi and be on your way, there must exist a whole hidden
+apparatus of medallions, inspectors, commissions, and so forth--which
+is fine as long as taxis are cheap and you can always get one. When the
+system fails to work in some way, it is mysterious and infuriating and
+turns otherwise reasonable people into conspiracy theorists. But when
+the Egyptian system breaks down, it breaks down transparently. You can't
+get a taxi, but your driver's nephew will show up, on foot, to explain
+the problem and apologize.
+TKdCJ
+d:hd
+,B\V
+AFi)
+TG3(
+                    
+Microsoft and Apple do things the Manhattan way, with vast complexity
+hidden behind a wall of interface. Linux does things the Egypt way,
+with vast complexity strewn about all over the landscape. If you've
+just flown in from Manhattan, your first impulse will be to throw up
+your hands and say "For crying out loud! Will you people get a grip on
+yourselves!?" But this does not make friends in Linux-land any better
+than it would in Egypt.
+                    
+You can suck Linux right out of the air, as it were, by downloading the
+right files and putting them in the right places, but there probably
+are not more than a few hundred people in the world who could create
+a functioning Linux system in that way. What you really need is a
+distribution of Linux, which means a prepackaged set of files. But
+distributions are a separate thing from Linux per se.
+                    
+Linux per se is not a specific set of ones and zeroes, but a
+5sbN
+4G&%
+h{'SfJ8D
+,B\V
+j=C&
+self-organizing Net subculture. The end result of its collective
+lucubrations is a vast body of source code, almost all written in C
+(the dominant computer programming language). "Source code" just means
+a computer program as typed in and edited by some hacker. If it's in C,
+the file name will probably have .c or .cpp on the end of it, depending
+on which dialect was used; if it's in some other language it will have
+some other suffix. Frequently these sorts of files can be found in a
+directory with the name /src which is the hacker's Hebraic abbreviation of
+"source."           
+                    
+Source files are useless to your computer, and of little interest to most
+users, but they are of gigantic cultural and political significance,
+because Microsoft and Apple keep them secret while Linux makes them
+public. They are the family jewels. They are the sort of thing that in
+Hollywood thrillers is used as a McGuffin: the plutonium bomb core,
+the top-secret blueprints, the suitcase of bearer bonds, the reel of
+,B\V
+microfilm. If the source files for Windows or MacOS were made public on
+the Net, then those OSes would become free, like Linux--only not as good,
+because no one would be around to fix bugs and answer questions. Linux
+is "open source" software meaning, simply, that anyone can get copies
+of its source code files.
+                    
+Your computer doesn't want source code any more than you do; it wants
+object code. Object code files typically have the suffix .o and are
+unreadable all but a few, highly strange humans, because they consist
+of ones and zeroes. Accordingly, this sort of file commonly shows up in
+a directory with the name /bin, for "binary."
+                    
+Source files are simply ASCII text files. ASCII denotes a particular way
+of encoding letters into bit patterns. In an ASCII file, each character
+has eight bits all to itself. This creates a potential "alphabet"
+of 256 distinct characters, in that eight binary digits can form that
+vg:,
+B6oS
+1{,y
+,B\V
+aoi@
+ g91>
+many unique patterns. In practice, of course, we tend to limit ourselves
+to the familiar letters and digits. The bit-patterns used to represent
+those letters and digits are the same ones that were physically punched
+into the paper tape by my high school teletype, which in turn were the
+same one used by the telegraph industry for decades previously. ASCII
+text files, in other words, are telegrams, and as such they have no
+typographical frills. But for the same reason they are eternal, because
+the code never changes, and universal, because every text editing and
+word processing software ever written knows about this code.
+                    
+Therefore just about any software can be used to create, edit, and read
+source code files. Object code files, then, are created from these source
+files by a piece of software called a compiler, and forged into a working
+application by another piece of software called a linker.
+                    
+The triad of editor, compiler, and linker, taken together, form the core
+qS#p
+gsoq
+bDy=B
+,B\V
+of a software development system. Now, it is possible to spend a lot of
+money on shrink-wrapped development systems with lovely graphical user
+interfaces and various ergonomic enhancements. In some cases it might even
+be a good and reasonable way to spend money. But on this side of the road,
+as it were, the very best software is usually the free stuff. Editor,
+compiler and linker are to hackers what ponies, stirrups, and archery sets
+were to the Mongols. Hackers live in the saddle, and hack on their own
+tools even while they are using them to create new applications. It is
+quite inconceivable that superior hacking tools could have been created
+from a blank sheet of paper by product engineers. Even if they are the
+brightest engineers in the world they are simply outnumbered.
+                    
+In the GNU/Linux world there are two major text editing programs: the
+minimalist vi (known in some implementations as elvis) and the maximalist
+emacs. I use emacs, which might be thought of as a thermonuclear word
+b[39y
+|Q|>"
+Y~WH
+SLR`
+K@X~3S@
+,B\V
+processor. It was created by Richard Stallman; enough said. It is written
+in Lisp, which is the only computer language that is beautiful. It is
+colossal, and yet it only edits straight ASCII text files, which is
+to say, no fonts, no boldface, no underlining. In other words, the
+engineer-hours that, in the case of Microsoft Word, were devoted to
+features like mail merge, and the ability to embed feature-length motion
+pictures in corporate memoranda, were, in the case of emacs, focused with
+maniacal intensity on the deceptively simple-seeming problem of editing
+text. If you are a professional writer--i.e., if someone else is getting
+paid to worry about how your words are formatted and printed--emacs
+outshines all other editing software in approximately the same way that
+the noonday sun does the stars. It is not just bigger and brighter; it
+simply makes everything else vanish. For page layout and printing you
+can use TeX: a vast corpus of typesetting lore written in C and also
+available on the Net for free.
+                    
+\S;Z
+f	IU
+,B\V
+e(VU
+I could say a lot about emacs and TeX, but right now I am trying to tell a
+story about how to actually install Linux on your machine. The hard-core
+survivalist approach would be to download an editor like emacs, and the
+GNU Tools--the compiler and linker--which are polished and excellent to
+the same degree as emacs. Equipped with these, one would be able to start
+downloading ASCII source code files (/src) and compiling them into binary
+object code files (/bin) that would run on the machine. But in order
+to even arrive at this point--to get emacs running, for example--you
+have to have Linux actually up and running on your machine. And even a
+minimal Linux operating system requires thousands of binary files all
+acting in concert, and arranged and linked together just so.
+                    
+Several entities have therefore taken it upon themselves to create
+"distributions" of Linux. If I may extend the Egypt analogy slightly,
+these entities are a bit like tour guides who meet you at the airport, who
+3i&r
+$LHy
+4p/S
+](zi
+y%Pb
+,B\V
+speak your language, and who help guide you through the initial culture
+shock. If you are an Egyptian, of course, you see it the other way;
+tour guides exist to keep brutish outlanders from traipsing through your
+mosques and asking you the same questions over and over and over again.
+                    
+Some of these tour guides are commercial organizations, such as Red
+Hat Software, which makes a Linux distribution called Red Hat that has
+a relatively commercial sheen to it. In most cases you put a Red Hat
+CD-ROM into your PC and reboot and it handles the rest. Just as a tour
+guide in Egypt will expect some sort of compensation for his services,
+commercial distributions need to be paid for. In most cases they cost
+almost nothing and are well worth it.
+                    
+I use a distribution called Debian (the word is a contraction of "Deborah"
+and "Ian") which is non-commercial. It is organized (or perhaps I should
+say "it has organized itself") along the same lines as Linux in general,
+,B\V
+which is to say that it consists of volunteers who collaborate over
+the Net, each responsible for looking after a different chunk of the
+system. These people have broken Linux down into a number of packages,
+which are compressed files that can be downloaded to an already
+functioning Debian Linux system, then opened up and unpacked using a
+free installer application. Of course, as such, Debian has no commercial
+arm--no distribution mechanism. You can download all Debian packages over
+the Net, but most people will want to have them on a CD-ROM. Several
+different companies have taken it upon themselves to decoct all of the
+current Debian packages onto CD-ROMs and then sell them. I buy mine from
+Linux Systems Labs. The cost for a three-disc set, containing Debian in
+its entirety, is less than three dollars. But (and this is an important
+distinction) not a single penny of that three dollars is going to any of
+the coders who created Linux, nor to the Debian packagers. It goes to
+Linux Systems Labs and it pays, not for the software, or the packages,
+;'c%?
+=e\};cS
+/31%
+,B\V
+ o8VM
+but for the cost of stamping out the CD-ROMs.
+                    
+Every Linux distribution embodies some more or less clever hack for
+circumventing the normal boot process and causing your computer, when it
+is turned on, to organize itself, not as a PC running Windows, but as a
+"host" running Unix. This is slightly alarming the first time you see it,
+but completely harmless. When a PC boots up, it goes through a little
+self-test routine, taking an inventory of available disks and memory,
+and then begins looking around for a disk to boot up from. In any normal
+Windows computer that disk will be a hard drive. But if you have your
+system configured right, it will look first for a floppy or CD-ROM disk,
+and boot from that if one is available.
+                    
+Linux exploits this chink in the defenses. Your computer notices
+a bootable disk in the floppy or CD-ROM drive, loads in some object
+code from that disk, and blindly begins to execute it. But this is not
+nrt"kHZ*
+,B\V
+Microsoft or Apple code, this is Linux code, and so at this point your
+computer begins to behave very differently from what you are accustomed
+to. Cryptic messages began to scroll up the screen. If you had booted a
+commercial OS, you would, at this point, be seeing a "Welcome to MacOS"
+cartoon, or a screen filled with clouds in a blue sky, and a Windows
+logo. But under Linux you get a long telegram printed in stark white
+letters on a black screen. There is no "welcome!" message. Most of the
+telegram has the semi-inscrutable menace of graffiti tags.
+                    
+Dec 14 15:04:15 theRev syslogd 1.3-3#17: restart. Dec 14 15:04:15 theRev
+kernel: klogd 1.3-3, log source = /proc/kmsg started. Dec 14 15:04:15
+theRev kernel: Loaded 3535 symbols from /System.map. Dec 14 15:04:15
+theRev kernel: Symbols match kernel version 2.0.30. Dec 14 15:04:15
+theRev kernel: No module symbols loaded. Dec 14 15:04:15 theRev kernel:
+Intel MultiProcessor Specification v1.4 Dec 14 15:04:15 theRev kernel:
+ERcS
+"Ggu
+tU_F
+,B\V
+oP^f
+Virtual Wire compatibility mode. Dec 14 15:04:15 theRev kernel: OEM
+ID: INTEL Product ID: 440FX APIC at: 0xFEE00000 Dec 14 15:04:15 theRev
+kernel: Processor #0 Pentium(tm) Pro APIC version 17 Dec 14 15:04:15
+theRev kernel: Processor #1 Pentium(tm) Pro APIC version 17 Dec 14
+15:04:15 theRev kernel: I/O APIC #2 Version 17 at 0xFEC00000. Dec 14
+15:04:15 theRev kernel: Processors: 2 Dec 14 15:04:15 theRev kernel:
+Console: 16 point font, 400 scans Dec 14 15:04:15 theRev kernel: Console:
+colour VGA+ 80x25, 1 virtual console (max 63) Dec 14 15:04:15 theRev
+kernel: pcibios_init : BIOS32 Service Directory structure at 0x000fdb70
+Dec 14 15:04:15 theRev kernel: pcibios_init : BIOS32 Service Directory
+entry at 0xfdb80 Dec 14 15:04:15 theRev kernel: pcibios_init : PCI BIOS
+revision 2.10 entry at 0xfdba1 Dec 14 15:04:15 theRev kernel: Probing PCI
+hardware. Dec 14 15:04:15 theRev kernel: Warning : Unknown PCI device
+(10b7:9001). Please read include/linux/pci.h Dec 14 15:04:15 theRev
+kernel: Calibrating delay loop.. ok - 179.40 BogoMIPS Dec 14 15:04:15
+_T1j
+gjX.Ic
+1|oGB
+HTz!
+Yv57
+5!0,
+A&B&
+,B\V
+FL]2$,
+theRev kernel: Memory: 64268k/66556k available (700k kernel code, 384k
+reserved, 1204k data) Dec 14 15:04:15 theRev kernel: Swansea University
+Computer Society NET3.035 for Linux 2.0 Dec 14 15:04:15 theRev kernel:
+NET3: Unix domain sockets 0.13 for Linux NET3.035. Dec 14 15:04:15
+theRev kernel: Swansea University Computer Society TCP/IP for NET3.034
+Dec 14 15:04:15 theRev kernel: IP Protocols: ICMP, UDP, TCP Dec 14
+15:04:15 theRev kernel: Checking 386/387 coupling... Ok, fpu using
+exception 16 error reporting. Dec 14 15:04:15 theRev kernel: Checking
+'hlt' instruction... Ok. Dec 14 15:04:15 theRev kernel: Linux version
+2.0.30 (root@theRev) (gcc version 2.7.2.1) #15 Fri Mar 27 16:37:24 PST
+1998 Dec 14 15:04:15 theRev kernel: Booting processor 1 stack 00002000:
+Calibrating delay loop.. ok - 179.40 BogoMIPS Dec 14 15:04:15 theRev
+kernel: Total of 2 processors activated (358.81 BogoMIPS). Dec 14
+15:04:15 theRev kernel: Serial driver version 4.13 with no serial
+options enabled Dec 14 15:04:15 theRev kernel: tty00 at 0x03f8 (irq =
+1:jSq
+#g,1
+H&qMy
+,B\V
+8.pUC
+4) is a 16550A Dec 14 15:04:15 theRev kernel: tty01 at 0x02f8 (irq =
+3) is a 16550A Dec 14 15:04:15 theRev kernel: lp1 at 0x0378, (polling)
+Dec 14 15:04:15 theRev kernel: PS/2 auxiliary pointing device detected --
+driver installed. Dec 14 15:04:15 theRev kernel: Real Time Clock Driver
+v1.07 Dec 14 15:04:15 theRev kernel: loop: registered device at major
+7 Dec 14 15:04:15 theRev kernel: ide: i82371 PIIX (Triton) on PCI bus 0
+function 57 Dec 14 15:04:15 theRev kernel: ide0: BM-DMA at 0xffa0-0xffa7
+Dec 14 15:04:15 theRev kernel: ide1: BM-DMA at 0xffa8-0xffaf Dec 14
+15:04:15 theRev kernel: hda: Conner Peripherals 1275MB - CFS1275A,
+1219MB w/64kB Cache, LBA, CHS=619/64/63 Dec 14 15:04:15 theRev kernel:
+hdb: Maxtor 84320A5, 4119MB w/256kB Cache, LBA, CHS=8928/15/63, DMA Dec
+14 15:04:15 theRev kernel: hdc: , ATAPI CDROM drive Dec 15 11:58:06 theRev
+kernel: ide0 at 0x1f0-0x1f7,0x3f6 on irq 14 Dec 15 11:58:06 theRev kernel:
+ide1 at 0x170-0x177,0x376 on irq 15 Dec 15 11:58:06 theRev kernel: Floppy
+drive(s): fd0 is 1.44M Dec 15 11:58:06 theRev kernel: Started kswapd v
+,B\V
+1.4.2.2 Dec 15 11:58:06 theRev kernel: FDC 0 is a National Semiconductor
+PC87306 Dec 15 11:58:06 theRev kernel: md driver 0.35 MAX_MD_DEV=4,
+MAX_REAL=8 Dec 15 11:58:06 theRev kernel: PPP: version 2.2.0 (dynamic
+channel allocation) Dec 15 11:58:06 theRev kernel: TCP compression code
+copyright 1989 Regents of the University of California Dec 15 11:58:06
+theRev kernel: PPP Dynamic channel allocation code copyright 1995 Caldera,
+Inc. Dec 15 11:58:06 theRev kernel: PPP line discipline registered. Dec
+15 11:58:06 theRev kernel: SLIP: version 0.8.4-NET3.019-NEWTTY (dynamic
+channels, max=256). Dec 15 11:58:06 theRev kernel: eth0: 3Com 3c900
+Boomerang 10Mbps/Combo at 0xef00, 00:60:08:a4:3c:db, IRQ 10 Dec 15
+11:58:06 theRev kernel: 8K word-wide RAM 3:5 Rx:Tx split, 10base2
+interface. Dec 15 11:58:06 theRev kernel: Enabling bus-master transmits
+and whole-frame receives. Dec 15 11:58:06 theRev kernel: 3c59x.c:v0.49
+1/2/98 Donald Becker http://cesdis.gsfc.nasa.gov/linux/drivers/vortex.html
+Dec 15 11:58:06 theRev kernel: Partition check: Dec 15 11:58:06 theRev
+-u4D
+&yQ_
+,B\V
+kernel: hda: hda1 hda2 hda3 Dec 15 11:58:06 theRev kernel: hdb: hdb1
+hdb2 Dec 15 11:58:06 theRev kernel: VFS: Mounted root (ext2 filesystem)
+readonly. Dec 15 11:58:06 theRev kernel: Adding Swap: 16124k swap-space
+(priority -1) Dec 15 11:58:06 theRev kernel: EXT2-fs warning: maximal
+mount count reached, running e2fsck is recommended Dec 15 11:58:06
+theRev kernel: hdc: media changed Dec 15 11:58:06 theRev kernel:
+ISO9660 Extensions: RRIP_1991A Dec 15 11:58:07 theRev syslogd 1.3-3#17:
+restart. Dec 15 11:58:09 theRev diald[87]: Unable to open options file
+/etc/diald/diald.options: No such file or directory Dec 15 11:58:09 theRev
+diald[87]: No device specified. You must have at least one device! Dec
+15 11:58:09 theRev diald[87]: You must define a connector script (option
+'connect'). Dec 15 11:58:09 theRev diald[87]: You must define the remote
+ip address. Dec 15 11:58:09 theRev diald[87]: You must define the local
+ip address. Dec 15 11:58:09 theRev diald[87]: Terminating due to damaged
+reconfigure.        
+                    
+/U8B
+&FUz
+@O`Uv
+H`ym
+>D(H*/h
+)$ d
+,B\V
+~bW}
+"%fU
+The only parts of this that are readable, for normal people, are the error
+messages and warnings. And yet it's noteworthy that Linux doesn't stop,
+or crash, when it encounters an error; it spits out a pithy complaint,
+gives up on whatever processes were damaged, and keeps on rolling. This
+was decidedly not true of the early versions of Apple and Microsoft
+OSes, for the simple reason that an OS that is not capable of walking and
+chewing gum at the same time cannot possibly recover from errors. Looking
+for, and dealing with, errors requires a separate process running in
+parallel with the one that has erred. A kind of superego, if you will,
+that keeps an eye on all of the others, and jumps in when one goes
+astray. Now that MacOS and Windows can do more than one thing at a time
+they are much better at dealing with errors than they used to be, but
+they are not even close to Linux or other Unices in this respect; and
+their greater complexity has made them vulnerable to new types of errors.
+                    
+doPxl
+)gdww
+%?a@>
+H*{m
+i$}V
+@Yt,:Od
+,B\V
+FALLIBILITY, ATONEMENT, REDEMPTION, TRUST, AND OTHER ARCANE TECHNICAL
+CONCEPTS            
+                    
+Linux is not capable of having any centrally organized policies dictating
+how to write error messages and documentation, and so each programmer
+writes his own. Usually they are in English even though tons of Linux
+programmers are Europeans. Frequently they are funny. Always they
+are honest. If something bad has happened because the software simply
+isn't finished yet, or because the user screwed something up, this will
+be stated forthrightly. The command line interface makes it easy for
+programs to dribble out little comments, warnings, and messages here and
+there. Even if the application is imploding like a damaged submarine,
+it can still usually eke out a little S.O.S. message. Sometimes when
+you finish working with a program and shut it down, you find that it
+has left behind a series of mild warnings and low-grade error messages
+in the command-line interface window from which you launched it. As if
+,ztW&
+HU@s
+,B\V
+|{My
+ S EJ
+the software were chatting to you about how it was doing the whole time
+you were working with it.
+                    
+Documentation, under Linux, comes in the form of man (short for manual)
+pages. You can access these either through a GUI (xman) or from the
+command line (man). Here is a sample from the man page for a program
+called rsh:         
+                    
+"Stop signals stop the local rsh process only; this is arguably wrong,
+but currently hard to fix for reasons too complicated to explain here."
+                    
+The man pages contain a lot of such material, which reads like the terse
+mutterings of pilots wrestling with the controls of damaged airplanes. The
+general feel is of a thousand monumental but obscure struggles seen in
+the stop-action light of a strobe. Each programmer is dealing with his
+own obstacles and bugs; he is too busy fixing them, and improving the
+software, to explain things at great length or to maintain elaborate
+pretensions.        
+Kwfg
+\'"V
+,B\V
+ wn;
+998p
+                    
+In practice you hardly ever encounter a serious bug while running
+Linux. When you do, it is almost always with commercial software (several
+vendors sell software that runs under Linux). The operating system and
+its fundamental utility programs are too important to contain serious
+bugs. I have been running Linux every day since late 1995 and have seen
+many application programs go down in flames, but I have never seen the
+operating system crash. Never. Not once. There are quite a few Linux
+systems that have been running continuously and working hard for months
+or years without needing to be rebooted.
+                    
+Commercial OSes have to adopt the same official stance towards errors
+as Communist countries had towards poverty. For doctrinal reasons
+it was not possible to admit that poverty was a serious problem in
+Communist countries, because the whole point of Communism was to eradicate
+poverty. Likewise, commercial OS companies like Apple and Microsoft can't
+-	$T
+2?3^
+9op`
+Ii3p
+,B\V
+go around admitting that their software has bugs and that it crashes
+all the time, any more than Disney can issue press releases stating that
+Mickey Mouse is an actor in a suit.
+                    
+This is a problem, because errors do exist and bugs do happen. Every
+few months Bill Gates tries to demo a new Microsoft product in front
+of a large audience only to have it blow up in his face. Commercial
+OS vendors, as a direct consequence of being commercial, are forced to
+adopt the grossly disingenuous position that bugs are rare aberrations,
+usually someone else's fault, and therefore not really worth talking
+about in any detail. This posture, which everyone knows to be absurd,
+is not limited to press releases and ad campaigns. It informs the whole
+way these companies do business and relate to their customers. If the
+documentation were properly written, it would mention bugs, errors,
+and crashes on every single page. If the on-line help systems that come
+with these OSes reflected the experiences and concerns of their users,
+JlmD?,
+X-wg
+gs'~
+,B\V
+wAJ9
+they would largely be devoted to instructions on how to cope with crashes
+and errors.         
+                    
+But this does not happen. Joint stock corporations are wonderful
+inventions that have given us many excellent goods and services. They
+are good at many things. Admitting failure is not one of them. Hell,
+they can't even admit minor shortcomings.
+                    
+Of course, this behavior is not as pathological in a corporation as
+it would be in a human being. Most people, nowadays, understand that
+corporate press releases are issued for the benefit of the corporation's
+shareholders and not for the enlightenment of the public. Sometimes the
+results of this institutional dishonesty can be dreadful, as with tobacco
+and asbestos. In the case of commercial OS vendors it is nothing of the
+kind, of course; it is merely annoying.
+                    
+Some might argue that consumer annoyance, over time, builds up into a
+{?[p
+,B\V
+XPmU
+kind of hardened plaque that can conceal serious decay, and that honesty
+might therefore be the best policy in the long run; the jury is still
+out on this in the operating system market. The business is expanding
+fast enough that it's still much better to have billions of chronically
+annoyed customers than millions of happy ones.
+                    
+Most system administrators I know who work with Windows NT all the time
+agree that when it hits a snag, it has to be re-booted, and when it
+gets seriously messed up, the only way to fix it is to re-install the
+operating system from scratch. Or at least this is the only way that
+they know of to fix it, which amounts to the same thing. It is quite
+possible that the engineers at Microsoft have all sorts of insider
+knowledge on how to fix the system when it goes awry, but if they do,
+they do not seem to be getting the message out to any of the actual
+system administrators I know.
+                    
+Because Linux is not commercial--because it is, in fact, free, as well
+63_O
+,B\V
+}m3$
+as rather difficult to obtain, install, and operate--it does not have
+to maintain any pretensions as to its reliability. Consequently, it
+is much more reliable. When something goes wrong with Linux, the error
+is noticed and loudly discussed right away. Anyone with the requisite
+technical knowledge can go straight to the source code and point out
+the source of the error, which is then rapidly fixed by whichever hacker
+has carved out responsibility for that particular program.
+                    
+As far as I know, Debian is the only Linux distribution that has
+its own constitution (http://www.debian.org/devel/constitution),
+but what really sold me on it was its phenomenal bug database
+(http://www.debian.org/Bugs), which is a sort of interactive Doomsday Book
+of error, fallibility, and redemption. It is simplicity itself. When
+had a problem with Debian in early January of 1997, I sent in a
+message describing the problem to submit@bugs.debian.org. My problem
+was promptly assigned a bug report number (#6518) and a severity level
+^tU+
+(!ic?
+A/rjR
+,B\V
+bk7*m
+QCBR{E
+(the available choices being critical, grave, important, normal, fixed,
+and wishlist) and forwarded to mailing lists where Debian people hang
+out. Within twenty-four hours I had received five e-mails telling me how
+to fix the problem: two from North America, two from Europe, and one from
+Australia. All of these e-mails gave me the same suggestion, which worked,
+and made my problem go away. But at the same time, a transcript of this
+exchange was posted to Debian's bug database, so that if other users
+had the same problem later, they would be able to search through and
+find the solution without having to enter a new, redundant bug report.
+                    
+Contrast this with the experience that I had when I tried to install
+Windows NT 4.0 on the very same machine about ten months later, in late
+1997. The installation program simply stopped in the middle with no error
+messages. I went to the Microsoft Support website and tried to perform
+a search for existing help documents that would address my problem. The
+H"6:
+d#i\Q
+,B\V
+search engine was completely nonfunctional; it did nothing at all. It
+did not even give me a message telling me that it was not working.
+                    
+Eventually I decided that my motherboard must be at fault; it was
+of a slightly unusual make and model, and NT did not support as many
+different motherboards as Linux. I am always looking for excuses, no
+matter how feeble, to buy new hardware, so I bought a new motherboard
+that was Windows NT logo-compatible, meaning that the Windows NT logo was
+printed right on the box. I installed this into my computer and got Linux
+running right away, then attempted to install Windows NT again. Again,
+the installation died without any error message or explanation. By this
+time a couple of weeks had gone by and I thought that perhaps the search
+engine on the Microsoft Support website might be up and running. I gave
+that a try but it still didn't work.
+                    
+So I created a new Microsoft support account, then logged on to submit
+z{`	
+zde<
+,B\V
+the incident. I supplied my product ID number when asked, and then began
+to follow the instructions on a series of help screens. In other words,
+I was submitting a bug report just as with the Debian bug tracking
+system. It's just that the interface was slicker--I was typing my
+complaint into little text-editing boxes on Web forms, doing it all
+through the GUI, whereas with Debian you send in an e-mail telegram. I
+knew that when I was finished submitting the bug report, it would become
+proprietary Microsoft information, and other users wouldn't be able to
+see it. Many Linux users would refuse to participate in such a scheme on
+ethical grounds, but I was willing to give it a shot as an experiment. In
+the end, though I was never able to submit my bug report, because the
+series of linked web pages that I was filling out eventually led me to
+a completely blank page: a dead end.
+                    
+So I went back and clicked on the buttons for "phone support" and
+eventually was given a Microsoft telephone number. When I dialed this
+!-rv
+,B\V
+ ZmI
+p7^)
+<TDPt
+@6lOT
+number I got a series of piercing beeps and a recorded message from
+the phone company saying "We're sorry, your call cannot be completed as
+dialed."            
+                    
+I tried the search page again--it was still completely nonfunctional. Then
+I tried PPI (Pay Per Incident) again. This led me through another series
+of Web pages until I dead-ended at one reading: "Notice-there is no Web
+page matching your request."
+                    
+I tried it again, and eventually got to a Pay Per Incident screen reading:
+"OUT OF INCIDENTS. There are no unused incidents left in your account. If
+you would like to purchase a support incident, click OK-you will then
+be able to prepay for an incident...." The cost per incident was $95.
+                    
+The experiment was beginning to seem rather expensive, so I gave up on the
+PPI approach and decided to have a go at the FAQs posted on Microsoft's
+website. None of the available FAQs had anything to do with my problem
+1w~vd
+1+s^<
+OG"	:*
+)f<)
+,B\V
+/L<85h
+except for one entitled "I am having some problems installing NT" which
+appeared to have been written by flacks, not engineers.
+                    
+So I gave up and still, to this day, have never gotten Windows NT
+installed on that particular machine. For me, the path of least resistance
+was simply to use Debian Linux.
+                    
+In the world of open source software, bug reports are useful
+information. Making them public is a service to other users, and improves
+the OS. Making them public systematically is so important that highly
+intelligent people voluntarily put time and money into running bug
+databases. In the commercial OS world, however, reporting a bug is a
+privilege that you have to pay lots of money for. But if you pay for
+it, it follows that the bug report must be kept confidential--otherwise
+anyone could get the benefit of your ninety-five bucks! And yet nothing
+prevents NT users from setting up their own public bug database.
+                    
+$0]F
+aP[-F
+,B\V
+This is, in other words, another feature of the OS market that simply
+makes no sense unless you view it in the context of culture. What
+Microsoft is selling through Pay Per Incident isn't technical support so
+much as the continued illusion that its customers are engaging in some
+kind of rational business transaction. It is a sort of routine maintenance
+fee for the upkeep of the fantasy. If people really wanted a solid OS
+they would use Linux, and if they really wanted tech support they would
+find a way to get it; Microsoft's customers want something else.
+                    
+As of this writing (Jan. 1999), something like 32,000 bugs have been
+reported to the Debian Linux bug database. Almost all of them have
+been fixed a long time ago. There are twelve "critical" bugs still
+outstanding, of which the oldest was posted 79 days ago. There are 20
+outstanding "grave" bugs of which the oldest is 1166 days old. There
+are 48 "important" bugs and hundreds of "normal" and less important ones.
+                    
+QE5n
+p(10
+,B\V
+E5-aY)
+Likewise, BeOS (which I'll get to in a minute) has its own bug database
+(http://www.be.com/developers/bugs/index.html) with its own classification
+system, including such categories as "Not a Bug," "Acknowledged Feature,"
+and "Will Not Fix." Some of the "bugs" here are nothing more than Be
+hackers blowing off steam, and are classified as "Input Acknowledged." For
+example, I found one that was posted on December 30th, 1998. It's in
+the middle of a long list of bugs, wedged between one entitled "Mouse
+working in very strange fashion" and another called "Change of BView
+frame does not affect, if BView not attached to a BWindow."
+                    
+This one is entitled
+                    
+R4: BeOS missing megalomaniacal figurehead to harness and focus developer
+rage                
+                    
+and it goes like this:
+                    
+----------------------------
+                    
+V\.BdI
+&,Z<
+mD\o
+S3*`
+r2k;
+8([R
+]o3>
+,B\V
+Be Status: Input Acknowledged BeOS Version: R3.2 Component: unknown
+                    
+Full Description:   
+                    
+The BeOS needs a megalomaniacal egomaniac sitting on its throne to
+give it a human character which everyone loves to hate. Without this,
+the BeOS will languish in the impersonifiable realm of OSs that people
+can never quite get a handle on. You can judge the success of an OS not
+by the quality of its features, but by how infamous and disliked the
+leaders behind them are.
+                    
+I believe this is a side-effect of developer comraderie under miserable
+conditions. After all, misery loves company. I believe that making the
+BeOS less conceptually accessible and far less reliable will require
+developers to band together, thus developing the kind of community where
+strangers talk to one- another, kind of like at a grocery store before
+a huge snowstorm.   
+                    
+{Q J
+yb[Q
+,B\V
+Following this same program, it will likely be necessary to move the BeOS
+headquarters to a far-less-comfortable climate. General environmental
+discomfort will breed this attitude within and there truly is no greater
+recipe for success. I would suggest Seattle, but I think it's already
+taken. You might try Washington, DC, but definitely not somewhere like
+San Diego or Tucson.
+                    
+----------------------------
+                    
+Unfortunately, the Be bug reporting system strips off the names of the
+people who report the bugs (to protect them from retribution!?) and so
+I don't know who wrote this.
+                    
+So it would appear that I'm in the middle of crowing about the technical
+and moral superiority of Debian Linux. But as almost always happens in
+the OS world, it's more complicated than that. I have Windows NT running
+on another machine, and the other day (Jan. 1999), when I had a problem
+with it, I decided to have another go at Microsoft Support. This time
+}c]p
+7w[n{*
+<|u_
+V\.BdI
+5+i*5
+,B\V
+ b0d2
+Y{bM4
+WlAC
+0ZN24
+the search engine actually worked (though in order to reach it I had
+to identify myself as "advanced"). And instead of coughing up some
+useless FAQ, it located about two hundred documents (I was using very
+vague search criteria) that were obviously bug reports--though they were
+called something else. Microsoft, in other words, has got a system up and
+running that is functionally equivalent to Debian's bug database. It looks
+and feels different, of course, but it contains technical nitty-gritty
+and makes no bones about the existence of errors.
+                    
+As I've explained, selling OSes for money is a basically untenable
+position, and the only way Apple and Microsoft can get away with it
+is by pursuing technological advancements as aggressively as they can,
+and by getting people to believe in, and to pay for, a particular image:
+in the case of Apple, that of the creative free thinker, and in the case
+of Microsoft, that of the respectable techno-bourgeois. Just like Disney,
+i.Y4
+_(=R
+}WQg
+,B\V
+ r_#@Lc""{
+/>q"J
+they're making money from selling an interface, a magic mirror. It has
+to be polished and seamless or else the whole illusion is ruined and
+the business plan vanishes like a mirage.
+                    
+Accordingly, it was the case until recently that the people who wrote
+manuals and created customer support websites for commercial OSes seemed
+to have been barred, by their employers' legal or PR departments, from
+admitting, even obliquely, that the software might contain bugs or that
+the interface might be suffering from the blinking twelve problem. They
+couldn't address users' actual difficulties. The manuals and websites
+were therefore useless, and caused even technically self-assured users
+to wonder whether they were going subtly insane.
+                    
+When Apple engages in this sort of corporate behavior, one wants to
+believe that they are really trying their best. We all want to give Apple
+the benefit of the doubt, because mean old Bill Gates kicked the crap
+z2QD
+>HU*\
+%kLb~s
+.REmT
+,B\V
+N!*t)RH
+i,d6.t
+out of them, and because they have good PR. But when Microsoft does it,
+one almost cannot help becoming a paranoid conspiracist. Obviously they
+are hiding something from us! And yet they are so powerful! They are
+trying to drive us crazy!
+                    
+This approach to dealing with one's customers was straight out of the
+Central European totalitarianism of the mid-Twentieth Century. The
+adjectives "Kafkaesque" and "Orwellian" come to mind. It couldn't last,
+any more than the Berlin Wall could, and so now Microsoft has a publicly
+available bug database. It's called something else, and it takes a while
+to find it, but it's there.
+                    
+They have, in other words, adapted to the two-tiered Eloi/Morlock
+structure of technological society. If you're an Eloi you install Windows,
+follow the instructions, hope for the best, and dumbly suffer when it
+breaks. If you're a Morlock you go to the website, tell it that you are
+"advanced," find the bug database, and get the truth straight from some
+FAuo
+,B\V
+[&Dq
+f"4gC
+|VUr
+anonymous Microsoft engineer.
+                    
+But once Microsoft has taken this step, it raises the question, once
+again, of whether there is any point to being in the OS business at
+all. Customers might be willing to pay $95 to report a problem to
+Microsoft if, in return, they get some advice that no other user is
+getting. This has the useful side effect of keeping the users alienated
+from one another, which helps maintain the illusion that bugs are rare
+aberrations. But once the results of those bug reports become openly
+available on the Microsoft website, everything changes. No one is going
+to cough up $95 to report a problem when chances are good that some
+other sucker will do it first, and that instructions on how to fix the
+bug will then show up, for free, on a public website. And as the size
+of the bug database grows, it eventually becomes an open admission,
+on Microsoft's part, that their OSes have just as many bugs as their
+competitors'. There is no shame in that; as I mentioned, Debian's bug
+)P6;F
+1`K'
+,B\V
+database has logged 32,000 reports so far. But it puts Microsoft on
+an equal footing with the others and makes it a lot harder for their
+customers--who want to believe--to believe.
+                    
+                    
+,B\V

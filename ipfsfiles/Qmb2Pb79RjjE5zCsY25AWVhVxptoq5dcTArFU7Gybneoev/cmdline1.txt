@@ -1,0 +1,1056 @@
+                    
+                    
+In the Beginning was the Command Line - Part 1/6
+                    
+by Neal Stephenson  
+                    
+                    
+About twenty years ago Jobs and Wozniak, the founders of Apple, came up
+with the very strange idea of selling information processing machines
+for use in the home. The business took off, and its founders made a
+lot of money and received the credit they deserved for being daring
+visionaries. But around the same time, Bill Gates and Paul Allen came
+up with an idea even stranger and more fantastical: selling computer
+operating systems. This was much weirder than the idea of Jobs and
+Wozniak. A computer at least had some sort of physical reality to it. It
+came in a box, you could open it up and plug it in and watch lights
+blink. An operating system had no tangible incarnation at all. It arrived
+on a disk, of course, but the disk was, in effect, nothing more than the
+oSK}
+8~62
+NI-k
+)tQs
+S,b		BPd
+rO&EA1
+/x'V
+: 1/?
+{-*\
+box that the OS came in. The product itself was a very long string of
+ones and zeroes that, when properly installed and coddled, gave you the
+ability to manipulate other very long strings of ones and zeroes. Even
+those few who actually understood what a computer operating system was
+were apt to think of it as a fantastically arcane engineering prodigy,
+like a breeder reactor or a U-2 spy plane, and not something that could
+ever be (in the parlance of high-tech) "productized."
+                    
+Yet now the company that Gates and Allen founded is selling operating
+systems like Gillette sells razor blades. New releases of operating
+systems are launched as if they were Hollywood blockbusters, with
+celebrity endorsements, talk show appearances, and world tours. The
+market for them is vast enough that people worry about whether it has been
+monopolized by one company. Even the least technically-minded people in
+our society now have at least a hazy idea of what operating systems do;
+|T-pP=
+B=mH
+'a\j
+/x'V
+: 1/?
+<glS/
+what is more, they have strong opinions about their relative merits. It is
+commonly understood, even by technically unsophisticated computer users,
+that if you have a piece of software that works on your Macintosh, and you
+move it over onto a Windows machine, it will not run. That this would,
+in fact, be a laughable and idiotic mistake, like nailing horseshoes to
+the tires of a Buick.
+                    
+A person who went into a coma before Microsoft was founded, and woke up
+now, could pick up this morning's New York Times and understand everything
+in it--almost:      
+                    
+                    
+Item: the richest man in the world made his fortune
+from-what? Railways? Shipping? Oil? No, operating systems. Item: the
+Department of Justice is tackling Microsoft's supposed OS monopoly with
+legal tools that were invented to restrain the power of Nineteenth-Century
+robber barons. Item: a woman friend of mine recently told me that she'd
+#%#[
+/x'V
+: 1/?
+broken off a (hitherto) stimulating exchange of e-mail with a young
+man. At first he had seemed like such an intelligent and interesting guy,
+she said, but then "he started going all PC-versus-Mac on me."
+                    
+What the hell is going on here? And does the operating system business
+have a future, or only a past? Here is my view, which is entirely
+subjective; but since I have spent a fair amount of time not only using,
+but programming, Macintoshes, Windows machines, Linux boxes and the BeOS,
+perhaps it is not so ill-informed as to be completely worthless. This
+is a subjective essay, more review than research paper, and so it might
+seem unfair or biased compared to the technical reviews you can find
+in PC magazines. But ever since the Mac came out, our operating systems
+have been based on metaphors, and anything with metaphors in it is fair
+game as far as I'm concerned.
+                    
+                    
+MGBs, TANKS, AND BATMOBILES
+                    
+`pTF
+y$X,
+P,y&
+! ,uU
+\~W}
+/x'V
+: 1/?
+Around the time that Jobs, Wozniak, Gates, and Allen were dreaming up
+these unlikely schemes, I was a teenager living in Ames, Iowa. One
+of my friends' dads had an old MGB sports car rusting away in his
+garage. Sometimes he would actually manage to get it running and then
+he would take us for a spin around the block, with a memorable look
+of wild youthful exhiliration on his face; to his worried passengers,
+he was a madman, stalling and backfiring around Ames, Iowa and eating
+the dust of rusty Gremlins and Pintos, but in his own mind he was Dustin
+Hoffman tooling across the Bay Bridge with the wind in his hair.
+                    
+In retrospect, this was telling me two things about people's relationship
+to technology. One was that romance and image go a long way towards
+shaping their opinions. If you doubt it (and if you have a lot of spare
+time on your hands) just ask anyone who owns a Macintosh and who, on
+those grounds, imagines him- or herself to be a member of an oppressed
+minority group.     
+W=V%Q
+/x'V
+: 1/?
+W{=}
+l)~!C
+                    
+The other, somewhat subtler point, was that interface is very
+important. Sure, the MGB was a lousy car in almost every way that
+counted: balky, unreliable, underpowered. But it was fun to drive. It
+was responsive. Every pebble on the road was felt in the bones, every
+nuance in the pavement transmitted instantly to the driver's hands. He
+could listen to the engine and tell what was wrong with it. The steering
+responded immediately to commands from his hands. To us passengers it was
+a pointless exercise in going nowhere--about as interesting as peering
+over someone's shoulder while he punches numbers into a spreadsheet. But
+to the driver it was an experience. For a short time he was extending
+his body and his senses into a larger realm, and doing things that he
+couldn't do unassisted.
+                    
+The analogy between cars and operating systems is not half bad, and so
+let me run with it for a moment, as a way of giving an executive summary
+of our situation today.
+Cdn@
+/x'V
+: 1/?
+JkhL!
+                    
+Imagine a crossroads where four competing auto dealerships are
+situated. One of them (Microsoft) is much, much bigger than the others. It
+started out years ago selling three-speed bicycles (MS-DOS); these were
+not perfect, but they worked, and when they broke you could easily fix
+them.               
+                    
+There was a competing bicycle dealership next door (Apple) that one day
+began selling motorized vehicles--expensive but attractively styled
+cars with their innards hermetically sealed, so that how they worked
+was something of a mystery.
+                    
+The big dealership responded by rushing a moped upgrade kit (the original
+Windows) onto the market. This was a Rube Goldberg contraption that, when
+bolted onto a three-speed bicycle, enabled it to keep up, just barely,
+with Apple-cars. The users had to wear goggles and were always picking
+bugs out of their teeth while Apple owners sped along in hermetically
+d6M1
+/tHo
+ol|8Ze
+QV7&
+/x'V
+: 1/?
+';x]
+sealed comfort, sneering out the windows. But the Micro-mopeds were
+cheap, and easy to fix compared with the Apple-cars, and their market
+share waxed.        
+                    
+Eventually the big dealership came out with a full-fledged car: a colossal
+station wagon (Windows 95). It had all the aesthetic appeal of a Soviet
+worker housing block, it leaked oil and blew gaskets, and it was an
+enormous success. A little later, they also came out with a hulking
+off-road vehicle intended for industrial users (Windows NT) which was no
+more beautiful than the station wagon, and only a little more reliable.
+                    
+Since then there has been a lot of noise and shouting, but little has
+changed. The smaller dealership continues to sell sleek Euro-styled
+sedans and to spend a lot of money on advertising campaigns. They have
+had GOING OUT OF BUSINESS! signs taped up in their windows for so long
+that they have gotten all yellow and curly. The big one keeps making
+bigger and bigger station wagons and ORVs.
+9?03
+	OI=V
+?pyBF
+P+Qp
+;Omqr
+&v9n
+/x'V
+: 1/?
+                    
+On the other side of the road are two competitors that have come along
+more recently.      
+                    
+One of them (Be, Inc.) is selling fully operational Batmobiles (the
+BeOS). They are more beautiful and stylish even than the Euro-sedans,
+better designed, more technologically advanced, and at least as reliable
+as anything else on the market--and yet cheaper than the others.
+                    
+With one exception, that is: Linux, which is right next door, and
+which is not a business at all. It's a bunch of RVs, yurts, tepees, and
+geodesic domes set up in a field and organized by consensus. The people
+who live there are making tanks. These are not old-fashioned, cast-iron
+Soviet tanks; these are more like the M1 tanks of the U.S. Army, made
+of space-age materials and jammed with sophisticated technology from
+one end to the other. But they are better than Army tanks. They've been
+modified in such a way that they never, ever break down, are light and
+f*h8I
+x0 (o
+>jRW
+/x'V
+: 1/?
+}r?by
+O6&k
+maneuverable enough to use on ordinary streets, and use no more fuel
+than a subcompact car. These tanks are being cranked out, on the spot,
+at a terrific pace, and a vast number of them are lined up along the
+edge of the road with keys in the ignition. Anyone who wants can simply
+climb into one and drive it away for free.
+                    
+Customers come to this crossroads in throngs, day and night. Ninety
+percent of them go straight to the biggest dealership and buy station
+wagons or off-road vehicles. They do not even look at the other
+dealerships.        
+                    
+Of the remaining ten percent, most go and buy a sleek Euro-sedan,
+pausing only to turn up their noses at the philistines going to buy the
+station wagons and ORVs. If they even notice the people on the opposite
+side of the road, selling the cheaper, technically superior vehicles,
+these customers deride them cranks and half-wits.
+                    
+aM<Y
+x{7X
+H@T	
+/x'V
+: 1/?
+_+C	|
+xenw
+The Batmobile outlet sells a few vehicles to the occasional car nut who
+wants a second vehicle to go with his station wagon, but seems to accept,
+at least for now, that it's a fringe player.
+                    
+The group giving away the free tanks only stays alive because it is
+staffed by volunteers, who are lined up at the edge of the street
+with bullhorns, trying to draw customers' attention to this incredible
+situation. A typical conversation goes something like this:
+                    
+Hacker with bullhorn: "Save your money! Accept one of our free tanks! It
+is invulnerable, and can drive across rocks and swamps at ninety miles
+an hour while getting a hundred miles to the gallon!"
+                    
+Prospective station wagon buyer: "I know what you say is
+true...but...er...I don't know how to maintain a tank!"
+                    
+Bullhorn: "You don't know how to maintain a station wagon either!"
+                    
+/x'V
+: 1/?
+Buyer: "But this dealership has mechanics on staff. If something goes
+wrong with my station wagon, I can take a day off work, bring it here,
+and pay them to work on it while I sit in the waiting room for hours,
+listening to elevator music."
+                    
+Bullhorn: "But if you accept one of our free tanks we will send volunteers
+to your house to fix it for free while you sleep!"
+                    
+Buyer: "Stay away from my house, you freak!"
+                    
+Bullhorn: "But..."  
+                    
+Buyer: "Can't you see that everyone is buying station wagons?"
+                    
+                    
+BIT-FLINGER         
+                    
+                    
+The connection between cars, and ways of interacting with computers,
+wouldn't have occurred to me at the time I was being taken for rides
+VPs4
+XD?v
+/x'V
+: 1/?
+%QW>2
+in that MGB. I had signed up to take a computer programming class at
+Ames High School. After a few introductory lectures, we students were
+granted admission into a tiny room containing a teletype, a telephone,
+and an old-fashioned modem consisting of a metal box with a pair of
+rubber cups on the top (note: many readers, making their way through
+that last sentence, probably felt an initial pang of dread that this
+essay was about to turn into a tedious, codgerly reminiscence about how
+tough we had it back in the old days; rest assured that I am actually
+positioning my pieces on the chessboard, as it were, in preparation to
+make a point about truly hip and up-to-the minute topics like Open Source
+Software). The teletype was exactly the same sort of machine that had
+been used, for decades, to send and receive telegrams. It was basically
+a loud typewriter that could only produce UPPERCASE LETTERS. Mounted to
+one side of it was a smaller machine with a long reel of paper tape on
+it, and a clear plastic hopper underneath.
+                    
+u1K*
+L_ibudq
+kyRo
+/x'V
+: 1/?
++p }	o
+In order to connect this device (which was not a computer at all) to
+the Iowa State University mainframe across town, you would pick up the
+phone, dial the computer's number, listen for strange noises, and then
+slam the handset down into the rubber cups. If your aim was true, one
+would wrap its neoprene lips around the earpiece and the other around
+the mouthpiece, consummating a kind of informational soixante-neuf.
+The teletype would shudder as it was possessed by the spirit of the
+distant mainframe, and begin to hammer out cryptic messages.
+                    
+Since computer time was a scarce resource, we used a sort of batch
+processing technique. Before dialing the phone, we would turn on the
+tape puncher (a subsidiary machine bolted to the side of the teletype)
+and type in our programs. Each time we depressed a key, the teletype
+would bash out a letter on the paper in front of us, so we could read
+what we'd typed; but at the same time it would convert the letter
+into a set of eight binary digits, or bits, and punch a corresponding
+lL?c
+fdep
+/x'V
+: 1/?
+,}io
+!hodJ
+pattern of holes across the width of a paper tape. The tiny disks of
+paper knocked out of the tape would flutter down into the clear plastic
+hopper, which would slowly fill up what can only be described as actual
+bits. On the last day of the school year, the smartest kid in the class
+(not me) jumped out from behind his desk and flung several quarts of
+these bits over the head of our teacher, like confetti, as a sort of
+semi-affectionate practical joke. The image of this man sitting there,
+gripped in the opening stages of an atavistic fight-or-flight reaction,
+with millions of bits (megabytes) sifting down out of his hair and into
+his nostrils and mouth, his face gradually turning purple as he built
+up to an explosion, is the single most memorable scene from my formal
+education.          
+                    
+Anyway, it will have been obvious that my interaction with the computer
+was of an extremely formal nature, being sharply divided up into different
+phases, viz.: (1) sitting at home with paper and pencil, miles and miles
+*qJ*
+QPi3P
+L38c
+&T;eF&N
+knD#
+/x'V
+: 1/?
+from any computer, I would think very, very hard about what I wanted the
+computer to do, and translate my intentions into a computer language--a
+series of alphanumeric symbols on a page. (2) I would carry this across
+a sort of informational cordon sanitaire (three miles of snowdrifts)
+to school and type those letters into a machine--not a computer--which
+would convert the symbols into binary numbers and record them visibly
+on a tape. (3) Then, through the rubber-cup modem, I would cause those
+numbers to be sent to the university mainframe, which would (4) do
+arithmetic on them and send different numbers back to the teletype. (5)
+The teletype would convert these numbers back into letters and hammer
+them out on a page and (6) I, watching, would construe the letters as
+meaningful symbols. 
+                    
+The division of responsibilities implied by all of this is admirably
+clean: computers do arithmetic on bits of information. Humans construe the
+bits as meaningful symbols. But this distinction is now being blurred, or
+L7?O!
+E8T)
+/x'V
+: 1/?
+_aZj
+at least complicated, by the advent of modern operating systems that use,
+and frequently abuse, the power of metaphor to make computers accessible
+to a larger audience. Along the way--possibly because of those metaphors,
+which make an operating system a sort of work of art--people start to
+get emotional, and grow attached to pieces of software in the way that
+my friend's dad did to his MGB.
+                    
+People who have only interacted with computers through graphical user
+interfaces like the MacOS or Windows--which is to say, almost everyone who
+has ever used a computer--may have been startled, or at least bemused,
+to hear about the telegraph machine that I used to communicate with
+a computer in 1973. But there was, and is, a good reason for using
+this particular kind of technology. Human beings have various ways
+of communicating to each other, such as music, art, dance, and facial
+expressions, but some of these are more amenable than others to being
+expressed as strings of symbols. Written language is the easiest of all,
+Nk`V)
+@prK
+/x'V
+: 1/?
+0r	8.
+because, of course, it consists of strings of symbols to begin with. If
+the symbols happen to belong to a phonetic alphabet (as opposed to,
+say, ideograms), converting them into bits is a trivial procedure, and
+one that was nailed, technologically, in the early nineteenth century,
+with the introduction of Morse code and other forms of telegraphy.
+                    
+We had a human/computer interface a hundred years before we had
+computers. When computers came into being around the time of the Second
+World War, humans, quite naturally, communicated with them by simply
+grafting them on to the already-existing technologies for translating
+letters into bits and vice versa: teletypes and punch card machines.
+                    
+These embodied two fundamentally different approaches to computing. When
+you were using cards, you'd punch a whole stack of them and run them
+through the reader all at once, which was called batch processing. You
+could also do batch processing with a teletype, as I have already
+K>3+
+"!j;
+]nBSon
+@8*g2
+$_s2
+/x'V
+: 1/?
+described, by using the paper tape reader, and we were certainly
+encouraged to use this approach when I was in high school. But--though
+efforts were made to keep us unaware of this--the teletype could do
+something that the card reader could not. On the teletype, once the modem
+link was established, you could just type in a line and hit the return
+key. The teletype would send that line to the computer, which might or
+might not respond with some lines of its own, which the teletype would
+hammer out--producing, over time, a transcript of your exchange with the
+machine. This way of doing it did not even have a name at the time, but
+when, much later, an alternative became available, it was retroactively
+dubbed the Command Line Interface.
+                    
+When I moved on to college, I did my computing in large, stifling
+rooms where scores of students would sit in front of slightly updated
+versions of the same machines and write computer programs: these used
+dot-matrix printing mechanisms, but were (from the computer's point
+527n
+'VAU2<QT(
+/x'V
+: 1/?
+ Zw-
+ VE7	
+of view) identical to the old teletypes. By that point, computers were
+better at time-sharing--that is, mainframes were still mainframes, but
+they were better at communicating with a large number of terminals
+at once. Consequently, it was no longer necessary to use batch
+processing. Card readers were shoved out into hallways and boiler rooms,
+and batch processing became a nerds-only kind of thing, and consequently
+took on a certain eldritch flavor among those of us who even knew it
+existed. We were all off the Batch, and on the Command Line, interface
+now--my very first shift in operating system paradigms, if only I'd
+known it.           
+                    
+A huge stack of accordion-fold paper sat on the floor underneath each one
+of these glorified teletypes, and miles of paper shuddered through their
+platens. Almost all of this paper was thrown away or recycled without
+ever having been touched by ink--an ecological atrocity so glaring
+that those machines soon replaced by video terminals--so-called "glass
+N25}<p
+/x'V
+: 1/?
+ uk[
+U[T9
+"2yi
+teletypes"--which were quieter and didn't waste paper. Again, though, from
+the computer's point of view these were indistinguishable from World War
+II-era teletype machines. In effect we still used Victorian technology
+to communicate with computers until about 1984, when the Macintosh
+was introduced with its Graphical User Interface. Even after that,
+the Command Line continued to exist as an underlying stratum--a sort of
+brainstem reflex--of many modern computer systems all through the heyday
+of Graphical User Interfaces, or GUIs as I will call them from now on.
+                    
+                    
+GUIs                
+                    
+                    
+Now the first job that any coder needs to do when writing a new piece
+of software is to figure out how to take the information that is being
+worked with (in a graphics program, an image; in a spreadsheet, a grid
+of numbers) and turn it into a linear string of bytes. These strings of
+3&+|
+?6<1B
+2:I(q
+/x'V
+: 1/?
+qaf-
+bytes are commonly called files or (somewhat more hiply) streams. They
+are to telegrams what modern humans are to Cro-Magnon man, which is
+to say the same thing under a different name. All that you see on your
+computer screen--your Tomb Raider, your digitized voice mail messages,
+faxes, and word processing documents written in thirty-seven different
+typefaces--is still, from the computer's point of view, just like
+telegrams, except much longer, and demanding of more arithmetic.
+                    
+The quickest way to get a taste of this is to fire up your web browser,
+visit a site, and then select the View/Document Source menu item. You
+will get a bunch of computer code that looks something like this:
+                    
+<HTML>              
+<HEAD>              
+        <TITLE> C R Y P T O N O M I C O N</TITLE>
+                    
+</HEAD>             
+<BODY BGCOLOR="#000000" LINK="#996600" ALINK="#FFFFFF" VLINK="#663300">
+                    
+r(TT
+<lL7"
+}AL=
+/x'V
+: 1/?
+^0Z8
+DOlC
+x{	6
+<MAP NAME="navtext">
+        <AREA SHAPE=RECT HREF="praise.html" COORDS="0,37,84,55">
+        <AREA SHAPE=RECT HREF="author.html" COORDS="0,59,137,75">
+        <AREA SHAPE=RECT HREF="text.html" COORDS="0,81,101,96">
+        <AREA SHAPE=RECT HREF="tour.html" COORDS="0,100,121,117">
+        <AREA SHAPE=RECT HREF="order.html" COORDS="0,122,143,138">
+        <AREA SHAPE=RECT HREF="beginning.html" COORDS="0,140,213,157">
+</MAP>              
+                    
+                    
+<CENTER>            
+<TABLE BORDER="0" CELLPADDING="0" CELLSPACING="0" WIDTH="520">
+<TR>                
+                    
+        <TD VALIGN=TOP ROWSPAN="5">
+        <IMG SRC="images/spacer.gif" WIDTH="30" HEIGHT="1" BORDER="0">
+        </TD>       
+                    
+        <TD VALIGN=TOP COLSPAN="2">
+        <IMG SRC="images/main_banner.gif" ALT="Cryptonomincon by Neal
+=sPO!i>
+',B$
+%	aO(a
+q;	1
+b^ncZL=
+iyo~N<
+;}\<
+Z>wuW
+iLI:
+/x'V
+: 1/?
+Stephenson" WIDTH="479" HEIGHT="122" BORDER="0">
+        </TD>       
+                    
+</TR>               
+                    
+This crud is called HTML (HyperText Markup Language) and it is basically
+a very simple programming language instructing your web browser how to
+draw a page on a screen. Anyone can learn HTML and many people do. The
+important thing is that no matter what splendid multimedia web pages
+they might represent, HTML files are just telegrams.
+                    
+When Ronald Reagan was a radio announcer, he used to call baseball games
+by reading the terse descriptions that trickled in over the telegraph
+wire and were printed out on a paper tape. He would sit there, all by
+himself in a padded room with a microphone, and the paper tape would
+eke out of the machine and crawl over the palm of his hand printed
+with cryptic abbreviations. If the count went to three and two, Reagan
+would describe the scene as he saw it in his mind's eye: "The brawny
+&d?1?
+@ih+
+I-a2*
+a5#[r
+',B$
+/x'V
+: 1/?
+v|4$
+left-hander steps out of the batter's box to wipe the sweat from his
+brow. The umpire steps forward to sweep the dirt from home plate." and
+so on. When the cryptogram on the paper tape announced a base hit,
+he would whack the edge of the table with a pencil, creating a little
+sound effect, and describe the arc of the ball as if he could actually
+see it. His listeners, many of whom presumably thought that Reagan was
+actually at the ballpark watching the game, would reconstruct the scene
+in their minds according to his descriptions.
+                    
+This is exactly how the World Wide Web works: the HTML files are the
+pithy description on the paper tape, and your Web browser is Ronald
+Reagan. The same is true of Graphical User Interfaces in general.
+                    
+So an OS is a stack of metaphors and abstractions that stands between
+you and the telegrams, and embodying various tricks the programmer used
+to convert the information you're working with--be it images, e-mail
+jZ86
+ oNM"
+5L]W
+noe)
+X:u9
+/x'V
+: 1/?
+Y_aU;
+messages, movies, or word processing documents--into the necklaces of
+bytes that are the only things computers know how to work with. When
+we used actual telegraph equipment (teletypes) or their higher-tech
+substitutes ("glass teletypes," or the MS-DOS command line) to work with
+our computers, we were very close to the bottom of that stack. When
+we use most modern operating systems, though, our interaction with
+the machine is heavily mediated. Everything we do is interpreted and
+translated time and again as it works its way down through all of the
+metaphors and abstractions.
+                    
+The Macintosh OS was a revolution in both the good and bad senses of
+that word. Obviously it was true that command line interfaces were not
+for everyone, and that it would be a good thing to make computers more
+accessible to a less technical audience--if not for altruistic reasons,
+then because those sorts of people constituted an incomparably vaster
+market. It was clear the the Mac's engineers saw a whole new country
+sE+e
+|fX;
+P2Lx
+[1X6
+2||@
+/x'V
+: 1/?
+stretching out before them; you could almost hear them muttering,
+"Wow! We don't have to be bound by files as linear streams of bytes
+anymore, vive la revolution, let's see how far we can take this!" No
+command line interface was available on the Macintosh; you talked to it
+with the mouse, or not at all. This was a statement of sorts, a credential
+of revolutionary purity. It seemed that the designers of the Mac intended
+to sweep Command Line Interfaces into the dustbin of history.
+                    
+My own personal love affair with the Macintosh began in the spring
+of 1984 in a computer store in Cedar Rapids, Iowa, when a friend of
+mine--coincidentally, the son of the MGB owner--showed me a Macintosh
+running MacPaint, the revolutionary drawing program. It ended in July of
+1995 when I tried to save a big important file on my Macintosh Powerbook
+and instead instead of doing so, it annihilated the data so thoroughly
+that two different disk crash utility programs were unable to find
+;j7g
+]	44
+[yv$i
+*{aE+
+,*%x
+/x'V
+: 1/?
+any trace that it had ever existed. During the intervening ten years,
+I had a passion for the MacOS that seemed righteous and reasonable at
+the time but in retrospect strikes me as being exactly the same sort of
+goofy infatuation that my friend's dad had with his car.
+                    
+The introduction of the Mac triggered a sort of holy war in the computer
+world. Were GUIs a brilliant design innovation that made computers more
+human-centered and therefore accessible to the masses, leading us toward
+an unprecedented revolution in human society, or an insulting bit of
+audiovisual gimcrackery dreamed up by flaky Bay Area hacker types that
+stripped computers of their power and flexibility and turned the noble
+and serious work of computing into a childish video game?
+                    
+This debate actually seems more interesting to me today than it did in
+the mid-1980s. But people more or less stopped debating it when Microsoft
+endorsed the idea of GUIs by coming out with the first Windows. At this
+x C#
+n~6rL
+~`h1f
+X]7j
+/x'V
+: 1/?
+kP6$hRK
+point, command-line partisans were relegated to the status of silly old
+grouches, and a new conflict was touched off, between users of MacOS
+and users of Windows.
+                    
+There was plenty to argue about. The first Macintoshes looked different
+from other PCs even when they were turned off: they consisted of one box
+containing both CPU (the part of the computer that does arithmetic on
+bits) and monitor screen. This was billed, at the time, as a philosophical
+statement of sorts: Apple wanted to make the personal computer into an
+appliance, like a toaster. But it also reflected the purely technical
+demands of running a graphical user interface. In a GUI machine, the
+chips that draw things on the screen have to be integrated with the
+computer's central processing unit, or CPU, to a far greater extent than
+is the case with command-line interfaces, which until recently didn't
+even know that they weren't just talking to teletypes.
+                    
+*h'#u
+thH?Z
+'55U
+z..n
+:r C
+4c>Y
+/x'V
+: 1/?
+This distinction was of a technical and abstract nature, but it
+became clearer when the machine crashed (it is commonly the case with
+technologies that you can get the best insight about how they work by
+watching them fail). When everything went to hell and the CPU began
+spewing out random bits, the result, on a CLI machine, was lines and
+lines of perfectly formed but random characters on the screen--known to
+cognoscenti as "going Cyrillic." But to the MacOS, the screen was not
+a teletype, but a place to put graphics; the image on the screen was a
+bitmap, a literal rendering of the contents of a particular portion of
+the computer's memory. When the computer crashed and wrote gibberish into
+the bitmap, the result was something that looked vaguely like static on
+a broken television set--a "snow crash."
+                    
+And even after the introduction of Windows, the underlying differences
+endured; when a Windows machine got into trouble, the old command-line
+interface would fall down over the GUI like an asbestos fire curtain
+&u<41
+/x'V
+: 1/?
+8oQ-ko
+sealing off the proscenium of a burning opera. When a Macintosh got into
+trouble it presented you with a cartoon of a bomb, which was funny the
+first time you saw it.
+                    
+And these were by no means superficial differences. The reversion of
+Windows to a CLI when it was in distress proved to Mac partisans that
+Windows was nothing more than a cheap facade, like a garish afghan flung
+over a rotted-out sofa. They were disturbed and annoyed by the sense
+that lurking underneath Windows' ostensibly user-friendly interface
+was--literally--a subtext.
+                    
+For their part, Windows fans might have made the sour observation that
+all computers, even Macintoshes, were built on that same subtext, and
+that the refusal of Mac owners to admit that fact to themselves seemed
+to signal a willingness, almost an eagerness, to be duped.
+                    
+Anyway, a Macintosh had to switch individual bits in the memory chips
+Ltqw
+gQ6X
+1%hb
+/x'V
+: 1/?
+on the video card, and it had to do it very fast, and in arbitrarily
+complicated patterns. Nowadays this is cheap and easy, but in the
+technological regime that prevailed in the early 1980s, the only realistic
+way to do it was to build the motherboard (which contained the CPU) and
+the video system (which contained the memory that was mapped onto the
+screen) as a tightly integrated whole--hence the single, hermetically
+sealed case that made the Macintosh so distinctive.
+                    
+When Windows came out, it was conspicuous for its ugliness, and its
+current successors, Windows 95 and Windows NT, are not things that people
+would pay money to look at either. Microsoft's complete disregard for
+aesthetics gave all of us Mac-lovers plenty of opportunities to look down
+our noses at them. That Windows looked an awful lot like a direct ripoff
+of MacOS gave us a burning sense of moral outrage to go with it. Among
+people who really knew and appreciated computers (hackers, in Steven
+(]O1H
+%,Bm
+/x'V
+: 1/?
+{mPr9
+Levy's non-pejorative sense of that word) and in a few other niches
+such as professional musicians, graphic artists and schoolteachers, the
+Macintosh, for a while, was simply the computer. It was seen as not only
+a superb piece of engineering, but an embodiment of certain ideals about
+the use of technology to benefit mankind, while Windows was seen as a
+pathetically clumsy imitation and a sinister world domination plot rolled
+into one. So very early, a pattern had been established that endures to
+this day: people dislike Microsoft, which is okay; but they dislike it
+for reasons that are poorly considered, and in the end, self-defeating.
+                    
+                    
+CLASS STRUGGLE ON THE DESKTOP
+                    
+Now that the Third Rail has been firmly grasped, it is worth reviewing
+some basic facts here: like any other publicly traded, for-profit
+corporation, Microsoft has, in effect, borrowed a bunch of money from
+some people (its stockholders) in order to be in the bit business. As
+*H,$Q
+8ddQ
+/x'V
+: 1/?
+Jk3y
+%iwC^
+an officer of that corporation, Bill Gates has one responsibility only,
+which is to maximize return on investment. He has done this incredibly
+well. Any actions taken in the world by Microsoft-any software released by
+them, for example--are basically epiphenomena, which can't be interpreted
+or understood except insofar as they reflect Bill Gates's execution of
+his one and only responsibility.
+                    
+It follows that if Microsoft sells goods that are aesthetically
+unappealing, or that don't work very well, it does not mean that they
+are (respectively) philistines or half-wits. It is because Microsoft's
+excellent management has figured out that they can make more money for
+their stockholders by releasing stuff with obvious, known imperfections
+than they can by making it beautiful or bug-free. This is annoying,
+but (in the end) not half so annoying as watching Apple inscrutably and
+relentlessly destroy itself.
+                    
+Hostility towards Microsoft is not difficult to find on the Net,
+h"Q 
+$b{v
+LXp&
+(0$R/
+z	"Oq
+/x'V
+: 1/?
+<+SrI$
+and it blends two strains: resentful people who feel Microsoft is
+too powerful, and disdainful people who think it's tacky. This is all
+strongly reminiscent of the heyday of Communism and Socialism, when the
+bourgeoisie were hated from both ends: by the proles, because they had
+all the money, and by the intelligentsia, because of their tendency to
+spend it on lawn ornaments. Microsoft is the very embodiment of modern
+high-tech prosperity--it is, in a word, bourgeois--and so it attracts
+all of the same gripes.
+                    
+The opening "splash screen" for Microsoft Word 6.0 summed it up pretty
+neatly: when you started up the program you were treated to a picture of
+an expensive enamel pen lying across a couple of sheets of fancy-looking
+handmade writing paper. It was obviously a bid to make the software look
+classy, and it might have worked for some, but it failed for me, because
+the pen was a ballpoint, and I'm a fountain pen man. If Apple had done
+it, they would've used a Mont Blanc fountain pen, or maybe a Chinese
+ecr}
+PWus
+=	w-
+/x'V
+: 1/?
+J5$lo
+Yunt
+calligraphy brush. And I doubt that this was an accident. Recently I
+spent a while re-installing Windows NT on one of my home computers,
+and many times had to double-click on the "Control Panel" icon. For
+reasons that are difficult to fathom, this icon consists of a picture of
+a clawhammer and a chisel or screwdriver resting on top of a file folder.
+                    
+These aesthetic gaffes give one an almost uncontrollable urge to make fun
+of Microsoft, but again, it is all beside the point--if Microsoft had done
+focus group testing of possible alternative graphics, they probably would
+have found that the average mid-level office worker associated fountain
+pens with effete upper management toffs and was more comfortable with
+ballpoints. Likewise, the regular guys, the balding dads of the world who
+probably bear the brunt of setting up and maintaining home computers,
+can probably relate better to a picture of a clawhammer--while perhaps
+harboring fantasies of taking a real one to their balky computers.
+                    
+' d}{
+.5lS
+Sfm_$@
+0^w;
+P:sW,E/?
+a1>np
+/x'V
+: 1/?
+This is the only way I can explain certain peculiar facts about the
+current market for operating systems, such as that ninety percent of
+all customers continue to buy station wagons off the Microsoft lot while
+free tanks are there for the taking, right across the street.
+                    
+A string of ones and zeroes was not a difficult thing for Bill Gates
+to distribute, one he'd thought of the idea. The hard part was selling
+it--reassuring customers that they were actually getting something in
+return for their money.
+                    
+Anyone who has ever bought a piece of software in a store has had the
+curiously deflating experience of taking the bright shrink-wrapped box
+home, tearing it open, finding that it's 95 percent air, throwing away
+all the little cards, party favors, and bits of trash, and loading the
+disk into the computer. The end result (after you've lost the disk) is
+nothing except some images on a computer screen, and some capabilities
+mF*@T
+ {GV
+/x'V
+: 1/?
+_5bU
+that weren't there before. Sometimes you don't even have that--you
+have a string of error messages instead. But your money is definitely
+gone. Now we are almost accustomed to this, but twenty years ago it was
+a very dicey business proposition. Bill Gates made it work anyway. He
+didn't make it work by selling the best software or offering the cheapest
+price. Instead he somehow got people to believe that they were receiving
+something in exchange for their money.
+                    
+The streets of every city in the world are filled with those hulking,
+rattling station wagons. Anyone who doesn't own one feels a little weird,
+and wonders, in spite of himself, whether it might not be time to cease
+resistance and buy one; anyone who does, feels confident that he has
+acquired some meaningful possession, even on those days when the vehicle
+is up on a lift in an auto repair shop.
+                    
+All of this is perfectly congruent with membership in the bourgeoisie,
+>uYX
+Uhu`
+3=w#
+/x'V
+: 1/?
+which is as much a mental, as a material state. And it explains why
+Microsoft is regularly attacked, on the Net, from both sides. People who
+are inclined to feel poor and oppressed construe everything Microsoft does
+as some sinister Orwellian plot. People who like to think of themselves
+as intelligent and informed technology users are driven crazy by the
+clunkiness of Windows.
+                    
+Nothing is more annoying to sophisticated people to see someone who
+is rich enough to know better being tacky--unless it is to realize,
+a moment later, that they probably know they are tacky and they simply
+don't care and they are going to go on being tacky, and rich, and happy,
+forever. Microsoft therefore bears the same relationship to the Silicon
+Valley elite as the Beverly Hillbillies did to their fussy banker,
+Mr. Drysdale--who is irritated not so much by the fact that the Clampetts
+moved to his neighborhood as by the knowledge that, when Jethro is seventy
+years old, he's still going to be talking like a hillbilly and wearing
+nt:"
+YD_}j
+7~s)*[P
+/x'V
+: 1/?
+^s2S
+bib overalls, and he's still going to be a lot richer than Mr. Drysdale.
+                    
+Even the hardware that Windows ran on, when compared to the machines put
+out by Apple, looked like white-trash stuff, and still mostly does. The
+reason was that Apple was and is a hardware company, while Microsoft was
+and is a software company. Apple therefore had a monopoly on hardware that
+could run MacOS, whereas Windows-compatible hardware came out of a free
+market. The free market seems to have decided that people will not pay
+for cool-looking computers; PC hardware makers who hire designers to make
+their stuff look distinctive get their clocks cleaned by Taiwanese clone
+makers punching out boxes that look as if they belong on cinderblocks
+in front of someone's trailer. But Apple could make their hardware as
+pretty as they wanted to and simply pass the higher prices on to their
+besotted consumers, like me. Only last week (I am writing this sentence
+in early Jan. 1999) the technology sections of all the newspapers were
+]cpH|
+G= z
+:qQdy
+/x'V
+: 1/?
+ CK-#9
+filled with adulatory press coverage of how Apple had released the iMac
+in several happenin' new colors like Blueberry and Tangerine.
+                    
+Apple has always insisted on having a hardware monopoly, except for a
+brief period in the mid-1990s when they allowed clone-makers to compete
+with them, before subsequently putting them out of business. Macintosh
+hardware was, consequently, expensive. You didn't open it up and fool
+around with it because doing so would void the warranty. In fact the first
+Mac was specifically designed to be difficult to open--you needed a kit of
+exotic tools, which you could buy through little ads that began to appear
+in the back pages of magazines a few months after the Mac came out on the
+market. These ads always had a certain disreputable air about them, like
+pitches for lock-picking tools in the backs of lurid detective magazines.
+                    
+This monopolistic policy can be explained in at least three different
+ways.               
+                    
+`[X!
+/x'V
+: 1/?
+THE CHARITABLE EXPLANATION is that the hardware monopoly policy reflected
+a drive on Apple's part to provide a seamless, unified blending
+of hardware, operating system, and software. There is something to
+this. It is hard enough to make an OS that works well on one specific
+piece of hardware, designed and tested by engineers who work down the
+hallway from you, in the same company. Making an OS to work on arbitrary
+pieces of hardware, cranked out by rabidly entrepeneurial clonemakers
+on the other side of the International Date Line, is very difficult,
+and accounts for much of the troubles people have using Windows.
+                    
+THE FINANCIAL EXPLANATION is that Apple, unlike Microsoft, is and always
+has been a hardware company. It simply depends on revenue from selling
+hardware, and cannot exist without it.
+                    
+THE NOT-SO-CHARITABLE EXPLANATION has to do with Apple's corporate
+culture, which is rooted in Bay Area Baby Boomdom.
+                    
+}vY]
+Yw_8
+3@/O
+/x'V
+: 1/?
+eo<$
+Now, since I'm going to talk for a moment about culture, full disclosure
+is probably in order, to protect myself against allegations of conflict
+of interest and ethical turpitude: (1) Geographically I am a Seattleite,
+of a Saturnine temperament, and inclined to take a sour view of the
+Dionysian Bay Area, just as they tend to be annoyed and appalled by
+us. (2) Chronologically I am a post-Baby Boomer. I feel that way,
+at least, because I never experienced the fun and exciting parts of
+the whole Boomer scene--just spent a lot of time dutifully chuckling
+at Boomers' maddeningly pointless anecdotes about just how stoned they
+got on various occasions, and politely fielding their assertions about
+how great their music was. But even from this remove it was possible to
+glean certain patterns, and one that recurred as regularly as an urban
+legend was the one about how someone would move into a commune populated
+by sandal-wearing, peace-sign flashing flower children, and eventually
+discover that, underneath this facade, the guys who ran it were actually
+{Mc	
+]znq
+%|Ia
+1Bim?
+d#p97
+/x'V
+: 1/?
+GW1W
+control freaks; and that, as living in a commune, where much lip service
+was paid to ideals of peace, love and harmony, had deprived them of
+normal, socially approved outlets for their control-freakdom, it tended
+to come out in other, invariably more sinister, ways.
+                    
+Applying this to the case of Apple Computer will be left as an exercise
+for the reader, and not a very difficult exercise.
+                    
+It is a bit unsettling, at first, to think of Apple as a control freak,
+because it is completely at odds with their corporate image. Weren't
+these the guys who aired the famous Super Bowl ads showing suited,
+blindfolded executives marching like lemmings off a cliff? Isn't this
+the company that even now runs ads picturing the Dalai Lama (except in
+Hong Kong) and Einstein and other offbeat rebels?
+                    
+It is indeed the same company, and the fact that they have been able to
+plant this image of themselves as creative and rebellious free-thinkers in
+I-(y:
+MZEE[ cyX!W
+cI",
+`@k9
+/x'V
+: 1/?
+*nBn
+the minds of so many intelligent and media-hardened skeptics really gives
+one pause. It is testimony to the insidious power of expensive slick ad
+campaigns and, perhaps, to a certain amount of wishful thinking in the
+minds of people who fall for them. It also raises the question of why
+Microsoft is so bad at PR, when the history of Apple demonstrates that,
+by writing large checks to good ad agencies, you can plant a corporate
+image in the minds of intelligent people that is completely at odds with
+reality. (The answer, for people who don't like Damoclean questions,
+is that since Microsoft has won the hearts and minds of the silent
+majority--the bourgeoisie--they don't give a damn about having a slick
+image, any more then Dick Nixon did. "I want to believe,"--the mantra
+that Fox Mulder has pinned to his office wall in The X-Files--applies
+in different ways to these two companies; Mac partisans want to believe
+in the image of Apple purveyed in those ads, and in the notion that Macs
+are somehow fundamentally different from other computers, while Windows
+0>&w
+sn[{
+}"=5
+/x'V
+: 1/?
+RQJ7J
+people want to believe that they are getting something for their money,
+engaging in a respectable business transaction).
+                    
+In any event, as of 1987, both MacOS and Windows were out on the market,
+running on hardware platforms that were radically different from each
+other--not only in the sense that MacOS used Motorola CPU chips while
+Windows used Intel, but in the sense--then overlooked, but in the long
+run, vastly more significant--that the Apple hardware business was a
+rigid monopoly and the Windows side was a churning free-for-all.
+                    
+But the full ramifications of this did not become clear until very
+recently--in fact, they are still unfolding, in remarkably strange ways,
+as I'll explain when we get to Linux. The upshot is that millions of
+people got accustomed to using GUIs in one form or another. By doing so,
+they made Apple/Microsoft a lot of money. The fortunes of many people
+have become bound up with the ability of these companies to continue
+(YP|
+{v@h$\
+ewM.<
+Nj"?
+/x'V
+: 1/?
+selling products whose salability is very much open to question.
+                    
+                    
+/x'V
+: 1/?

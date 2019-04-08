@@ -1,0 +1,24 @@
+To automatically extract somes files from blockchains you can use:
+
+$ hachoir-subfile --category=image,video,audio,container,archive,misc blkexample.dat .
+
+I just did a quick run on an incomplete copy of Namecoin's blk00003.dat and got all these files:
+
+http://gateway.glop.me/ipfs/QmQhgUeYWGVwknopf84ELiaDjCGyoSpMQmjMP8nP6n8ci4/nameblk3.7z.001
+http://gateway.glop.me/ipfs/QmQAaVM15NDUCvHiytHXpXb8d1rtVVzaTRbJB3YUNurZHY/nameblk3.7z.002
+http://gateway.glop.me/ipfs/Qmbt3REqKF4XrfG2jKS3aG5cvG7zRi8Ft8PNCyMTQmzk1k/nameblk3.7z.003
+https://a.pomf.cat/kjmhdz.7z
+
+You can run those exe files in the zip folders by using $ dosbox. 
+
+I tried it on Bitcoin's blk00052.blk and it correctly found the beginning of Cablegate.7z. It also found some images but I was not able to save them. If someone could run it on all the blk*dat for Bitcoin, Namecoin, Litecoin and Dogecoin (has a big spike on Oct 16) and then post the results somewhere, that would be very helpful. We will do it eventually but it will take a very long time. Note that this process is done extremely quickly on a normal computer and requires practically no expertise.
+
+For anyone interested in getting most of the simple files out of blockchains, simply start by using:
+
+$ hachoir-subfile --category=image,video,audio,container,archive,misc blkexample.dat .
+$ binwalk --dd='.*' blkexample.dat .
+$ strings -n 7 blkexample.dat > examplestrings.txt
+
+This will give you a good idea of where the obvious files are and then you can use the information to get the rest. 
+
+If you want to help, reply here with any findings. Otherwise, we will do everything we can to post all the results but again, it will be a very slow process. It took us hours to send this message. Hopefully it helps someone.

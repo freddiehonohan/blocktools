@@ -1,0 +1,162 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256        
+                    
+This is my standard consulting agreement, drafted by Addison Cameron-Huff
+<addison@cameronhuff.com> Feel free to use/distribute this as you see fit.
+                    
+                    
+Consulting Agreement
+====================
+                    
+Parties             
+=======             
+                    
+The parties to this agreement are <FIXME> (
+Client
+) and <FIXME>
+Contractor
+                    
+                    
+Services            
+========            
+                    
+Contractor will provide the services described in Schedule 1 (titled 
+Services
+to be Provided
+                    
+                    
+Payment             
+=======             
+                    
+Contractor will be paid according to Schedule 2 (titled 
+Compensation
+                    
+                    
+License & Ownership of Work
+===========================
+                    
+|BGF
+dS#6G[
+KPsS
+Client is hereby granted a non-exclusive, worldwide license to use, distribute,
+reproduce and modify the copyrighted works produced pursuant to this contract.
+This license may be assigned or sub-licensed by Client.
+                    
+Client agrees that Contractor will own all of the intellectual property (viz.
+copyright) created in the process of carrying out this agreement.
+                    
+                    
+No Confidentiality  
+==================  
+                    
+Client agrees that Contractor (and its employees, officers and directors) have
+no obligations regarding the confidentiality of information disclosed by, or
+work done for, Client.
+                    
+                    
+No Patent Covenant  
+==================  
+                    
+Contractor strongly believes that software should not to be patented. Client
+agrees not to patent any invention that includes work or ideas supplied by
+Contractor. Client further agrees to pay $25,000 if it breaches this covenant.
+mO5i
+&RE;
+dS#6G[
+KPsS
+Similarly, Contractor agrees not to seek patent protection for any inventions
+that emanate from this contract.
+                    
+                    
+Limitation of Liability
+=======================
+                    
+Contractor
+s liability for any act or omission related to this agreement shall
+be limited to the lesser of $5000 or the amount billed by Contractor in the six
+month period preceding the notice of claim.
+                    
+                    
+Indemnity           
+=========           
+                    
+Client agrees to indemnify Contractor (and its employees, directors and
+officers) against any third party actions that relate to this agreement (and
+work performed pursuant to it) and cover any legal fees incurred defending
+against such actions.
+                    
+                    
+Termination & Survival
+======================
+                    
+This contract may be terminated by either party upon 15 days notice. The
+dS#6G[
+KPsS
+clauses titled 
+No Confidentiality
+No Patent Covenant
+Limitation of
+Liability
+ and 
+Indemnity
+ are intended to survive such termination.
+                    
+                    
+Waiver              
+======              
+                    
+Any purported waiver shall only be effective if in writing and signed by both
+parties.            
+                    
+                    
+Choice of Forum & Governing Law
+===============================
+                    
+Client agrees that the forum for any dispute shall be either Mississauga or
+Toronto (Ontario, Canada). The parties agree that the laws of Ontario, Canada
+shall be used to resolve any dispute.
+                    
+                    
+Entire Agreement    
+================    
+                    
+This agreement is the entire agreement between the parties with respect to the
+services to be rendered by the Contractor and supersedes any other
+understandings.     
+                    
+                    
+9/tvk
+dS#6G[
+KPsS
+Signatures          
+==========          
+                    
+This agreement may be signed electronically.
+                    
+                    
+Schedule 1: Services to be Provided
+===================================
+                    
+Contractor shall provide computer programming and analysis services.
+                    
+                    
+Schedule 2: Compensation
+========================
+                    
+Contractor shall be paid $FIXME per hour.
+                    
+Payment is due upon invoicing.
+                    
+-----BEGIN PGP SIGNATURE-----
+                    
+iQGrBAEBCACVBQJVRq8XXhSAAAAAABUAQGJsb2NraGFzaEBiaXRjb2luLm9yZzAw
+MDAwMDAwMDAwMDAwMDAwZTc5ODBhYWI5YzA5NmM0NmU3ZjM0YzQzYTY2MWM1Y2Iy
+ZWE3MTUyNWViYjhhZjcvFIAAAAAAFQARcGthLWFkZHJlc3NAZ251cGcub3JncGV0
+ZUBwZXRlcnRvZC5vcmcACgkQwIXyHOf0udyqhQf/VkPXbAqQc8oKBAnih667OaFq
+UZHVbfTVhzQzgvoFpLR+3ws/MI+V/O7lkS2BruJu8q8G+udLTl2J2EyX9y2M+YEp
+3/kqalfTUyIsVTZLuGFPSaPRNRWMAYCU4yNcscxG97xuiJcNLG4A0UNIn2/ilGDA
+y6H3V2P/43+eDlySzMmbGiPxvZb+0sVea8LucuK1ldvE98R2dndts1wdgFMGNO3/
+oW4qP/34wc61GfsxoFrwA8Wd7V9BfmOochKylOb0QxIKKMSbGAvNh/Azwkf9hRUz
+GXn27K9uV7uXbn2rM9OwJPuWcqrHrCu/0VqD9//p5/aMw3+r7hYfSJ/0ROyYgQ==
+=yVjf               
+-----END PGP SIGNATURE-----

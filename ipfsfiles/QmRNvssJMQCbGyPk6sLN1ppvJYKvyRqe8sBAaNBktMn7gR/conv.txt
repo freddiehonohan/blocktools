@@ -1,0 +1,1424 @@
+
+ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBOGWpqoVnJ0IrKARDDrSKbdoyCQonG+fAUX8XNhgO7VTkUfOAnqByVh6xG1RfzNI1UiE3AG3lv3cB2Pyz43cRzc=
+21:05 < warren> hah.  my server can't do ecdsa
+"*g0*
+_{)nq5
+oChA
+21:05 < gmaxwell> ^ thats part of the point for him in changing out openssl!
+21:05 < warren> exactly
+21:05 < sipa> ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAxs4zxmvGrtdtzCFrEyVhaxj/nB29TrcExZzqLhb8pZK+7zl3njGUbVNf3HZ3EgTVDyfSZsw44qNIwAg4XeWllIy/h8bdLZoUgd53Y1J3vJu+CNwZqw+4lKZG7Wj2bzSD+DM/GmreEbqtDuFLG5gnO8FKssSuopWEzkSiA+8HXYOsRd9b3PdmwVJbGdULd5HKPe8wtWD1GLBag5rwOh6UiSZdD1zXvPNCOLPRs1tk64bmJ1ntHckEp4MiZxvTE1tahldd4OG5uEsnOW7+T89hBtE7RPEe6B2Te62Evw16RqI/QCh0Jr6XWz1So0oTsAO+rQ3opE2SkNUl0kwx1XbUew==
+21:06 < warren> well, i tried to rebuild Fedora 18's openssl with ecdsa yesterday.  It needs patching to actually build.  jgarzik said he gave up on it.
+21:06 < gmaxwell> really? ... weird! did you replace the tarball?
+21:07 < warren> yes 
+21:07 < warren> it's all the fedora patches on top of it that complicate it
+21:07 < sipa> do you need those patches?
+21:07 < warren> probably not.  I haven't tried removing them all yet.
+QH,I
+O.u4M
+YB]Hgo
+21:07 < gmaxwell> The procedure is to replace the openssl tarball with the matching one from the site (the one fedora gives is gutted), comment out the patch in the spec, and then remove the no-ecdsa stuff in the configure line.
+21:08 < gmaxwell> I just did the latest F17 ones the other day without issue. I don't yet have a F18 host so I haven't tried that.
+21:08 < warren> Yeah, it bombs out with missing references to ecdsa stuff from fipscanister.o
+21:08 < warren> F18 has a rebased openssl
+21:08 < gmaxwell> :-/
+21:08 < jgarzik> gmaxwell, not that easy anymore.  Now makefiles require patching
+21:09 < warren> jgarzik: you switched to Ubuntu now? =)
+21:09 < jgarzik> that plus EFI #fail forced me onto Ubuntu
+21:09 < jgarzik> :( 
+21:09 < warren> =(  
+21:09 < warren> I wonder how many users/developers bitcoin lost in these past years over this.
+w67{V
+l9>Y
+17:56 < gmaxwell> I had an ex-gf that went through two years of having a damn hard time getting hired. Then she'd been working for a place as a contractor for some time, and they wanted to bring her on full time
+ when they checked her references, the national drug store chain she worked for for four years, told them that she had only showed up for work for two days and
+then no showed
+  ... turned out that there had been someone else in another state wit
+17:56 < sipa> another state wit[...]
+17:56 < gmaxwell> with the same name.
+17:57 < sipa> hint: /script load splitlong.pl
+17:57 < gmaxwell> so anytime a prospective employer checked her references they got told that her biggest block of employement on her resume was a lie.
+17:57 < sipa> right...
+17:57 < gmaxwell> Thanks, dunno how that got unloaded.
+17:57 < petertodd> sheesh, you can see why in some places the law is such that all companies really can do is confirm that you worked there
+17:58 < petertodd> though that has it's own problems...
+[ 7;.
+&7Cj
+ 9X7^{3
+17:58 < gmaxwell> petertodd: normally you'd consider confirming duration to be pretty safe. It really sucks that this caused her problems for _years_ and we had no idea.
+17:59 < gmaxwell> in any case, all kinds of boring ways for things to go wrong, so it pays to find out why if you can.
+18:00 < jgarzik> gmaxwell, that's pretty smart RE Dwolla response, btw, done ;p
+18:02 < petertodd> gmaxwell: Kinda reminds me of how when my brother applied to join the air force, they lost his application, but the record of him applying was in their system, so every time he called to ask how it was going they said it was still in processing...
+18:03 < petertodd> gmaxwell: He worked at a call center at the time, and he spent his whole lunch hour every day for about two months calling them over and over again until finally they got annoyed enough that they asked the actual processing department, who of course said they had never got it.
+18:04 < sipa> i've been told about cases where the recruiter who was supposed to tell a candidate about the outcome of their job application, had left the company
+&7Cj
+p}%t
+18:04 < petertodd> human systems often have remarkably bad error handling...
+18:05 < petertodd> sheesh
+18:06 < petertodd> I actually had the opposite of that happen to me kinda: I got hired to be the electronics lab night shift monitor at uni, and somehow no-one ever told my boss I had been hired, and being night shift I never had any interactions with him...
+18:06 < sipa> so some day: "who are you?
+18:06 < petertodd> exactly!
+18:07 < petertodd> it also made very clear how people had been stealing thousands of dollars from payroll through fake time sheets...
+18:36 < jgarzik> "Please enter the address that can be found on your current photo ID"
+18:36  * jgarzik just moved and got a new photo ID
+  that might be possible cause (c)
+18:37 < jgarzik> The System wants my old address
+18:37 < jgarzik> perhaps
+18:39 < Luke-Jr> wtf is NEL?
+--- Log closed Wed Aug 14 00:00:47 2013
+--- Log opened Wed Aug 14 00:00:47 2013
+&7Cj
+HD#0J
+4)%\z
+NGt=c,
+--- Log closed Thu Aug 15 00:00:53 2013
+--- Log opened Thu Aug 15 00:00:53 2013
+09:50 < realazthat> http://www.scipr-lab.org/
+09:50 < realazthat> SCIP website is up
+09:50 < realazthat> and I am still working on LLVM backend
+13:41 < gmaxwell> realazthat: their site is broken on IPv6. :P
+13:41 < petertodd> gmaxwell: ? worked for me
+13:43 < realazthat> heh dunno
+14:37 < gmaxwell> realazthat: oh, so the proofs are smaller in this final version of the paper than I'd thought from the draft.
+14:37 < gmaxwell> They are saying the proofs are 2576 bits for 80 bit security.
+14:38 < realazthat> mmm
+14:38 < petertodd> that's pretty small!
+14:38 < realazthat> that is good then
+14:41 < gmaxwell> yea, it's 12 group elements, but they are G1 elements which are 184 bits. (I think I'd figured the size I'd concluded from them based on their G2 elements or something)
+14:50 < gmaxwell> the keys are larger, of course.
+&7Cj
+\>}EY
+ _f7
+c7M	o^#(
+14:52 < gmaxwell> I'm not actually sure how big they are,  they say n+2 G1 elements, plus 6 G2 elements  (184 bits for g1 elements, 550 bits for g2 elements)
+14:52 < petertodd> so what's a group element mean?
+14:53 < gmaxwell> EC points.
+14:54 < petertodd> huh, how does that work?
+14:56 < gmaxwell> but I'm not clear what N is there, they give an example with a computation which is 1105 instructions takes 11,001 steps and the verification key is 9 G1s + 6 G2s or around 5000 bits.
+14:58 < gmaxwell> petertodd: I'd tell you to read the paper, which you should. But really you have to read all the papers it cites and all the papers they cite several levels back.  But basically it amounts to the proofs being proofs of arithemetic circut satisfyability over a special EC field constructed to make the computation tractable.
+15:00 < gmaxwell> In any case, the paper on the site is intended to give you an engineering view of the system.
+15:00 < gmaxwell> It's not perfect for that purpose, but you should actually read it.
+15:04 < petertodd> will do then
+15:04  * petertodd shouldn't have gone to art school
+15:05 < petertodd> Sounds like it's one of those things where a "simple explanation" just doesn't cut it yet. :)
+19:28 < gmaxwell> petertodd: they didn't teach abstract algebra in art school?
+19:33 < petertodd> gmaxwell: yes, but it's called post-modernism there
+H1k9
+&7Cj
+19:33 < petertodd> also, there's only one thing to learn really: bottom == post-modern
+20:09 < gmaxwell> Luke-Jr: you might want to look at their tinyram spec, http://www.scipr-lab.org/system/files/TinyRAM-spec-0.991.pdf  since you have some interest in emulators and such.
+20:37 < gmaxwell> ah the n+2 is the number of words in the public input to the verification program.
+--- Log closed Fri Aug 16 00:00:59 2013
+--- Log opened Fri Aug 16 00:00:59 2013
+21:33 < gmaxwell> So, we've mused about how SCIP could give us provable checkpoints, well except for the fact that the program execution for validation of the blockchain is currently not pratical with existant systems.
+21:34 < gmaxwell> Consider this
+ the SCIP validator is pretty fast, within the general order of magnitude of what we could have in a block (it's perhaps as expensive as 1000 checksigs).  You could send txouts to a proof verification key.  Okay nothing amazing here other than giving you superpowered scripts.
+21:35 < gmaxwell> Except the proof verification key could actualy be validing a long chain of off chain transactions, potentially transactions in another blockchain, and then returning the output values to bitcoin.
+21:36 < gmaxwell> so this is kind of like zero coin, except you could have long chains of transactions hidden under the proof.
+c58]
+&7Cj
+D	%F~
+21:40 < gmaxwell> e.g. I could pay 1 BTC to alice, under plus an anti-reply timestamper oracle which prevents replaying an ID number but is otherwise blind to the txn. And then alice could pay to bob (and get timestamped). and bob could pay to charley.  And then charlie could take this transcript (the ecdsa validation and the timestamps that prove no double spends), run
+the SCIP prover on the transcript,  and recover the bitcoin.
+21:42 < gmaxwell> It's zero knoweldge (the transcript is aux input), so the public doesn't learn anything about the chain of transactions... and also has the benefit of compressing a potentially long transaction history into a single result.
+21:48 < gmaxwell> or you could replace the timestamper oracle with SPV proof on another blockchain. Your bitcoin becomes a colored litecoin satoshi, you make a bunch of plain litecoin transactions, and then assemble a bunch of litcoin SPV proofs, and a number of additional headers, prove it, and the bitcoin reemerges in bitcoin.
+&7Cj
+21:49 < gmaxwell> (e.g. what some people have proposed doing for cross chain transactions, but compressing all that data under SCIP to avoid sticking hundreds of kilobytes of data into the global blockchain)
+21:50 < gmaxwell> So whereas ZC creates scaling concerns in exchange for improved fungibility, this thing solves scaling concerns and improves fungibility as a side effect.
+21:54 < gmaxwell> One challenge is that the upper limit of input size and computation for SCIP must be established when computing the verifcation key. So the colored coin thing would be a bit weird because you could only go so many hops before you could no longer recover the coin.
+23:15 < jgarzik> petertodd, The first SIN software has appeared,
+23:15 < jgarzik> https://github.com/gasteve/node-libcoin
+23:15 < jgarzik> SIN.js makes a bitcoin-address-like thingy, according to protocol spec
+&7Cj
+23:15 < jgarzik> SINKey.js generates an EC key for use w/ SIN
+23:16 < jgarzik> This, therefore, is the original SIN,
+23:16 < jgarzik> jgarzik@pum:~/node_modules/libcoin$ node sin-test.js
+23:16 < jgarzik> { created: 1376709207,
+23:16 < jgarzik>   priv: 'bc65f94b4142be3c6c0b02b33dab3775a829fc1f60e484e7d4ea64e2f421cdc4',
+23:16 < jgarzik>   pub: '029381bcb36358e58842431981a01742d494970a245c8f5c77874bbbde8fb25a9b',
+23:16 < jgarzik>   sin: 'je9eFspuTC29yhUqGqzEYwWmVTJRS9nWEkA' }
+--- Log closed Sat Aug 17 00:00:08 2013
+--- Log opened Sat Aug 17 00:00:08 2013
+01:14 < jgarzik> or, perhaps, after some shed-painting,
+01:14 < jgarzik>  { created: 1376715876,
+01:14 < jgarzik>         priv: 'db25473a599ad99db89616da536be066ea58825a6cd9b17e90b70b824e0daea6',
+01:14 < jgarzik>         pub: '0346891919f18000be1c9aae381b93870f7dcf807c4f581e2b64dcd547342f70b8',
+01:14 < jgarzik>         sin: 'Tf86BqNWrnyn117U7N7Vc1sAUfKc2esd4z3' },
+01:15 < jgarzik> petertodd, changed the base58-encoded prefix to 0x0F
+&7Cj
+ ZSAXE
+01:39 < jgarzik> https://en.bitcoin.it/wiki/Identity_protocol_v1
+21:17 < realazthat> mmm cool
+21:17 < realazthat> I am still working on TinyRam backend for LLVM
+21:17 < realazthat> making an LLVM backend is annoyingly hard
+21:17 < realazthat> even though TinyRam is simple
+--- Log closed Sun Aug 18 00:00:14 2013
+--- Log opened Sun Aug 18 00:00:14 2013
+23:15 < amiller> i ran into ben laurie finally
+&7Cj
+ eZD
+<)7U
+F?m:
+00:31 < realazthat> 2. how many competitors will split the money with you? A: only way to know is to look at the current power directed at this problem
+00:31 < realazthat> ie. look at the power beforehand
+00:32 < realazthat> gmaxwell's idea is implemented some version of this type of market will happen
+00:32 < realazthat> they might use some other incentive, a more stable/predicted one than I suggested
+00:32 < amiller> okay so
+00:32 < amiller> how do you look at the power directed
+00:32 < realazthat> regardless of mining ideas
+00:32 < amiller> this is a big thing i'm interested in with bitcoin
+00:32 < amiller> is more realtime info about how hash power is  allocated
+00:32 < realazthat> you look at the last time this program was offered as a job,
+00:33 < amiller> right now you get one sample every 10 minutes
+00:33 < realazthat> and you see how many people split the money
+00:33 < amiller> are the programs offered according to a fixed schedule
+00:33 < amiller> that could help sure
+iD-^K 8e
+^.LI
+ V]@D
+00:33 < realazthat> lets say .. yes
+00:33 < amiller> okay
+00:33 < amiller> the program could always be split into smaller parts
+00:33 < amiller> and those parts would be individually payable
+00:33 < amiller> the finer grain you split it the more reliable the estimates are
+00:33 < amiller> same with bitcoin mining, it's why people join pools
+00:33 < realazthat> yes
+00:34 < amiller> the only reason not to split it super fine grain is because of communication overhead
+00:34 < realazthat> oh well wrt pools, I had some ideas of trying to support pools as a first class citizen
+00:34 < amiller> but other than that the finer you make it the more painless it is for everyone involved
+00:34 < realazthat> yeah
+00:35 < realazthat> a better solution to making multiple workers do the same job maybe
+00:35 < realazthat> hmmm
+00:36 < realazthat> ok what about a legit lottery
+00:36 < realazthat> this would cloud the chain with a ton of txs perhaps
+^.LI
++! E
+00:36 < realazthat> but lets go with this a sec
+00:36 < amiller> sure
+00:36 < realazthat> in order to take a job,
+00:36 < realazthat> you have to give a certain amount of btc
+00:36 < realazthat> to the pool
+00:36 < realazthat> lol mixing a lot of concepts here
+00:37 < realazthat> ok
+00:37 < realazthat> lets also fix jobs to a T
+00:37 < realazthat> so that we know the size at an interval
+00:37 < realazthat> and everything happens in intervals
+00:38 < realazthat> ok so the only reason to actually have "mining" in such a market,
+00:38 < realazthat> is to introduce new coins
+00:38 < realazthat> because,
+00:38 < realazthat> you can really do away with winning coins
+00:39 < realazthat> and just have the winner of the mining lottery (not this new lottery) mint the new block in exchange for the tx fees; and he is chosen by lottery of workers
+00:39 < realazthat> mmm so let me think
+00:39 < realazthat> ok, so here goes
+?kD4
+^.LI
+00:39 < realazthat> lets redo this, forget this lottery concept
+00:40 < realazthat> 1. units of work are offered
+00:40 < realazthat> 2. workers choose their units of work and complete them
+00:40 < realazthat> 1.a assume all the units take ~10 mins or less
+00:42 < realazthat> 3. worker results in an answer R + sig(R,P)
+00:42 < realazthat> if H(sig(R,P) + R + B) < difficulty, then the worker wins
+00:42 < realazthat> and mints the coins
+00:43 < realazthat> in addition
+00:43 < realazthat> all those who worked get half the winnings
+00:43 < realazthat> split among them all
+00:43 < realazthat> now only issue is, bluff posts of work
+00:43 < realazthat> it needs to cost to post work
+00:46 < realazthat> so that is easily solvable I think
+00:47 < realazthat> workers who finish ontime split the post for their program at the end of the block; if they completed on before the winner
+00:47 < realazthat> so it is a bit risky
+^.LI
+B |EV
+bu],I
+00:47 < realazthat> you automatically get more money than regular bitcoin chain
+00:47 < realazthat> because all work is paid for ... but only if you finish the work before the lottery winner
+00:48 < realazthat> otherwise you hung out dry
+00:48 < realazthat> so its a race to finish fast
+00:48 < realazthat> which is good
+00:49 < realazthat> this all assumes that all the programs are very strictly time bound
+00:49 < realazthat> and all must take that long to run
+00:49 < realazthat> upper and lower limit
+00:49 < realazthat> this could be hard
+00:49 < realazthat> I would like to think of adjustment that doesn't require all the different programs to be on interval, in sync
+00:52 < realazthat> mmmk I should add this to my doc
+00:52 < realazthat> these good ideas
+00:52 < realazthat> prolly some big holes still
+01:18 < amiller> eh i don't think any of that made much sense
+01:18 < amiller> will look again tomorrow :o
+01:18 < realazthat> lolk
+01:18 < realazthat> I'll try to write up a doc
+^.LI
+Wu+%-
+'SCV
+01:18 < realazthat> and make it public
+12:17 < realazthat> mmm amiller, you were saying that it is good to be increment/very small jobs, ie. playing the lottery very often
+12:18 < realazthat> why is that an advantage?
+12:19 < amiller> because otherwise there's more uncertainty about how much you'll earn for any amount of work
+12:20 < petertodd> SCIP idea: use it to prove to "SPV" clients for a proof-of-sacrifice based key-value map that a given view of history is in fact the one with the highest total sacrifice
+12:21 < petertodd> If I understand things correctly, this is basically an extension of the idea of using SCIP to generate checkpoint hashes and prove they are correct.
+12:22 < petertodd> Probably impractical given how SCIP is going to need a crowdfunded buy of, like, half of Amazon EC2, but it's an interesting concept none the less.
+12:35 < realazthat> amiller: mm true indeed; I guess my idea for PoW would have to totally change the dynamics of the system, relying on the compute-market to drive computation/incentive
+12:37 < realazthat> petertodd: mmm I don't totally understand the point of sacrifice lol
+12:37 < realazthat> I wasn't following the key-value map ideas
+12:37 < realazthat> in the chan
+12:37 < realazthat> but I'll put in my list
+12:38 < realazthat> but I understand what you mean about application of SCIP here
+^.LI
+h/o7m
+12:39 < realazthat> "probably impractical" - do you mean 'cause SCIP is probably practically slow?
+12:39 < amiller> meh, we'll crowdsource the construction of scip proofs via the PoW
+12:40 < realazthat> mmm but can u trust that
+12:40 < realazthat> er
+12:40 < realazthat> i mean, can you trust a 3rd party construction
+12:41 < realazthat> anyway, eli confirmed that it might be possible to bring down the construction time via bootstrapping
+12:41 < petertodd> realazthat: It's an alternative to proof-of-work basically
+12:41 < petertodd> amiller: Sure, but this is an example where you'll want a lot of these proofs.
+12:41 < amiller> well they build on each other actually
+12:41 < petertodd> Ah, interesting, that may be good enough then.
+12:42 < petertodd> I saw the SCIP talk in San Jose, but I don't pretend to understand much of it.
+12:42 < amiller> so each block contains a proof that the previous block is valid, and given the validity of the previous block, we have an incremental proof that the current block is valid too
+^.LI
+Kv22
+='[9
+12:42 < realazthat> mmm I don't understand the math obviously lol
+12:42 < realazthat> but I think I understand how it would work/ how to use it
+12:42 < amiller> i might be overinterpreting it but i think that is really similar to the proof-carrying-data idea in the bootstrapping paper
+12:43 < realazthat> mmm
+12:43 < amiller> i actually don't think any of eli's stuff itself is so interesting, relative to the recursive SNARK paper
+12:43 < realazthat> the way I posed it to eli,
+12:43 < petertodd> amiller: I think that would work in this case. Basically you'd want to write a program that shows from block n to m the delta changes in the key:value map were whatever.
+12:43 < amiller> right
+12:43 < amiller> really eli's contributions are a) a ton of practical improvements which is great and b) you can simulate 'ram' by using merkle trees
+12:44 < realazthat> mmm
+12:44 < amiller> but at this point we are already used to working out the merkle trees ourselves
+^.LI
+12:44 < amiller> or at least we don't assume we have 'ram', we assume we have k-v stores like leveldb
+12:44 < realazthat> the practical is important though; because the recursive and bootstrapping stuff seems external to the "base" SNARK implementation
+12:44 < realazthat> they can use any implementation, no?
+12:44 < amiller> that's true yeah
+12:44 < amiller> it's SNARK + blockchains and merkle trees basically
+12:44 < realazthat> so I assume that eli would work on that next
+12:45 < petertodd> huh, is there a laymans description of what a SNARK is somewhere?
+12:45 < realazthat> no, the bootstrapping improvement can possibly be applied generically
+12:45 < realazthat> petertodd: he describes it in the talk
+12:45 < realazthat> which one did you watch
+12:45 < realazthat> there are two of them
+12:45 < realazthat> one is very easy
+12:45 < petertodd> realazthat: the san jose one
+12:45 < petertodd> haven't watched the more in-depth one he did at stanford yet
+12:46 < realazthat> mmm yeah
+^.LI
+12:46 < realazthat> that was the easy one
+12:46 < realazthat> er
+12:47 < realazthat> the san jose one was easy to understand IMO
+12:47 < realazthat> its really simple, as a user
+12:47 < petertodd> yeah, even I understood it :P
+12:47 < petertodd> it turned SCIP into a blackbox you could reason about, like hash functions
+12:47 < realazthat> right
+12:47 < realazthat> exactly
+12:48 < amiller> well SNARK is SCIP it's not really any different
+12:48 < realazthat> Alice has a program P, you create an SCIP proof for it, give it to Bob, he runs P, and produces a sig(P), and result
+12:48 < amiller> the difference i think is that SCIP is about RAM computations (using merkle trees) and SNARK is just about circuits
+12:48 < amiller> SCIP is also his name for the whole practical project which includes a gcc compiler
+12:49 < amiller> SNARK is a blackbox
+12:49 < realazthat> a compiler and a vm
+^.LI
+{VP2
+8l^7
+12:27 < jtimon> I thought that maybe the payer could provide the proofs necessary for the SPV recipient to validate them only looking at the current Txin set
+12:28 < jtimon> so the "only first txin goes into the txin set" validation, which is the only validation done, could be enough
+12:28 < jtimon> it is very possible that I'm misunderstanding something
+12:29 < petertodd> right, but remember in that scheme a step back isn't verified by anyone
+12:29 < petertodd> OTOH with scip...
+12:29 < jtimon> sorry what was otoh?
+12:30 < fagmuffinz> gmaxwell, you're full of nuggets
+12:30 < petertodd> I mean, with SCIP you can prove the previous history of the txout followed the rules without providing it
+12:30 < jtimon> on the other hand, ok
+12:31 < jtimon> so you could actually have spv nodes with this minimized central validation
+12:32 < jtimon> the main problem I see is that the TXI set grows forever
+12:32 < jtimon> by "central" I meant in-chain
+12:33 < jtimon> this minimized in-chain validation
+#(L2B
+12:34 < jtimon> if I understand correctly, miners only receive inputs and validate the following:
+12:34 < jtimon> if it is already in TXI, do nothing, otherwise, insert in the TXI tree
+12:35 < jtimon> is that right?
+12:42 < fagmuffinz> Can you guys get me up to speed on hashcash?
+12:42 < fagmuffinz> I'm taking it this is kind of the gauntlet for ideas
+12:45 < fagmuffinz> I'm moving through Zerocoin's paper right now
+12:46 < petertodd> jtimon: right, that the txin set grows forever is a problem that I need to solve in some clever fashion :)
+12:46 < petertodd> jtimon: after all, I mainly wrote that as a "hey! if we do this as yet undiscussed thing we get a system with different properties!"
+12:47 < jtimon> Ihehe
+12:47 < jtimon> I'm not sure I understand the structure of the commited inputs though
+12:47 < _ingsoc> fagmuffinz: Which one?
+12:47 < fagmuffinz> http://zerocoin.org/media/pdf/ZerocoinOakland.pdf
+12:48 < jtimon> miners receive independent inputs with tx_hash, output_id and another hash?
+12:48 < _ingsoc> Ah, right.
+12:48 < fagmuffinz> Figuring out the mechanism still
+12:48 < petertodd> jtimon: well, it's indexed by the txout:n being spent, and miners store the scriptSig + rest of tx hash basically
+12:51 < fagmuffinz> Digital commitments
+12:51 < jtimon> so the final hash lets you identify which inputs go in the same transaction, no?
+12:51 < fagmuffinz> Things I haven't heard of
+12:52 < fagmuffinz> I've written a simulation of Shor's circuit
+12:52 < fagmuffinz> Haven't heard of this
+12:54 < petertodd> jtimon: right, so it's still a totally committed set of hashes, but miners only are ensuring that the chain can't be changed, not what's in the tx's themselves
+12:54 < petertodd> jtimon: and until a txout gets spent, it has no affect on the blockchain at all and no-one but the tx holder knows it exists in any faashion
+6>6t
+I)HC
+w>/0
+NN;m
+12:55 < jtimon> yes, yes, just wanted to make sure I understood the structure
+12:55 < petertodd> you do, I think :P
+12:56 < fagmuffinz> And it's time to spend some more time with zero-knowledge proofs
+12:56 < jtimon> so what about this for the evergrowing TXI-set...
+12:57 < jtimon> in the TXI tree that is hashed each block
+12:58 < jtimon> when you add a new input, you also store a refHeight with the block number in which the input appeared in the chain
+12:58 < jtimon> when the refHeight + X = current block height
+12:59 < jtimon> that input has to be removed from the TXI data structure
+12:59 < jtimon> basically, inputs only stay in the chain for X blocks
+12:59 < jtimon> that could be 100,000,000 blocks, but it's still better than ad infinitum
+13:00 < jtimon> holders just have to move their funds from time to time
+13:01 < jtimon> hmmh, but you only answered half of the fee question...why miners mine in this protocol?
+13:05 < petertodd> jtimon: heh, I don't know all the answeres yet :)
+13:06 < petertodd> jtimon: but I gotta go - I'm at the darkwallet conf right now
+13:06 < jtimon> ok, have fun
+14:06 < maaku> jtimon: the better approach is to construct the TXI tree in such a way that no one needs (random access to) the whole structure
+14:07 < maaku> then it doesn't matter if it grows forever
+14:08 < warren> anyone know how long bitcointalk has been down?
+14:08 < maaku> not more than an hour or two since I was just there
+14:12 < jtimon> maaku, when a miner gets an input, he needs to check wether the input has already been published or not
+14:13 < maaku> jtimon: yes, and the creator of the transaction could provide proof-of-not-inclusion along with the transaction
+14:13 < jtimon> I don't know how can you construct the TXI tree the way you propose and still satisfy that validation rule
+14:13 < maaku> so long as they maintain those proofs, the miner doesn't have to
+sHR/
+14:13 < maaku> BUT, they do need random access to initialize the proofs for their as-yet unspent outputs when the create the transaction
+14:14 < maaku> but they wouldn't if you use a merkle-mountain range
+14:14 < jtimon> I got lost
+14:15 < jtimon> how does the payer provide a non-inclusion proof to the miner?
+14:15 < maaku> the payer provides for each input a path through the input tree showing that the input does not exist yet
+14:16 < maaku> those same paths can be used to insert the input record into the tree, updating the root hash
+14:16 < maaku> so the miner only has to store the root hash
+14:17 < maaku> and the onus is on the payer to maintain the proofs needed to spend
+14:35 < fagmuffinz> I return
+14:37 < maaku> the problem, i believe, is that as presented the payer (or recipiant) has no meaningful control over the hash of the new transaction, and therefore the portion of the tree needed  for the proofs related to the new outputs
+14:37 < maaku> proof-updatable UTXO trees suffer from the same problem
+15:30 < HM2> ah sipa's back
+15:30 < HM2> sipa, not retired yet?
+15:32 < sipa> retired? :o
+15:32 < sipa> maybe when i'm twice my current age or something...
+15:32 < sipa> actually, not even
+15:32 < Luke-Jr> lol
+15:33 < HM2> Oh that's only you're well to do enough to live in to cryogenics :P
+15:34 < HM2> sipa, could you remind me of your variable length integer encoding? I've been regoogling and can't come across it
+15:34 < Luke-Jr> wtf, does *everyone* have their own varint encoding? :o
+15:34 < HM2> Yes, but sipa's is best
+15:35 < sipa> HM2: https://github.com/bitcoin/bitcoin/blob/master/src/serialize.h#L242
+15:37 < HM2> ah that was it
+15:37 < HM2> thanks 
+15:37 < Luke-Jr> why is it in bitcoind src? :o
+15:38 < sipa> the chainstate uses it
+15:38 < sipa> ultraprune started out as an experiment to see how small the chainstate could be encoded as
+15:38 < Luke-Jr> i c
+15:39 < sipa> there are some overkill things in it :)
+r2:h
+15:39 < Luke-Jr> looks nice
+15:39 < Luke-Jr> often I just abuse UTF-8 <.<
+15:39 < Luke-Jr> of course, that's not remotely compact
+15:39 < sipa> it is, for numbers with the right distribution :)
+15:40 < Luke-Jr> sure, but not compared to yours
+15:40 < Luke-Jr> or even protobuf's
+15:40 < sipa> mine is for all intent and purposes the same as protobuf
+15:40 < sipa> in encoding size
+15:40 < sipa> but it's unique
+15:40 < sipa> (and a tiny tiny bit smaller)
+15:41 < Luke-Jr> oh, so you never use 0xff?
+15:41 < Luke-Jr> could extend your range slightly if you did.. ;)
+15:41 < sipa> it is optimal
+15:41  * Luke-Jr looks at it in more detail
+15:41 < sipa> every unique infinite sequence of bytes corresponds to a unique sequence on integers
+15:42 < HM2> you'd have to zigzag encode it for signed ints
+15:42 < HM2> right? 
+15:43 < sipa> yup   
+15:43 < HM2> but that's post/preprocess so not important at all
+15:58 < HM2> hmm    
+15:59 < sipa> i just pushed a change to libsecp256k1 that makes it 1.3x slower :(
+=?MC
+16:06 < Luke-Jr> why?
+16:07 < HM2> sipa, timing leak?
+16:07 < sipa> potential patent
+16:08 < Luke-Jr> sipa: old code in #ifdef? :P
+16:08 < sipa> yes   
+16:10 < Emcy_> who gets sued?
+16:12 < HM2> #ifdef I_ACCEPT_THE_DISCLAIMER
+16:12 < sipa> it's still there, via --use-endomorphism
+16:40 < HM2> sipa, the commends on your serialization code are whack
+16:40 < HM2> https://github.com/bitcoin/bitcoin/blob/master/src/serialize.h#L260
+16:40 < HM2> 128-16511: 2 bytes
+16:40 < HM2> then on line 260
+16:40 < HM2> 16511: [0x80 0xFF 0x7F]
+16:40 < sipa> ha!   
+16:41 < HM2> i thought the code was broke :|
+16:44 < Luke-Jr> sipa: should be --enable-endomorphism :/
+16:44 < Luke-Jr> (and will probably *need* to be to autotools it)
+21:41 < Mike_B> people are panicking over this directory.io thing, i think it's hilarious :)
+22:10 < midnightmagic> Mike_B: Hrm?  directory.io?
+22:10 < pigeons> yeah check it out, funny
+22:11 < midnightmagic> ok
+22:12 < midnightmagic> ha ha ha!
+ ?"A
+22:13 < midnightmagic> "It took a lot of computing power to generate this database."
+22:33 < gmaxwell> Mike_B: lol, link to panic?
+22:34  * gmaxwell adds "it doesn't contain compressed keys! so if you use those you're safe!"
+22:38 < Mike_B> haha
+22:38 < Mike_B> it was mostly irc
+22:39 < Mike_B> this guy tried to calm everyone down on reddit, but did it the wrong way: http://www.reddit.com/r/Bitcoin/comments/1ruk0z/dont_panic_directoryio_thing_is_fake/
+--- Log closed Mon Dec 02 00:00:25 2013
+--- Log opened Mon Dec 02 00:00:25 2013
+00:43 < gmaxwell> so for those who haven't been watching, it appears someone may have used cloudflare's special relationship with a certificate authority to compromise even ssl access to bitcointalk.org.
+00:44 < gmaxwell> There is a CA which will make a cert for any domainname pointed at a cloudflare IP in DNS and give it to cloudflare. So you get a really fast "change domain name" to "intercept SSL invisibly" escilation.
+00:44 < gmaxwell> ISTM it would be pretty easy to reduce the risk of the existing CA infrastrcuture substantially with some help from bitcoin.
+00:44 < BlueMatt> lol, wow
+00:45 < gmaxwell> We could require that all CA's publish lists of all the certs they issue. And the lists get hash commitments in bitcoin. And then sites hand out certs with a proof that they were in the published list.
+ hsPw
+K1UW
+s#-3
+{{N'
+22:47 < gmaxwell> petertodd: I don't know that explicitly supporting that makes sense.. simply because you can just have the trusted hardware produce signed message regardless, even without support.
+22:47 < petertodd> gmaxwell: I'm not sure either yet - strikes me that doing traces + monotonic counters could be very tricky, but it's worth looking into at least.
+22:57 < petertodd> Anyway, I think the interesting part is more that with the model that you build up every part of the language from the forth primatives you make it very, very clear what code is actually being run. Equally, forth is already common in applications, IE spacecraft, where you need relatively bare metal languages with simple frameworks and symantics; note how
+with forth it's much easier to get to the level where you trust that the code being run is what you actually wrote than, say, C.
+22:57 < petertodd> It's fundementally the same math wise as a tonne of other approaches, but forth makes what is going on very explicit.
+22:58 < sipa> petertodd: type this: /script load splitlong.pl
+22:58 < petertodd> ok, I typed rm -rf /, but it doesn't seem to be doing much
+s#-3
+pgTy
+23:00 < petertodd> Anyway, I think the interesting part is more that with the model that you build up every part of the language from the forth primatives you make it very, very clear what code is actually being run. Equally, forth is already common in applications, IE spacecraft, where you need relatively bare metal languages with simple frameworks and symantics; note how
+with forth it's much easier to get to the level where you trust that the ...
+23:00 < petertodd> ... code being run is what you actually wrote than, say, C.
+23:03 < petertodd> The actual implementation can be some tiny and primitive C kernel with static memory layout. Just be clear what the maximum's are for the variou parts of the stack. Dunno yet what the stack datatype should be, MPI's are nice but there is the subtle issue that it'd be good to have some clear idea of how many operations an operation takes. Of course, really
+s#-3
+simple would be 32-bit ints and implement everything higher level in forth.
+23:41 < jgarzik> go go Open Firmware
+23:41 < jgarzik> the BIOS standard that should have won
+23:42 < petertodd> for sure
+23:43 < petertodd> With any luck some OpenFirmware TPM modules will become available and I won't actually make to write any code. :P
+23:45 < jgarzik> OK 
+23:45 < jgarzik> Query results:
+23:45 < jgarzik> Average block summary size: 8858.34
+23:46 < jgarzik> That's block header + (vtx.size() * 32)
+23:46 < jgarzik> does not include coinbase average size
+23:48 < BlueMatt> ok?
+23:49 < jgarzik> That's how big a UDP frame distributing block data would be
+23:49 < sipa> you technically also need 1-3 bytes for the number of transactions
+23:49 < jgarzik> nod
+23:50 < jgarzik> call it 8858 + 4(n_tx) + 512(coinbase)
+23:50 < jgarzik> I imagine 8-16 bytes of overhead would sneak in somewhere
+23:50 < sipa> never 4
+23:50 < BlueMatt> meh, average doesnt matter much since it new blocks are so much bigger than average
+<: iA
+s#-3
+23:51 < sipa> 1,3,5 or 7 :)
+23:51 < sipa> eh, 1,3,5 or 9
+23:51 < sipa> but i doubt any block has over 65535 transactions :D
+23:52 < jgarzik> 8858+3+512+16 == 9389 bytes
+23:52  * jgarzik wonders how much droppage that would cause, given that it is well over size to be fragmented across WAN
+23:53 < jgarzik> To avoid fragmenting, you could only looking at shipping smaller bits of useful data: block header only, small TX's, INV's, addresses perhaps
+--- Log closed Fri Mar 29 00:00:11 2013
+--- Log opened Fri Mar 29 00:00:11 2013
+00:01 < jgarzik> I might just do a wholly separate service, a "UDP beacon"
+00:02 < jgarzik> Clients send a simple message, subscribing to block header (block+tx list?) broadcasts over UDP.  Subscription lasts X seconds, after which, it must be renewed with another UDP request to the beacon server.
+00:02 < jgarzik> Each block triggers a broadcast.
+00:04 < jgarzik> Semi-related: tunneling SCTP over UDP: http://tools.ietf.org/id/draft-ietf-sigtran-sctptunnel-00.txt
+h8MQ
+s#-3
+00:05 < petertodd> jgarzik: ACK on UDP beacon
+00:06 < BlueMatt> jgarzik: sounds like what I would think of udp as
+00:18  * jgarzik retweets a bitcoin block header ;p
+00:19 < petertodd> THAT'S HOW YOU DEFEAT TYRANNY!!!!!
+00:35 < petertodd> jgarzik: re: uint256 for hashes in bitcoinlib, were you just trying to follow the C++ implementation?
+00:35 < jgarzik> petertodd: specific code example / source file line#?
+00:37 < petertodd> COutPoint is an example, where self.hash is deserialized to an integer and back again
+00:39 < jgarzik> petertodd: It is helpful for the few cases where it matters as more than just a binary blob
+00:39 < BlueMatt> how mature is libcoinc?
+00:39 < jgarzik> petertodd: though TBPH, that was inherited from the original ArtForz mini-node
+00:39 < BlueMatt> s/c?/?/
+00:40 < petertodd> jgarzik: Yeah, I was going to change that back to plain bytes instances. Bitcoin has a ton of hashes involved and you're doing a lot of copying there.
+00:40 < petertodd> jgarzik: Makes it easier to build up transaction too in a natural way.
+00:40 < jgarzik> BlueMatt: my libccoin?  Unit tested, not much outside of that.  What it does, should be solid (famous last words).  You are more likely to find some missing pieces here and there.
+00:42 < jgarzik> petertodd: oh yeah, it makes it a lot easier to print ;p
+oFNL
+s#-3
+00:42 < petertodd> jgarzik: For instance with my code you can now do: CScript([OP_DUP, OP_HASH160, pubkeyhash, OP_EQUALVERIFY, OP_CHECKSIG]) and everything works as expected. You need to convert the hash back to bytes if it's an integer.
+00:42 < jgarzik> petertodd: slower, but more pythonic
+00:43 < petertodd> jgarzik: I think we've hit an edge case where "pythonic" can mean two different things. :P
+00:44 < jgarzik> petertodd: pythonic == elegant python source, regardless of how slow under the hood
+00:44  * jgarzik runs
+00:45 < petertodd> jgarzik: Heh, well building up a transation the way you can now is IMO a lot more elegant than the previous CScript() thing.
+00:45 < BlueMatt> what? is that not an accepted definition?
+00:46 < petertodd> BlueMatt: What constitutes 'elegant' isn't clear-cut.
+00:47 < jgarzik> petertodd: If you want to change everywhere to byte buffers, how would we test the change to see if anything breaks?
+00:47 < jgarzik> :) 
+Iz.7U
+s#-3
+ D"O
+00:48 < jgarzik> would need print and comparison helpers (or perhaps just a convert-to-python-long helper)
+00:48 < petertodd> jgarzik: Gee, I dunno, it'd be good if we had some unittests... :P
+00:48 < petertodd> jgarzik: I did up h2b() and b2h()
+00:48 < petertodd> jgarzik: You already have bytes to python integer.
+00:58 < jgarzik> petertodd: BTW, seen this? https://github.com/samrushing/caesure
+00:58 < jgarzik> petertodd: looks like he's doing some Cython work
+00:59 < petertodd> jgarzik: crazy, the re-implementations never stop
+00:59 < jgarzik> petertodd: that's actually pretty old
+01:00 < jgarzik> petertodd: python-bitcoinlib's key.py came from there via a third party
+01:00 < jgarzik> (see header)
+01:00 < jgarzik> petertodd: I'm about to add base58 support, and was thinking of stealing it from there
+01:00 < petertodd> jgarzik: huh, interesting
+01:00 < jgarzik> petertodd: do you know of a better base58 source?
+s#-3
+ Ks	6
+Xy%<
+01:01 < jgarzik> https://github.com/samrushing/caesure/blob/master/caesure/proto.pyx#L53
+01:01 < petertodd> jgarzik: hmm... no license specified
+01:01 < petertodd> oh, wait, no I'm blind
+01:01 < gmaxwell> jgarzik: that SCTP draft is dead, this one is very much alive: http://tools.ietf.org/html/draft-ietf-tsvwg-sctp-dtls-encaps  and is already shipped in beta state to many millions of systems (in Chrome and Firefox).
+01:01 < petertodd> jgarzik: Probably as good as any.
+01:02 < jgarzik> gmaxwell: neat
+01:02 < jgarzik> petertodd: groovy
+01:03 < gmaxwell> the nice thing about using that draft: (1) you can copy webrtc code for all of it (including nat traversal), (2) you get censorship resistance because you look like webrtc.  ... downside: still connection oriented.
+01:07 < petertodd> # having trouble understanding if there is a difference between: CHECKMULTISIG and P2SH. <- not a good sign
+01:08 < gmaxwell> Which CTO in charge of technology for a hundred million dollar bitcoin business did that come from?
+s#-3
+01:09 < petertodd> gmaxwell: lol, nah it's from yet another bitcoin reimplementation: https://github.com/samrushing/caesure
+01:09 < petertodd> (more scary I know)
+01:11 < petertodd> "I'm attempting to make this a full node, with tx verification etc...." "Script engine is mostly done. Needs some work on failing constraints like stack size, sig count, etc."
+01:12 < petertodd> Oh, and it comes with a "drop-in replacement" for openssl...
+01:21 < jgarzik> petertodd: ok, pushed
+01:23 < petertodd> jgarzik: cool, lemme add some tests
+01:30 < gmaxwell> sipa: oh, supposidly openssl's ECDSA signing adds the message to the randompool before generating the nonce.
+01:36 < petertodd> jgarzik: prelims pushed; I'm off for the weekend
+06:39 < warren> What's the number of tx's changed that causes a pre-0.8 reorg to fail again?
+07:53 < sipa> warren: over 4800 affected txids in a single reorg is risky
+07:57 < warren> sipa: the litecoin users finally noticed the reorg risk due to gavin's posting, and I'm thinking about the likelihood of an actual reorg attack succeeding within the next 3 months it will take coblee to upgrade the client as he doesn't think it is urgent.
+cDH@
+s#-3
+08:01 < warren> sipa: their typical blocks have *at most* a few dozen tx's, and their standard fees are extremely high, so it would be expensive to artificially jack up the number of tx's in a number of successive blocks.  Then a reorg attack would need amazing luck to generate a valid attack block fast enough after the previous block containing just the right number of tx's.
+The part I'm not sure of is the exact circumstances where an attack block would f
+08:01 < warren> ail differently for some nodes in a reorg.
+h(ohf@
+pXq2j
+Ylq(i
+  R~)F
+13:06 < phantomcircuit> jgarzik, i had to run earlier, in general the constituency has a lot of other issues they are worried about, but the principle matter representatives work towards is more pork for their district, they they also pass some social policy changes then maybe they beat the guy running against them who would also make pork their primary issue
+13:06 < phantomcircuit> jgarzik, it's gotten to the point that they dont really need to campaign on it since it's implied
+13:08 < phantomcircuit> jgarzik, iirc real estate holding companies like that would mean following sec guidelines that are doubly plus not fun
+13:59 < jgarzik> phantomcircuit, not true, if properly arranged :)
+14:00 < jgarzik> (RE real estate)
+14:00 < jgarzik> Still have annoying investor DD, so far from anonymous, but thankfully no SEC reg
+14:01 < phantomcircuit> jgarzik, unless you're transferring title to the investor they would need to be
+14:04 < jgarzik> phantomcircuit, nope
+/{9s
+>q&'
+14:05 < jgarzik> phantomcircuit, think multiple companies, multiple countries, annoyingly complex ownership structure
+14:05 < phantomcircuit> sorry i accidentally some words
+14:06 < gmaxwell> 10:59 < cjb> "github: we put the 'central' in 'decentralized revision control system'"
+14:06 < phantomcircuit> jgarzik, they would need to be accredited investors and/or you would need to comply with the JOBS act stuff
+14:06 < phantomcircuit> gmaxwell, lol
+14:07 < phantomcircuit> jgarzik, im sure there are shenanigans you can play with offshore holding companies which they're invested in which in turn hold the domestic company
+14:07 < phantomcircuit> thus the investors comply with the offshore rules instead of the domestic rules
+14:07 < phantomcircuit> in general schemes like that work until they dont and then they tend to really not work
+14:11 < jgarzik> gmaxwell, rofl
+14:15  * jgarzik ambushes the channel with a new term, beta-testing it: http://imgur.com/P2G7670
+14:16 < jgarzik> My thesis, after watching economists and computer scientists grossly misunderstand bitcoin, even after looking at it a while
+/{9s
+14:17 < jgarzik> To understand why bitcoin works (or how it might fail), you must evaluate any thesis according to each of the three legs of the Satoshi Triangle:  economics, game theory and software engineering.  Most academics fail to take a holistic approach, and in doing so, wind up failing to understand why their "bitcoin is broken!" argument falls over.
+14:18 < jgarzik> Really Smart People(tm) keep missing major facets of bitcoin, when they do their own research
+14:18 < jgarzik> and thinking
+14:19 < gmaxwell> I very much agree with your point. Invoking satoshi more makes me a bit sad. I think we do better without the satoshi mysticism in general, and people fixating on satoshi weakens us. </tangent>
+14:20 < gmaxwell> I don't have any better names for the facets, not sure I'd choose that exact set of labels.
+14:38 < jgarzik> gmaxwell, Modesty prevents me from calling it 'garzik triangle', and 'bitcoin triangle' seems rather boring.
+/{9s
+14:38 < jgarzik> gmaxwell, IMO these are key facets that Satoshi figured out, so I thought it fair
+14:38 < jgarzik> computer scientists are calling bitcoin tech "Nakamoto block chain" for example
+14:43 < petertodd> gmaxwell: We should pay the NSA to come up with undeniable proof that Satoshi was a crack-addled alcoholic. Then again, Toronto's mayor is still in office...
+14:43 < gmaxwell> "I was too drunk to know I was inventing a decenteralized cryptocurrency."
+14:44 < petertodd> lol
+14:46 < phantomcircuit> lol
+14:47 < sipa> "I was trying to come up with this absurdly complex pyramid scheme..."
+14:47 < gmaxwell> "I'm not sure if I succeeded or failed"
+14:47 < amiller> i'm not sure what you mean is the difference between economics and game theory
+14:49 < sipa> amiller: atire
+14:49 < jgarzik> I agree that economic incentives and game theory motivations are quite intertwined
+/{9s
+14:49 < jgarzik> But from the PoV of a classically trained economist, who barely knows computers and prints out his email, I think the distinction matters
+14:49 < amiller> swap one or the other for distributed systems & cryptography and i'd like it
+14:50 < jgarzik> (1) Economics and game theory, (2) software engineering, (3) distributed systems & crypto ?
+14:50 < amiller> sounds right to me
+14:50 < petertodd> jgarzik: you forgot (4) sociology/political science
+14:51 < adam3us> need a bitcoin.it wiki page
+14:51 < jgarzik> petertodd, too meta
+14:52 < jgarzik> want to avoid politics and ideology.  depending on your political bent, views range from "bitcoin is OBVIOUSLY political" to "keep your politics away from my bitcoin"
+14:52 < petertodd> jgarzik: well you are talking to a guy whose most recent bitcoin-dev list post was a short near-future sci-fi post-modern narrative
+14:52 < jgarzik> best not to go there
+14:52 < jgarzik> P.S. I argue it is impossible to be post-modern
+/{9s
+14:52 < petertodd> See, seriously speaking where politics comes into it is the nature of changing the system itself; something that hasn't been deeply explored yet.
+14:53 < petertodd> jgarzik: heh, my art school teachers would have argued the exact opposite
+14:53 < amiller> it's post-impossible to be modern?
+14:54 < petertodd> amiller: lol
+14:54 < petertodd> amiller: You're recognition of the concept of modernity dooms you to forever be a post-modern man.
+14:56 < jgarzik> petertodd, Yeah, but that's in art school, where they know nothing of engineering constraints imposed by reality.  ;p
+14:57 < jgarzik> OK 
+14:57 < jgarzik> Revised: http://imgur.com/S4dTQOG
+14:58 < petertodd> jgarzik: at least they don't pretend otherwise :P I quit industrial design after a year that included me having to argue a design for a "eco-friendly" lamp was physically impossible; couldn't get my teacher to understand the relevance of E_k = mgh...
+n(Yzk9
+/{9s
+15:00 < petertodd> heh, I like how software engineering != distributed systems, good
+15:05 < phantomcircuit> petertodd, but but it's eco friendly!
+15:07 < jgarzik> petertodd, to me "engineering" is the grubby parts of making things work, outside the world in which theoreticians exist
+15:07 < jgarzik> some attacks are valid in theory, but just not practical for engineering reasons to annoying to detail
+15:08 < petertodd> To me an engineer is just a theoretician who analyzes non-spherical cows too.
+15:10 < maaku> petertodd: that's one approach to engineering. it's not always the best though
+15:11 < petertodd> heh, ah, but see, the moment you assume a non-spherical cow, you very quickly either adopt good engineering practices, or give up and make the cow spherical again.
+15:11 < petertodd> (or design bridges that fall down...)
+15:19 < phantomcircuit> petertodd, brb genetically engineering a spherical cow
+15:20 < petertodd> phantomcircuit: spoken like a true engineer!
+/{9s
+15:23 < jgarzik> Any problem is solvable given sufficient time to debug.
+15:29 < phantomcircuit> jgarzik, or the ability to modify the problems contraints
+15:29 < phantomcircuit> constraints*
+15:30 < jgarzik> phantomcircuit, I'm an engineer.  I am allowed to tell management that reality is interfering with their artificial, theoretical constraints.
+15:30 < phantomcircuit> hehe
+15:34 < phantomcircuit> is the disable wallet patch in master?
+15:35 < jgarzik> phantomcircuit, yes
+15:35 < jgarzik> wumpus pushed it over the finish line, while I was off dealing with family stuff
+15:35 < maaku> phantomcircuit: while you're at it, make me a cuboid cow. easier to stack.
+15:36 < midnightmagic> jgarzik: Yes, people do often misapprehend the nature of the scaling issues bitcoin has. https://twitter.com/midmagic/status/241845808201334784
+15:36 < phantomcircuit> maaku, try japan they already make cuboid watermelons
+15:36 < phantomcircuit> although something tells me a cow would object to being kept in a plastic box
+15:36 < midnightmagic> "because it has to broadcast transactions, it's untenable"
+15:36 < midnightmagic> `_`
+15:37 < phantomcircuit> midnightmagic, "i have no idea what a gossip protocol is"
+15:39 < midnightmagic> phantomcircuit: She's a tor dev. :(
+15:40 < phantomcircuit> that is deliciously ironic
+15:40 < sipa> midnightmagic: who?
+15:41 < sipa> ah    
+/{9s
+RO\-
+;^dow
+15:42 < midnightmagic> sipa: The person who told me namecoin was useless as a distributed dns lookup because tx are broadcast thus hand-wavey "quadratic scaling problem".
+15:42 < midnightmagic> maybe I'm misinterpreting.
+15:43 < phantomcircuit> midnightmagic, she's missing that peers keep track of what they've told other peers about
+15:43 < phantomcircuit> the communication protocol is basically O(n * m) for n = messages and m = peers
+15:44 < phantomcircuit> but the actual chain storage is linear with transactions
+15:44 < phantomcircuit> if you naively assume that every peer tells every other peer about everything
+15:44 < phantomcircuit> then it is horrible
+15:46 < midnightmagic> phantomcircuit: But the cost of doing those broadcasts successfully is significant (or it was before Vince screwed us all) so growth does not cause strictly quadratic growth in network communications overhead anyway, even leaving the blockchain itself out of it (which is ultimately very much more prunable than bitcoin's.)
+15:47 < phantomcircuit> midnightmagic, the broadcasts should be fairly cheap with an inventory/getdata setup
+hZ{e
+/{9s
+ApdB
+7J		
+15:47 < phantomcircuit> optimally each peer receives 8 inv messages, sends 1 getdata, and received 1 data block
+15:52 < gmaxwell> midnightmagic: One reason people assume quadratic communication is because they're not aware of the surprising result that expander graphs can have log radius while having constant degree. E.g. nodes can have some small _constant_ number of connections per node, but the distance to any other node can remain log in the number of nodes. So they start thinking
+every node has to be fully connected to every other node.
+16:04 < warren> hmm, is the floating fee stuff happening for 0.9?
+16:14 < ebfull> ya warren
+)E"2
+/{9s
+^NM8~
+n}qb=
+6t}?F
+XGyl
+fYr_
+23:38 < jgarzik> warren: I paid BTC, and got a refund months later
+23:45 < gmaxwell> warren: guy sold a successful fpga product, though it seems mostly on outsourced tech. Announced an asic product. Became very secretive.. Began making obviously booze induced postings. imploded as all preorder holders lost confidence. started returning funds, very slowly.
+23:46 < warren> wow 
+23:47 < gmaxwell> some people think he was attempting honest business and got in over his head and became unhinged. Others think that he got scammed by someone he was outsourcing to. Other people think that it was all just a scam... ask for coin, if bitcoin value goes up 'fail' and return a fraction of it.
+23:48 < gmaxwell> people who think that last one are probably the source of the question to Jeff.
+--- Log closed Wed Apr 03 00:00:17 2013
+--- Log opened Wed Apr 03 00:00:17 2013
+6t}?F
+XGyl
+6]S1p
+ Arz5
+03:28 < warren> jgarzik: my brain just connected dots ... you're mining the avalon through tor for the botnet study thing?
+04:53 < realazthat> would there be a use for an online bitcoin-script simulator?
+09:51 < jgarzik> warren: not through tor, no
+14:45 < amiller> i'd like playing with an online bitcoin-script simulator realazthat
+14:45 < amiller> bah
+--- Log opened Wed Apr 03 22:22:42 2013
+--- Log opened Wed Apr 03 22:41:42 2013
+--- Log closed Thu Apr 04 00:00:11 2013
+--- Log opened Thu Apr 04 00:00:11 2013
+00:03 < jgarzik> petertodd: I wonder if @blockheaders has room for a #bitcoin hashtag?
+00:32 < warren> A random walk student walked up to me just now and said, "I heard you have bitcoins.  Do you have any to sell?"
+00:32 < warren> These are the same people who can't keep their computers secure from viruses.
+00:32 < warren> sigh
+00:33 < warren> wow 
+00:33 < warren> random brain macro activated while typing that
+00:33 < warren> I'm tired.
+6t}?F
+XGyl
+7sp7
+00:37 < jgarzik> warren: we get end user support questions all the time.  the "I lost my bitcoins, how do I recover them?" ones are the worst.
+00:38 < jgarzik> s/worst/most heartbreaking/
+01:10 < petertodd> jgarzik: it's now much improved
+01:12 < nanotube> warren: random walk student eh? they sound like fun. :)
+01:37  * jgarzik grabs globalsin.com, for his identity network thingy
+01:38 < amiller> so a random walks students walks up randomly to me and says...
+01:38 < amiller> all the best jokes begin this way
+01:49 < gmaxwell> Do you go to brown?
+01:50 < gmaxwell> (I thought you said the student was brownian?  ... badumpcha)
+03:26 < warren> nanotube: I've been making those weird brain macro mistakes for a few days now.  Something odd is going on.
+03:30 < gmaxwell> warren: welcome to being old
+10:01 < BlueMatt> gmaxwell: does one have to be old for that? Im pretty sure I do it all the time too
+10:08 < petertodd> BlueMatt: just old enough
+11:24 < realazthat> sipa: ping?
+12:20 < realazthat> hey is it ok for me to re-ask my project proposal idea in this channel
+12:20 < realazthat> bitcoin-dev is quite noisy
+12:20 < realazthat> and it got lost
+12:20 < realazthat> (I want some dev feedback before I start)
+a$Wf9
+A.M3
+6t}?F
+XGyl
+c&Z4
+12:56 < realazthat> sipa: so I been thinking for another project (or extension of this one) and someone gave me this idea, to make a bitcoin "client" that would use the RPC interface, but use a local wallet. thus, you can "federate" the blockchain to a trusted central bitcoind. would this be useful?
+12:56 < sipa> realazthat: yes, but i believe the RPC interface is completely inappropriate for that
+12:57 < sipa> in fact, the P2P protocol is perfect for that, as there are already clients out there that manage wallets without storing the blockchain :D
+12:58 < realazthat> why is the RPC interface innapropriate?
+13:00 < sipa> how will you know which coins you have to spend? iterate all transactions in all blocks?
+13:02 < realazthat> erm
+13:02 < realazthat> hmm
+13:02  * realazthat thinks
+13:04 < realazthat> so there is no way to retreive the balance of an output hmm
+13:05 < sipa> no    
+6w%&Mg4
+6t}?F
+XGyl
+13:05 < sipa> and doing that would require an even more extensive index
+13:06 < sipa> while scanning the blockchain for interesting transactions is already possible via the p2p protocol, very efficiently
+13:06 < sipa> without the server requiring an index
+13:06 < realazthat> ah
+13:06 < realazthat> but can that be trusted?
+13:06 < sipa> and even better, it even doesn't require trusting the server, as authentication is built into the protocol
+13:07 < sipa> and yet better: it already exists
+13:07 < sipa> and works
+13:07 < realazthat> yeah but that takes away my project idea!
+13:07 < realazthat> :P
+13:07 < realazthat> not better!
+13:07 < sipa> (download bitxoin wallet for android or electrum)
+13:12 < sipa> also, the model you propose (fully indexed by address server, with light clients querying balances) also exists already (though via an own protocol): electrum
+13:12 < sipa> so... sorry!
+13:14 < realazthat> lol
+14:08 < warren> crap.  The Slashdot summary on the DDoS attacks and instawallet is extremely misleading.'
+6t}?F
+XGyl
+K??h
+14:10 < gmaxwell> warren: you expect otherwise? How else are the editors to buy cheap coins? :P
+14:13 < warren> gmaxwell: I'm impressed how unaffected the market is despite the alarmist news
+14:15 < sipa> they're used to it by now :p
+14:16 < gmaxwell> as sipa says.
+14:17 < sipa> half of slashdot is "just shut the fuck about bitcoin", and the rest are fans who ignore bad news :p
+14:18 < gmaxwell> This can't be healthy. :P
+15:46 < BlueMatt> sipa: thats been going on for a while
+17:37 < warren> What was the decision about the irc seed?  Revive the network?  Leave it disabled?  Remove the code?
+17:42 < BlueMatt> remove code
+17:42 < BlueMatt> I dont think anyone even bothered emailing the guy who runs it
+17:49 < warren> BlueMatt: remove irc code completely or just turn it off?
+17:49 < gmaxwell> warren: it's been turned off for years now.
+17:49 < warren> for testnet too?
+17:50 < gmaxwell> nah, we left it on for testnet. this takes it out completely.
+6t}?F
+XGyl
+F~"01
+"G- Gk
+17:50 < gmaxwell> why are you asking here instead of reading the pull?
+17:50 < warren> oh, 
+17:50  * warren looks
+17:54 < warren> thanks, I only searched the open pulls, not closed
+18:33 < warren> Haha, the LTC instawallet was destroyed too.
+18:38 < gmaxwell> destroyed?
+18:42 < warren> gmaxwell: it isn't clear what happened.  I'm guessing someone figured out how to access all the addresses like the BTC instawallet.
+20:40 < weex> google indexed something afaik
+21:04 < warren> Wow.  in the last 12 hours BFL downgraded the speed of the advertised ASIC's and doubled the price.
+21:08 < gmaxwell> I understand their phone has been ringing off the hook
+21:10 < warren> Last week Josh committed to sending additional units to existing orders to satisfy hash rates that customers paid for.
+21:12 < sipa> afaik, the change is only for new orders?
+21:14 < warren> sipa: They would have a major backlash if they changed past orders especially after Josh made that commitment in public last week.
+21:16 < sipa> well, then what's the problem?
+21:17 < warren> Just surprising that it happened.
+22:33 < nanotube> got links?
+--- Log closed Fri Apr 05 00:00:12 2013
+--- Log opened Fri Apr 05 00:00:12 2013
+04:03 < warren> sipa: I lucked out, I bought one only hours before the price change.
+04:03 < warren> I have no idea what I will receive or when.
+6t}?F
+XGyl
+{r{]Il=
+04:03 < warren> whatever happens happens
+04:04 < sipa> well, you know
+04:04 < sipa> perhaps you receive it before the subsidy runs out in 2140 :p
+04:04 < gmaxwell> lol
+04:05 < gmaxwell> sipa: when you're in town you can look at my avalons. :P
+04:09 < warren> I bought it because I figured out that Paypal's Bill Me Later would let me borrow the entire purchase price for 6 months with zero interest, zero payments.
+04:11 < warren> (I'm aware those promos are meant to ensnare people who can't pay it off.)
+04:14 < gmaxwell> there is often a lot of fine print too.
+04:17 < warren> I had friends who borrowed $200k on credit card 0% 1-year promos and collected 4-5% bank interest during the year.  Seemed like too much effort for the risk of screwing up.
+04:18 < gmaxwell> it's usually also the case that they only offer those promos on purchases and not cash advances, so there is no (easy) way to convert the credit to interest.
+04:19 < warren> oh, back then they allowed it, it was the credit bubble
+4mIjMy
+6t}?F
+XGyl
+ @/K
+04:19 < gmaxwell> yea, as explained by "4-5% bank interest"
+04:19 < warren> only way to get 4-5% interest was a CD
+04:20 < warren> who knew at the time none of those CD's were at risk because the taxpayer would bail them all out ...
+04:21 < sipa> gmaxwell: will do!
+04:28 < warren> gmaxwell: I was most amused when I realized that, that Paypal would let me money to help defend its greatest long-term threat.
+17:54 < warren> https://bitcointalk.org/index.php?topic=168251.0  Looks like one of the alt coins had an accidental hardfork
+18:01 < nanotube> what's with all these altchains coming out of the woodwork.... heh
+18:02 < warren> dunno
+19:03 < gmaxwell> nanotube: I am hans and this is franz and we are here ...
+20:33 < gmaxwell> People are buying $coin right now under the "what if" basis, so there is a ton of incentive to spin up and endless series of additional coins.
+20:42 < nanotube> so, seems like a problem that will solve itself. :P
+20:42 < nanotube> in fact, why don't we just come up with 100-some different coins, so people will see the ridiculousness of the enterprise. :P
+21:04 < warren> gmaxwell: it is unfortunate that mtgox is getting in on the act
+21:04 < gmaxwell> I was told that was an april fools day thing and not actually serious.
+21:07 < nanotube> i was told it wasn't....
+r!bzlU
+6t}?F
+XGyl
+21:09 < nanotube> in response to "are you considering ltc trading or is that just a cooked rumor?" mtux said "eventually"
+21:26 < amiller> bitcoin is pure network effect
+21:27 < amiller> normally you see things that are network effect + lock in mechanisms
+21:28 < amiller> so it's refreshing to have something that's just network effect alone
+21:30 < amiller> but still it's _just_ network effect
+XwMh
+#}x%
+-VD,K
+)b R
+":9p
+18:32 < sipa> the problem is that centralized systems are superior in pretty much every technical way
+18:32 < sipa> apart from required trust
+18:35 < amiller> maybe the bitcoin community will end up developing an offensive capability that basically compromises centralized systems quickly to make it apparent that they're vulnerable
+18:35 < gmaxwell> amiller: Pretty much, I think.  I mind this less when they haven't adopted a story that requires them to store data in bitcoin.
+18:36 < amiller> well we have to figure out how to a) make them pay for their utxo usage over time and b) also charge people for archive access to old blocks
+18:36 < gmaxwell> charge for archive access to old blocks kind of undermines the bitcoin security model. :(
+18:37 < gmaxwell> You can't determine if your on the longest valid chain without inspecting the historical chain, and we're an anonyous system which new people should be able to join
+18:37 < amiller> well you can bittorrent it, just takes a while
+-VD,K
+ %[b
+18:37 < amiller> it's already pretty expensive in a batch
+18:37 < gavinandresen> Hey wizards: I need to recruit a couple of people to help review technical-focused Foundation grant proposals.  Anybody have a little bandwidth to help? (I don't want to be Grant Gatekeeper)
+18:43 < petertodd> Oh, there are tech-focused ones?
+18:44 < gavinandresen> petertodd: sure, I think you proposed one first round.
+18:44 < gmaxwell> gavinandresen: Being gatekeeper stinks!
+18:45 < gmaxwell> "Emperor of broken dreams" has a much better ring to it.
+18:45 < petertodd> gavinandresen: oh, tpm hardware? that probably should be taken off the list as it'd duplicate other peoples efforts
+18:47 < gavinandresen> that's one of the reasons I want to get a couple more people involved in review; I can't possibly keep track of everything happening, and more people means more "don't fund that, Jehosephat announced a similar project last week..."
+18:47 < petertodd> agreed
+-VD,K
+M0&h;	
+V'AB
+18:47 < gavinandresen> to be clear: the Foundation Board are the ultimate gatekeepers who decide how much money to grant.
+18:48 < gmaxwell> I'm willing to review things (and I suppose am at least somewhat likely to notice overlapping efforts), esp. with the point that its really someone else in the buck-stops-here position.
+18:49 < gavinandresen> gmaxwell: great!
+18:50 < amiller> i'm volunteering to review too, i like having excuses to dredge through the forums looking for related work
+18:50 < gavinandresen> gmaxwell: you going to submit a dust-buster grant proposal this time around?  No impact on review, you'd just abstain from reviewing your own proposal....
+18:51 < gmaxwell> hurrah.
+18:52 < gmaxwell> Thanks for the reminder.
+19:47 < jgarzik> gavinandresen, I'm willing to help, too
+19:47 < jgarzik> gavinandresen, just never responded to your email asking
+19:48 < gavinandresen> jgarzik: no worries
+--- Log closed Thu Sep 19 00:00:55 2013
+--- Log opened Thu Sep 19 00:00:55 2013
+O>#*
+-VD,K
+jpf`
+m4k+
+02:35 < midnightmagic> gavinandresen: You might want to supply your nick:pass as the server pass for freenode, you're flapping with your real connection details in bigpond.
+02:36 < midnightmagic> gavinandresen: Also, I wouldn't mind helping review proposals so long as my voice isn't the only one that counts.
+02:41 < Luke-Jr> gavinandresen: I can take a look
+12:28 < warren> huh.  I thought Bitcoin Foundation didn't do grants for core dev.  Is this new?
+12:38 < jgarzik> warren, since Day One, BF has been interested in helping core dev
+12:38 < jgarzik> warren, One of the first goals was always to pay Gavin's salary.
+12:39 < jgarzik> warren, Side projects included getting some hosting for bitcoincore.org
+12:39 < gmaxwell> And BF has provided e.g. hosting for the pulltester robot and some other assorted stuff.
+12:39 < gmaxwell> The proposals stuff for review, I assume are mostly not "core dev"
+12:39 < warren> what is at bitcoincore.org hosting?
+(6[Tx
+-VD,K
+12:40 < jgarzik> There has been an indicated willingness to fund various side projects I've proposed, like having nodes sitting around collecting metrics about the network.  -ENOTIME on my side for that stuff, not BF's fault.
+12:41 < jgarzik> warren, random stuff we find useful to stick on a server.  Mostly Gavin uses it right now, but as gmaxwell said, pull tester and other things
+12:41 < jgarzik> There was even resources allocated for a permanent testnet node, as I requested, then never did anything with :(
+12:41 < gmaxwell> speaking of metrics, jcorgan has expressed an interest on doing some integrated metrics code as a way to get involved in development. We should encourage this. He does good work elsewhere.
+12:41  * jgarzik needs minions
+12:41 < jgarzik> +1 
+12:50 < warren> Earlier gavin mentioned the lack of a security bug bounty program from the BF was largely from the lack of anyone to run it.
+12:51 < warren> It was suggested that a volunteer do it.
+12:51 < warren> however the average volunteer isn't privy to security issues, and maybe you don't want them to receive the responsible disclosures
+12:52  * gmaxwell is skeptical of the value of security bug bounties
+12:53 < jgarzik> security bug bounties and assassination markets sometimes share similar economic incentives
+12:53  * jgarzik runs
+-)MZ
+-VD,K
+12:53 < gmaxwell> "I can remotely make nodes kinda slow" is not some kind of catagorically worse bug than "OSX users frequently corrupt their database" but one is "security". "meh"
+12:54 < warren> I could be wrong, but perhaps Google is keeping drama low and saving money in the long-term by responsible disclosures from their bug bounties.
+12:56 < gmaxwell> It's just distorting to give bounties on "security" bugs as uniquely important compared to other bugs.
+12:56 < gmaxwell> "omg my private keys were lost by this wallet corruption" is infinitely more important than "some lame dos attack made nodes run slow"
+12:58 < gmaxwell> The kind of security bugs that do deserve bounties are so rare as to be unobservable... and any bounty for it would be insultingly low compared to exploiting it.. or alternatively, exploiting it would just destroy bitcoin and wouldn't be profitable in any case. ::shrugs::
+-VD,K
+12:58 < warren> Non-profits including the FSF, EFF, Amnesty International, Wikimedia Foundation (and too numerous others) use CiviCRM to automate management of membership.  FSF Executive Director John Sullivan really wants somebody to implement a plugin for CiviCRM that relies on Free Software for many of these orgs to be able to automate acceptance of Bitcoin payments.
+It is currently weird that they accept Paypal but not Bitcoin with that AGPL code.
+12:58 < warren> (another example)
+12:59 < gmaxwell> warren: sounds like something that could use a grant proposal, indeed.
+12:59 < warren> I'm not proposing it because I'm too busy.
+12:59 < jgarzik> I know that feeling :)
+12:59 < gmaxwell> another point as to why bounties aren't so helpful...
+13:00 < jgarzik> warren, RE CiviCRM, interesting.  BitGive might benefit from that info.
+13:00 < gmaxwell> though perhaps they could be helpful for pulling in more technical people who don't have any bitcoin at all now.
+13:00 < warren> jgarzik: indeed.
+]wSQ
+Eu	ZA
+-VD,K
+13:00 < gmaxwell> E.g. a few coins bounty might be worth more than a few hundred dollars to some developer with a passing interest in this bitcoin stuff but no bitcoins.
+13:01 < warren> indeed
+13:03 < warren> that was fast, found someone who wants to write the grant proposal
+13:04 < warren> is it too late to submit?
+13:06 < jgarzik> ask the Internet that question :)
+13:07 < jgarzik> reddit r bitcointalk had a thread talking about 3q grant props
+13:07 < sipa> there's this website
+13:07 < sipa> where you can search for stuff on the internet!
+13:07 < warren> how do I find that website?
+13:07  * warren is lacking sleep
+13:08 < sipa> http://bit.ly/157cUBZ
+13:54 < HM> Bitmit is awful
+13:54 < HM> can't even signup
+13:55 < gmaxwell> it wanted my home address and stuff... I'm kinda uneasy giving that to a bitcoin website.
+13:56 < HM> i tried disposable email addresses but they have them all blocked
+13:56 < HM> fair enough, switch to my real one
+13:56 < HM> still doesn't work. just refreshes
+13:56 < HM> It's a shame really, Silk Road has a really good user experience
+--- Log closed Fri Sep 20 00:00:58 2013
+--- Log opened Fri Sep 20 00:00:58 2013
+00:19 < warren> jgarzik: regarding CiviCRM, johns said he might have got students at Stanford to agree to do it, but if that falls through one of the grant submissions is the task as defined by johns.
+-VD,K
+00:21 < warren> jgarzik: one dev looked into CiviCRM and found a mess of poor or lacking documentation and broken examples.  I think he submitted only the Free Software part for the grant, and by the time he finishes that it should be easy for him to write separate Bitpay and Coinbase modules.
+08:03 < HM> lol "Homeless, unemployed, and surviving on Bitcoins". Wired sure can write a headline
+08:04 < HM> I think the picture features the entire dev team ? ;)
+14:22 < jgarzik> It would be annoying as hell, but the first autonomous agent will likely be a beggar-bot
+14:22 < jgarzik> "I'm the first autonomous agent, give me bitcoins or I die"
+14:22 < gmaxwell> at least it would be true.
+14:23 < gmaxwell> it could be a little more "fit" than that... perhaps like one of those bitcoin gems where the high bidder gets some free advertising.
+14:23 < MoALTz> "i'll work your product into my conversations for bitcoins"
+-VD,K
+ 7$@b'
+16:25 < HM> Bitfetch -> nice implementation, corrupts downloads
+16:28 < amiller> i found a minor bug in this proof of work paper http://eprints.qut.edu.au/40036/6/40036-full-revised.pdf
+16:28 < amiller> it doesn't really matter i guess
+16:28 < amiller> but there are a bunch of nice things about his definition of puzzles and i want to import those
+16:29 < amiller> but they're too strong, "correctness" says that there's some amount of time you can run such that you find a solution with probability 1
+16:29 < amiller> and that's not the case with hashcash style puzzles (e.g., bitcoin)
+yC*K
+=#[c8
+01:05 < petertodd> (for the basic reasons Luke was getting at...)
+01:06 < zooko> So Bitcoin-proper fits into this model in this way, IIUC: who gets to decide? Anyone who knows a certain ecdsa private key. What sorts of values can they put in? Only highly constrained values -- transactions.
+01:07 < zooko> Oh, and a third question: what form can the key take? A highly constrained form -- txouts.
+01:07 < petertodd> Sure, but the point is once you create the basic mapping, you can start applying rules to it and what not.
+01:07 < petertodd> The fundemental thing is to have the set-once key-value mapping!
+01:07 < zooko> Okay, so what policy do you want from your basic mapping?
+01:07 < petertodd> But this is the thing, so how would you do a basic key-value mapping on top of Bitcoin?
+01:07 < zooko> By "policy" I mean who gets to set which keys.
+01:07  * zooko thinks about that.
+01:09 < zooko> How *I* would do it is that I would implement set-multiple-times key-value mapping on top of Bitcoin.
+01:09 < petertodd> No-no, how would you do the set-once key value mapping? (and it's ok if both key and value are limited to 20 bytes each)
+01:09 < zooko> The policy of "who gets to decide" is that anyone who knows a certain private ecdsa signingkey can issue a "set" operation.
+x]c:
+ (-3
+l~"n
+MOImP$
+ 932%
+01:10 < zooko> Are you saying you'd *prefer* set-once instead of set-many? Or that you think the former would be easier to implement directly on top of Bitcoin?
+01:10 < zooko> BTW, my Tahoe-LAFS system is an example of a distributed set-many k-v system...
+01:10 < petertodd> No, this is an exercise, tell me how you would implement the former.
+01:10 < zooko> Okay, to implement set-once, I would choose the policy to be that anyone who knows a certain secret can issue the set-once for a certain key.
+01:11 < zooko> This is Ross Anderson's "Guy Fawkes Protocol".
+01:11 < zooko> Whenever you use your set-once, you set the value to a tuple of (value1, key2).
+01:11 < petertodd> Ok, so how would that be encoded into an actual transaction?
+01:11 < zooko> Oh, well that didn't answer how to *implement* it...
+01:11 < zooko> Okay now this is the hard part for me.
+01:11  * zooko thinks.
+01:11 < petertodd> Yes, I'm big on implementing stuff, er, big on talking about implementing stuff...
+01:12 < zooko> 
+x]c:
+ [Nk
+01:12 < zooko> I'm not clear on all the details of the transaction format.
+01:12 < zooko> I    
+01:12 < petertodd> Do you know what a scriptSig and scriptPubKey are?
+01:13 < zooko> 'm particularly uncertain about the script opcodes and which ones are not disabled...
+01:13 < zooko> Um, scriptSig and scriptPubKey are of that class of things that I *have* momentarily understood more than once in the past.
+01:13 < petertodd> Read the thing about scripts/transactiosn on the wiki until you understand - you won't understand zookeyv without understanding them.
+01:13 < zooko> But I think I need a refresher.
+01:13 < zooko> Which thing?
+01:14 < petertodd> https://en.bitcoin.it/wiki/Script#Scripts
+01:14 < petertodd> and https://en.bitcoin.it/wiki/Transaction
+01:14 < zooko> Will do!
+01:14 < zooko> Thanks for the good conversatio.
+01:14 < petertodd> np
+20:38 < amiller> timestamping isn't inherently enough
+[HIE
+x]c:
+20:38 < amiller> for any useful protocol
+20:38 < amiller> it's also not enough to assign an ordering to a set of objects determine the order of them
+20:39 < amiller> suppose I tell you, here are transactions A, B, D, E, and F
+20:39 < amiller> (suppose you agree that the order that they were timestamped in corresponds to the ordinary lexical ordering)
+20:40 < amiller> do you see the problem that you might be concerned about the omission of 'C'
+20:40 < amiller> suppose later i say also there was C
+20:40 < amiller> so actually the valid ordering of events is really A B C D E F
+20:40 < amiller> well that didn't contradict the first ordering
+20:46 < amiller> a good sign you're going down the wrong track is if you start with "timestamping" as an end in itself, it's more important to consider an entire protocol in which an irrevocable decision is made based on the presence of timestamping evidence, i don't know that i have any in mind
+20:46 < amiller> maybe a (admittedly contrived) example is patent law
+x]c:
+B:Dn
+20:47 < amiller> prior art invalidates a patent, and prior art is basically a timestamp evidence argument
+20:47 < gmaxwell> no it's not.
+20:47 < gmaxwell> prior art requires _public pratice_, a timestamp is not terribly helpful to you... unless it's, say, a newspaper timestamping itself.. though if your invention is described in a newspaper no one cares about the timestamp.
+20:48 < amiller> but just being 'able' to present prior art isn't an adequate system, a lot of prior art goes missed, and so there are some systems in place to try to encourage digging up the prior art through like crowdsourcing (i'll find the nice link in a minute)
+20:53 < amiller> so the problem with high compression timestamping
+20:53 < amiller> for example just putting a hash of some data in a big ol' merkle tree with tons of other data
+20:54 < amiller> and only the root hash is in a public place
+(mKu
+x]c:
+ qCC
+20:55 < amiller> is that you can't be sure at any time that some earlier data won't be revealed and preempt whatever you think is the correct order
+20:56 < amiller> so if at any finite time you make some irrevocable decision, it's not just based on the timestamp order but also on the order in which they are revealed / circulated
+20:56 < amiller> or to give an other example, you could convince people of two separate histories by selectively revealing preimages of timestamped data on a common chain
+--- Log closed Sat Jun 01 00:00:54 2013
+--- Log opened Sat Jun 01 00:00:54 2013
+11:51 < amiller> gmaxwell, here's the thing that's a little tricky about eli ben sasson's stuff
+11:51 < amiller> there's a preprocessing phase that has to be as large as the time-bound on the number of steps of the computation
+11:51 < amiller> so if there are 200,000 blocks
+11:52 < amiller> then you have to do 200,000 steps of preprocessing to compile the verifier basically
+x]c:
+11:52 < amiller> the one time cost of preprocessing the checker isn't any easier than a one-time step of preprocessing the whole blockchain
+11:53 < gmaxwell> amiller: Eli's reponse to that was to suggest to break it and cascade it.
+11:53 < amiller> there's like other possible tradeoffs like maybe you only use SCIP to do a smaller chunk
+11:53 < amiller> yeah
+11:53 < amiller> maybe we can have blockchain voting on what's the hash of a valid SCIP program?
+11:54 < gmaxwell> (I talked to him specifically about that...)  Maybe, his thinking was like "well duh you'd just fix it into the system" ... kinda defeats the point though. :P
+11:54 < amiller> awesome quote from his video "i don't know who the central authorities in bitcoin are, but they can do the preprocessing"
+11:57 < gmaxwell> supposedly they know how to solve the poly in steps ACSP compile time part, and just have the engineering of building it to go.
+11:57 < amiller> do you mean they can get *less* than linear compile time?
+11:57 < amiller> someone else told me that too and i couldn't find the citation
+11:59 < gmaxwell> amiller: yea, they say they can get to poly in just the length of the program for the compile on the verifier.. I believe this is the subject of their upcomming paper.
+x]c:
+ frhr
+13:48 < petertodd> amiller: re: timestamping that's why the zookeyv key-value system I've been talking relies on you being able to determine if someone *could have* created a key-value associated timestamped earlier with a higher sacrifice than the one you just did
+13:48 < amiller> sounds a bit like zookeeper :p
+13:48 < amiller> which is also basically a distributed consensus kv store
+13:48 < petertodd> Or zucchini
+13:49 < petertodd> Oh, apache ZooKeeper? Interesting
+13:49 < amiller> i don't think i follow the 'sacrifice' reasoning very well, or at least there's some reason it doesn't sit well with me
+13:49 < petertodd> What part are you not following?
+13:49 < petertodd> (I need a diagram really...)
+13:49 < amiller> but as long as you have a *could have* determination then i'm basically ok with the protocol w.r.t. the timestamp thing
+13:50 < amiller> well what's the simplest sacrifice protocol to discuss as an example
+13:50 < amiller> like fidelity bonds?
+x]c:
+(hJ7
+?ZD~D
+13:50 < petertodd> Yeah, and because sacrifices build upon one other, the could have determination doesn't have to be too expensive.
+13:50 < petertodd> fidelity bonds turned into a terrible bit of concept confusion... fidelity bonds are an abstract idea, the sacrifice methods are the important thing
+13:50 < petertodd> Like announce-commit sacrifices, or anyone-can-spend coinbase txouts.
+13:51 < petertodd> Or just sending coins to unspendable outputs...
+13:51 < amiller> so what security property do you get from a sacrifice
+13:52 < amiller> what kind of decision am i going to make based on the presence of a sacrifice where i won't make that decision if i don't see the sacrifice
+13:52 < petertodd> Well, in a PoW blockchain the state of the blockchain is determined by total work right? So in a PoS blockchain the state of the blockchain is determined by total sacrifice.
+13:53 < amiller> yeah and to the best i can intuit, the security of the blockchain has to do with an assumption that an attacker has a bounded budget
+13:53 < petertodd> Yup, which is true for proof-of-work and proof-of-sacrifice fundementally. (the latter is just transferrable proof-of-work after all)
+13:53 < amiller> and the (rational) miners receive as payment (the price of their rewards) an amount exactly equal to the computational costs of mining
+y)T\^
+x]c:
+ Gu}
+:7!+|
+13:54 < petertodd> Yup. Now a proof-of-sacrifice blockchain intended to work as a currency probably is infeasible, but as a namecoin replacement it makes sense.
+13:55 < amiller> i don't see why it should be different if the security statement is the same... but anyway go on
+13:55 < amiller> so if we assume bitcoin *is* the money and namecoin is the blockchain of discussion
+x]c:
++p,0
+02:21 < petertodd> ah, too bad, also the blacklisting RPC needs a way to unblacklist. (unless I missed something when I looked at it)
+02:21 < warren> it does
+02:21 < warren> it adds tothe blacklist and you can remove
+02:21 < warren> he even added the missing lock that I found
+02:21 < warren> just it fails to disconnect anything you ban
+02:23 < petertodd> huh, how do you remove the blacklist? I never figured that out
+02:24 < warren> petertodd: expiration to zero
+02:24 < warren> petertodd: the PR says how
+02:27 < petertodd> expiration? where is that mentioned? I totally missed that
+02:27 < warren> I haven't looked at it in a while
+02:27 < warren> the patch just doesn't work at all
+02:27 < petertodd> too bad, we should have something like it anyway
+02:28 < warren> yeah, if only we had software engineers capable of fixing things
+02:29 < warren> volunteers usually only fix the fun things
+`}ATVeD+p)
+02:29 < petertodd> gmaxwell: lol, my girlfriend just pointed out that the song is "Bizzare Love Triangle", and there's two girls and one boy in the protocol :P
+02:29 < petertodd> gmaxwell: she's more impressed with your quote than my protocol!
+02:30 < petertodd> warren: ha, so very true... (see log)
+02:31 < warren> i'm calling this Bitcoin OMG
+02:31 < petertodd> better name than next-test
+02:31 < warren> meant to be stable, fun, and including things that should be in Bitcoin proper but isn't fully proven yet
+02:31 < gmaxwell> petertodd: hahah yes, thats why I chose to emit the lyrics when I did. Because all this alice and carol and bob and ones cheating the other but they have this non-public arrangement and soooo.
+02:35 < petertodd> heh, ah, it's just too perfect
+02:35 < warren> https://github.com/wtogami/bitcoin/commits/btc-0.8.5-omg
+02:35 < warren> it seems to work!
+02:36 < warren> Disable Wallet, Coin Control, Watch Only, processgetdata and a million other things tested in Litecoin for months
+cAe{
+02:42 < warren> hmm, should I include secp256k1 in this?
+02:42 < warren> hmm....
+02:43 < petertodd> warren: tsk tsk, I don't see any git signatures proving that branch is really yours :P
+02:45 < warren> petertodd: fine ... how do I verify them?
+02:45 < petertodd> warren: git log --show-signature
+02:45  * petertodd needs to figure out how to make that the default
+02:45 < warren> petertodd: you have a working gitian setup?
+02:46 < warren> petertodd: I want to do gitian.sigs for OMG
+02:46 < petertodd> warren: nope :( there's been progress on non-VM-based gitian lately?
+02:46 < warren> I'm testing watchonly with DPR's coins now
+02:46 < warren> petertodd: some, michagogo was working on it
+02:46 < petertodd> my bios is buggy apparently
+02:46 < petertodd> ha, nice
+02:46 < warren> not sure if it is in 0.9 yet
+02:46 < petertodd> yeah, I gotta get that working properly
+02:47 < warren> I committed something to 0.9 that gets rid of wine during the win32 build
+ {aB
+02:47 < petertodd> personally I always compile from source though, so it's git's integrity that I'm interested in
+02:49 < warren> if I disable mining is secp256k1 safe enough?
+02:50 < petertodd> sure given this is an OMG
+02:50 < petertodd> heck, I mine on git master myself, so I shouldn't talk
+02:50 < warren> I'll wait for sipa's feedback on that
+02:51 < warren> hm, better not risk it
+02:51 < warren> this is meant to be usable for Coinpunk
+02:51 < petertodd> yeah, don't need to go too far...
+02:53 < warren> petertodd: https://togami.com/~warren/archive/2013/my-bitcoin-wallet.png
+02:53 < petertodd> lol
+02:54 < petertodd> if it can do correct horse I'll be more impressed though
+03:59 < warren> ooh 
+03:59 < warren> forgot to add leveldb-1.13
+08:39 < warren> jgarzik: https://bitcointalk.org/index.php?topic=320695
+08:40 < warren> jgarzik: yet another bitcoin mac build with leveldb related improvements, would be interesting to see if it fixes the mac corruption, you had people at your office affected?
+}N*{<:
+08:47 < sipa> warren: for a secp256k1 build, i'd like to disable both wallet and mining
+08:47 < sipa> in that case the worst that can happen is you yourself being forked off
+08:52 < TD> sipa: does libsecp256k1 work on ARM?
+08:52 < sipa> i've been told it does, but i haven't tried
+08:52 < sipa> it may be slow
+08:53 < sipa> i believe cfields tried it on Debian/ARM
+08:53 < TD> slow in what sense?
+08:53 < TD> slow as in not any faster than openssl, or ... ?
+08:53 < sipa> yes   
+08:54 < sipa> of course i don't expect it to be as fast on a mobile as on an i7 :)
+08:54 < TD> naturally. i don't think it's possible to be slower than interpreted Bouncy Castle on ARM though
+08:54 < sipa> :D    
+08:54 < TD> you'd have to insert sleep statements into the inner loop to be slower than that
+09:53 < petertodd> paper analyzing mixing services and similar things: https://www.wi.uni-muenster.de/sites/default/files/public/department/itsecurity/mbc13/mbc13-moeser-paper.pdf
+ey	?
+kA?y
+13:50 < gmaxwell> man, I wish the script OP code values had bits in them to signal how many objects they push and pop from the stack.. would have made softforking forwards compatibility a lot easier.
+13:51 < petertodd> good point
+13:58 < gmaxwell> (though you end up with the arm instruction set (32 bit instructions) pretty quickly if you're not careful. :P )
+13:58 < petertodd> no worries, just run blocks through bzip2...
+14:00 < gmaxwell> petertodd: you did see that I responded to TD pointing out that p2sh is larger and that has an impact on long term storage with a "sufficiently good blockchain compression"?
+14:02 < petertodd> gmaxwell: maybe?
+14:03 < petertodd> https://bitcointalk.org/index.php?topic=320331.msg3429302#msg3429302
+14:03 < petertodd> that's a good point
+14:04 < petertodd> OTOH it is bigger in terms of blockchain data, and we all know how much TD cares about maximizing the transaction rate and a fixed block size :P
+14:06 < petertodd> (biger vs. pay-to-pubkey)
+14:08 < TD> i think with compression of the storage (and maybe in a future protocol version, transmission) it's down to a few bytes difference either way, right?
+14:08 < TD> so not worth worrying about in either direction
+14:09 < petertodd> good to hear
+higr
+(GQa=
+%#+h
+14:09 < petertodd> p2sh certainely could be a good thing for the payment protocol re: standardization if we're going to keep IsStandard()
+14:09 < gmaxwell> TD: You can't compress a never spent txout.  I dunno if it's worth worrying about, but I'm still much more comfortable with larger scriptsigs than scriptpubkeys.
+14:10 < TD> it'd be nice to get rid of the IsStandard checks one day, especially if script became more powerful
+14:11 < petertodd> TD: I think jdillon's opcode whitelisting suggestion for P2SH scriptPubKeys has merit for a short-term solution
+14:12 < petertodd> TD: though it's interesting how IsStandard() is currently important for mutability too...
+15:00 < gmaxwell> petertodd: http://pastebin.com/EsmJarxU < diagramed out the teleportation protocol.
+15:32 < warren> sipa: secp256k1 works on litecoin ARM
+15:34 < sipa> warren: nice to know
+21:05 < amiller> this mixing transaction thing is nuts
+21:06 < amiller> i'm helping write this paper about the rationale for third party bitcoin mixing services
+21:06 < amiller> it's simpler than zerocoin, which i still kind of like the best
+21:07 < amiller> we keep nearly getting undermined by simpler better tech though, like coinjoin would be better if not for the DoS and apparent infeasibility of an honest server
+g'f 
+21:08 < amiller> but now this hashlock mix is just as good in every way, and better specifically in that it prevents the server from running away with the funds
+21:09 < amiller> we've sort of gone through great lengths so far by just whitewashing the problem and saying "well servers will want to maintain their great reputations and future income therefore they'll never actually steal any funds if users can prove it happened"
+21:09 < amiller> which IMO sucks and is not even justified
+21:09 < amiller> anyway this simplifies it
+21:14  * amiller tries to think of some third cool trick to achieve with hashlocked tx
+21:14 < amiller> abstractly, hashlocking lets you bind two transactions into an atomic pair
+21:14 < amiller> either both get through or neither
+21:14 < amiller> with tiernolan's crosschain exchange, the two txes aren't even on the same chain
+21:15 < amiller> with gmaxwell's hashlocked mix, only the mixer knows the correspondence between the two in the ordinary case
+d_yl1
+21:16 < amiller> what other reason could you have to want to join two separate transactions?
+21:17 < maaku> amiller: why do you need an honest server for coinjoin?
+21:17 < amiller> maaku, because there's no public publishing system (like freenet or w/e) that gives you much defense against one person trivially jamming the whole tx by not singing
+21:17 < amiller> signing*
+21:18 < amiller> it's a DoS disaster
+21:18 < amiller> a dosaster
+21:18 < amiller> (trademark pending)
+21:18  * amiller registers dosaster.com
+21:18 < maaku> ok by "DoS and apparent infeasibility of an honest server" you made it sound like something else
+21:18 < amiller> oh 
+21:19 < amiller> i mean that even an honest server can't do much to prevent it other than check bonds or something
+21:19 < amiller> it's a hopeless game for the honest server, sort of like the standard "escrow" on bitmit or silkraod
+21:19 < amiller> good for comforting users but not actually capable of resolving an actual dilemma
+F/z6
+21:20 < maaku> it's not hopeless; DoS can be mitigated
+21:20 < maaku> but granted it's not easy either
+21:22 < amiller> it's not so much that dos can be mitigated, but that in most practical scenarios no one is trying that hard so you can get away with not mitigating it
+21:22 < amiller> which is why, for example, bitmessage is currently functioning
+22:01 < amiller> ugh, so i need a way to make a coin flip automatically go to the winner
+22:11 < amiller> i wish the stupid splice operations weren't all disabled :/
+22:47 < warren> petertodd: crap.  the combination of coin control and watch only snuck in some really strange coin selection bugs
+15Q!
+es/ys
+ QaV
+17:47 < michagogo|cloud> okay, it's 12:47 am
+17:47 < michagogo|cloud> goodnight.
+17:47 < warren> michagogo|cloud: you must be on the opposite side of the planet from me
+17:47 < michagogo|cloud> UTC+2
+17:47 < michagogo|cloud> (Israel)
+17:48 < michagogo|cloud> warren: Hawaii, right?
+17:48 < cfields> great, i think my macbook hdd is about to take a dump
+17:48 < warren> yes, UTC-10
+17:53 < gavinandresen> warren: RE: app store: maybe when we're 1.0. And have a user-friendly "you are out of date; upgrade now?".  And start in SPV mode. And have a reasonable customer support system.
+17:54 < gavinandresen> warren: I think it makes more sense for a company to comercialize Bitcoin-Qt, and give professional support, etc etc etc.
+17:54 < warren> bitcointroll isn't a reasonable customer support system? =)
+17:54 < warren> joking
+17:54 < warren> gavinandresen: to do that wouldn't they need to pay for qt?
+17:55 < petertodd> warren: red hat model
+17:55 < phantomcircuit> it's not that expensive...
+17:55 < gavinandresen> yes, red hat model.
+C>2<}>d.)
+17:56 < petertodd> warren: though in the case of bitcoin, I think there's a lot of stuff about theft that we're not considering... it may be the case that the only model that works for anything over a small businesses re: liability is actually bitbanks - you gotta trust someone, might as well trust someone whose business is trust.
+17:56 < petertodd> warren: I sure wouldn't want to be distributing binaries as a business for instance with a support contract without some long discussions with the lawyers first.
+17:57 < gmaxwell> warren: where is the bounty link?
+17:58 < phantomcircuit> petertodd, "not fit for purpose, any purpose"
+17:58 < warren> https://bitcointalk.org/index.php?topic=337294.0
+17:58 < petertodd> phantomcircuit: "We're the premier company in the Executive Desk Toys that happen to also be turnkey Bitcoin nodes business!"
+17:58 < warren> I suppose we can't get away with a perpetual beta when Bitcoin hits $1 trillion.
+17:58 < warren> That is unless a loaf of bread is $10k at that time, then maybe.
+ ;oP
+17:59 < phantomcircuit> warren, it's a beta until there are no known issues
+17:59 < gmaxwell> "Novelty nodes"
+17:59 < phantomcircuit> shrug
+18:00 < phantomcircuit> im gonna order a bunch of flash drives with the blockchain + bitcoin-qt loaded on them
+18:00 < warren> someone donated 0.5 BTC
+18:00 < petertodd> warren: tl;dr: people are going to lose shitloads of money, over and over again. and maybe Thompson's "Reflections on Trusting Trust" will be common knowledge.
+18:00 < phantomcircuit> and include a nice little script to start with -loadblocks
+18:00 < warren> petertodd: the massive centralized thefts seem to happen a lot
+18:01 < petertodd> warren: indeed, and more to the point, it's impossible to know how many are insiders.
+18:01 < warren> Don't worry, Coin Validation to the rescue.
+18:01 < warren> forgot the smiley on that
+18:01 < phantomcircuit> warren, the issue is people keep trusting people nobody really knows
+y^P\
+18:01 < petertodd> warren: but we're also starting to see thefts due to hacked software - anything that auto-updates is scary.
+18:01 < phantomcircuit> people suck at trust
+18:02 < warren> You mean TradeFortress isn't trustworthy?
+18:02 < phantomcircuit> aahahh
+18:02 < phantomcircuit> oh god
+18:03 < warren> both him and Ukto came into #bitcoin-dev screaming for help with wallet issues
+18:03 < gmaxwell> warren: you mean people didn't know he wasn't trustworthy?
+18:03 < phantomcircuit> gmaxwell, amazingly that message was apparently not received by everybody
+18:03 < petertodd> warren: My views on those things is I'm likely to lose whatever I have in them eventually, but I also like the privacy. So I've lost money on instawallet, inputs.io, and will eventually lose $100 or so on EasyWallet.
+18:03 < warren> it's a little sad that we can't recommend that people can't use bitcoind's wallet for a service provider
+18:03 < phantomcircuit> largely because he basically bribed a bunch of people to write positive fluff stories
+18:04 < warren> my english is failing,I need more sleep.
+18:04 < phantomcircuit> warren, well if there is a 0.8.6 release with my wallet hashing code then it will be totally
+18:04 < phantomcircuit> you just need to have enough ram for all of the transactions in the wallet
+18:05 < warren> phantomcircuit: was that merged into master yet?
+t}oh
+18:05 < phantomcircuit> i have a testnet wallet with like 90k transactions that's only 400 MB on disk
+18:05 < phantomcircuit> probably less in memory
+18:05 < petertodd> warren: ha, yeah, that satoshi didn't use type1 deterministic wallets should convince anyone he was a shitty programmer.
+18:05 < phantomcircuit> warren, yeah it was
+18:05 < warren> phantomcircuit: we have at least two DoS patches that could be a 0.8.6
+18:05 < phantomcircuit> warren, hmm?
+18:05 < phantomcircuit> ones that haven't been merged yet?
+18:05 < warren> phantomcircuit: yes
+18:05 < phantomcircuit> warren, you have a pr?
+18:06 < warren> phantomcircuit: which PR's were the wallet performance commits?
+18:06 < warren> phantomcircuit: you really want me to tell the public which are DoS fixes?
+18:06 < phantomcircuit> i guess not
+18:06 < phantomcircuit> lol
+18:08 < phantomcircuit> https://github.com/bitcoin/bitcoin/pull/2950
+18:08 < warren> that the only one?
+18:08 < warren> I thought there were like four
+18:08 < gavinandresen> I'm dragging my feet on 0.8.6 because I keep hoping somebody figures out the leveldb corruption issue
+.  Time to give up on that, I think.
+18:09 < warren> gavinandresen: my 0.8.5++ branch is super well tested
+18:09 < gavinandresen> warren: famous last words!
+18:09 < warren> gavinandresen: the leveldb bounty was only posted recently, let's wait a bit longer?
+16\@
+18:10 < petertodd> gavinandresen: release 0.8.6 with macos disabled, followed by 0.8.7 with it enabled once leveldb is fixed - good statement re: maintenance doesn't happen by magic
+18:11 < gavinandresen> petertodd: good idea.
+18:11 < phantomcircuit> warren, there are other ones that haven't been merged
+18:11 < gavinandresen> warren: link to your 0.8.5++ branch?
+18:11 < phantomcircuit> i fixed the fractal complexity IsConfirmed function
+18:12 < warren> gavinandresen: https://bitcointalk.org/index.php?topic=320695.0
+18:12 < warren> gavinandresen: not suggesting shipping all of this crap of course
+18:12 < warren> phantomcircuit: should I add your wallet thing to OMG?
+18:13 < gavinandresen> mmm, definitely not. 0.8.6 will be critical-bug-fix-only
+18:13 < warren> gavinandresen: OMG is whatever I think is good enough for non-mining nodes
+18:14 < warren> gavinandresen: some of the patches here are appropriate for 0.8.6
+~-g:
+18:14 < gavinandresen> warren: email me a list
+18:15 < warren> gavinandresen: tonight
+18:16 < warren> gavinandresen: seriously going to skip mac in a release?
+18:17 < petertodd> warren: there's important fixes that would go in 0.8.6, why hold them back for a small minority?
+18:17 < warren> are they a small minority?
+18:18 < warren> and are the fixes important?
+18:18 < petertodd> warren: last I checked on one of my nodes the supermajority of nodes had ip addresses that were definitely VPS services
+18:18 < warren> petertodd: all at digitalocean? =)
+18:18 < sipa> note that there aren't even bitcoind releases for OSX
+18:18 < petertodd> warren: lol, nah, this was before that
+18:19 < gavinandresen> warren: sure, when the bug is fixed we can release a mac version then. I don't like shipping known-seriously-buggy software.
+18:19 < phantomcircuit> gavinandresen, well currently all the osx releases are known to be buggy
+18:19 < gavinandresen> I don't like taking things away from people even more....
+5'k4
+18:19 < nOgAnOo> hi phantom <3
+18:19 < phantomcircuit> would it not be better to fix some things even if that cant be fixed yet?
+18:19 < nOgAnOo> I love you.
+18:19 < warren> gavinandresen: while I tested these patches against 0.8, my 0.8 is really a hybrid of 0.9, so I make no guarantees about these backports being correct against plain 0.8.5
+18:20 < phantomcircuit> nOgAnOo, lol ok
+18:20 < phantomcircuit> nOgAnOo, ohh hello
+18:20 < phantomcircuit> i know who you areeee
+18:20 < sipa> ehm   
+18:20 < sipa> get a room
+18:20 < petertodd> warren: why not point osx users to your OMG branch then?
+18:20 < sipa> s/room/channel/
+18:20 < nOgAnOo> I remember your handle.. but I'm stoned.
+18:21 < petertodd> "Wizards don't use drugs."
+18:21 < phantomcircuit> lol
+18:21 < nOgAnOo> *laffter*
+18:21 < nOgAnOo> I hauled 5 truckloads of compost today
+18:21 < nOgAnOo> shoveled by hand
+18:21 < petertodd>  /ignore nOgAnOo
+	cK]
+R{B-3
+18:22 < warren> gavinandresen: the elephant in the room here: many of us really think NODE_BLOOM should be added as a safety fallback.	If we're doing 0.8.6 for the purpose of protecting the network with <those other DoS mitigations> I strongly suggest we include NODE_BLOOM too.  Having it disabled by default but available as an option would allow the world to recover
+quickly without a software update.
+18:22 < warren> petertodd: OMG branch isn't fixed for mac either
+18:22 < petertodd> warren: you really had to bring that up?
+18:22 < warren> petertodd: is it productive to continue to not talk about it?
+18:23 < petertodd> warren: IMO we've pushed the cost of the attack just high enough that it's a bit hard to exploit, which gives us breathing room; NODE_BLOOM in that context is not critical.
+18:23 < warren> gavinandresen: given inertia of defaults we're not under the risk of people turning it off en masse.
+*7,[
+%xEw
+18:23 < petertodd> warren: IE, it's a "policy" decision, and calling it a solution to DoS attacks isn't the way to talk about it.
+18:24 < warren> petertodd: sure it isn't a solution
+18:24 < petertodd> warren: hence, leave it out of 0.8.6 and let people continue to think about it on their own terms
+18:24 < warren> petertodd: neither is anything else we have
+18:24 < petertodd> warren: yes, but we're at the point where a bored hacker can't cause us damage we can't recover from.
+
