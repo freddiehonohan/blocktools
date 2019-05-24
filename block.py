@@ -313,6 +313,37 @@ class txInput:
                     if(op_codeTail=="OP_ROLL"):
                         print "OP_ROLL"
                         scriptStack.append(op_codeTail)
+                    elif(op_codeTail=="OP_EQUAL"):
+                        print "OP_EQUAL"
+                        curIndex = len(hexstr)-2
+                        cur_opValue = hexstr[curIndex:curIndex+2]
+                        scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
+                        for i in range(0,3):
+                            curIndex-=2
+                            cur_opValue = hexstr[curIndex:curIndex+2]
+                            scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
+                        curIndex -=2
+                        # go back 32 bytes and check for sig length == 32, if not siglength = 33
+                        #for i in range(0,2):
+                            #print "DSFFDSSDF"+hexstr[curIndex-64-2:curIndex-64]
+                        if(hexstr[curIndex-64-2:curIndex-64]=='20'):
+                            sigLength = 32
+                        else:
+                            sigLength = 33
+                        curIndex-=sigLength*2
+                        sig = hexstr[curIndex:curIndex+sigLength*2] #
+                        scriptStack.append(sig)
+                        curIndex-=2
+                        cur_opValue=hexstr[curIndex:curIndex+2]
+                        scriptStack.append("OP_LENGTH:"+cur_opValue)
+                        curIndex-=2
+                        cur_opValue=hexstr[curIndex:curIndex+2]
+                        scriptStack.append("OP_INT:"+cur_opValue)
+                        curIndex-=2
+                        cur_opValue = hexstr[curIndex:curIndex+2]
+                        scriptStack.append(checkOpCode(cur_opValue)+":"+cur_opValue)
+                        print " \tOP_EQUAL, DROP:\t "+" ".join(scriptStack[::-1])
+
                     else:
                         print " \tScript op_code is not SIGHASH_ALL "+hexstr
                         print "Tail: "+op_codeTail

@@ -10867,7 +10867,8 @@ for l in newlines:
     for s2 in s:
         if "gateway.glop.me" in s2:
             s2 = s2.replace("gateway.glop.me","gateway.ipfs.io")
-            hashes.append(s2.split('/')[4])
+            #print s2
+            hashes.append(s2)#.split('/')[4])
 #import ipfsApi
 #api = ipfsApi.Client(host='https://ipfs.infura.io', port=5001)
 #OR
