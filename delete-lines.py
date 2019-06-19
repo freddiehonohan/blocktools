@@ -10855,6 +10855,14 @@ http://archive.is/TMLq7
 http://archive.fo/FVrdK
 http://zerobinqmdqd236y.onion/?c6bee941c121025a#aXbXpISypJNLbrrWv4sN3ST5/zHpJnyEaShgM1Bb+W0=
 http://zerobin.i2p/?94e681557c8b5459#HfkRIZVltQd6GUOpFrR3ZNTJ5nEgDMBYbcvQeWjqnVE= 
+
+adding these:
+http://gateway.glop.me/ipfs/QmUUiWf1KLshZBQWHDt8yVaabHdMjJA2g1md7YS8qsvMci/insurance.aes256.5120
+http://gateway.glop.me/ipfs/QmZHmQrNuBL1MJEi3cSn7bYoLShLiqGue5oeqZmcvHtBD6/wlinsurance-20130815-A.aes256.5120
+http://gateway.glop.me/ipfs/QmRRAnoHgZGqMrJodHA3Nj6GeQ5j4y1AHUbG8MgVXWshMH/wlinsurance-20130815-B.aes256.5120 
+http://gateway.glop.me/ipfs/QmPCPmGwyCghyMrVENUB1AEbzkZ9dULE9rBJcVMqc5RG1M/wlinsurance-20130815-C.aes256.5120
+http://gateway.glop.me/ipfs/QmNdwpvqWXkYsxPnjoL8rSZZpVDRDNu3YYvddsQ7dLdrEC/2016-06-03_insurance.aes256.5120
+
 """
 
 newlines = []
